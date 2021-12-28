@@ -23,16 +23,16 @@ from django.conf.urls import url
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('',views.home, name="faculty-view-page"),
+    path('',views.home, name="home"),
     path('p',views.place, name="placement"),
     path('f',views.facultyLogin, name="faculty_login"),
     path('cf',views.current_faculty, name="current_faculty"),
+    path('fv',views.faculty_view, name="faculty-view"),
     path('fp',views.faculty_profile, name="faculty_profile"),
     path('cs',views.current_student, name="current_student"),
     path('abt',views.about, name="about"),
     path('revu',views.review,name="review"),
     path('df',views.download_forms,name="download_forms"),
     path('ad',views.admission,name="admission"),
-    url(r'^media/(?P<path>.*)$', serve,{'document_root': settings.MEDIA_ROOT}), 
-    url(r'^static/(?P<path>.*)$', serve,{'document_root': settings.STATIC_ROOT}), 
+    path('hostals',views.hostal,name="hostal"),
 ]

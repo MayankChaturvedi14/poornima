@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  {% load static %}
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="{% static 'css\hostal.css' %}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+  <body id="body-pd">
+    <button style="float:right; background-color:#0d6efd;  border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    border-radius:8px;
+    cursor: pointer;
+    margin:15px;" type="button" id="home-btn">Home</button>
+    <script type="text/javascript">
+      document.getElementById("home-btn").onclick = function () {
+          location.href = "{% url 'home' %}";
+      };
+  </script>
+    <div class="first-img">
+    <img src="{% static 'img\PGC-Hostel-Banner-3.jpg' %}" alt="Hotal">
+</div>
+
+<div class="lol">
+<h1>POORNIMA HOSTELS</h1>
+<p>Poornima Hostel Details</p>
+<button type="button" class="collapsible">Open Collapsible</button>
+<div class="content">
+  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+</div>
+
+<p>Basic Essentials</p>
+<button type="button" class="collapsible">Basic Essentials</button>
+<div class="content">
+  <p>Many Students consider quality of life as one of the important factors while choosing a College. We at Poornima Group provide you a decent stay and the best possible learning environment. The stay at campus would certainly provide a wealth of experience by developing qualities such as comradeship and social responsibility.<br>Poornima Group provides separate hostel for boys and girls. Each hostel has spacious and semi furnished rooms offering a pleasant environment. The hostels are well-equipped with Wi-Fi facility, telephone, water purifier, water cooler and provision for indoor as well as outdoor games. The students housed in the campus are encouraged to use the gymnasium, playground and all indoor gaming facilities. These hostels also have home like dining facilities that offer fresh & nutritious food to the students. Hostels give an environment to create most effective conditions for student development. The hostels are located within the campus thus offering secured abode. The hostel is designed in such a way as to provide optimum utilization of student’s time for their overall personality development.
+<br>
+    ->24X7 Water Supply<br>
+    ->Well-furnished common rooms with TV<br>
+    ->Indoor & Outdoor Games<br>
+    ->Wi-Fi Internet facility<br>
+    ->Guest Room<br>
+    ->Laundry Facility<br>
+    ->Separate gymnasium for girls and boys<br>
+    ->Hot and Cold Water<br>
+    ->Medical facility<br>
+    ->Amphitheatre<br>
+    ->Regular Shuttle Service<br>
+    ->ATM’s available in the campus<br>
+    ->Daily House keeping<br>
+    ->Departmental and Stationary Stores<br>
+    ->Parking Space<br>
+    ->Power Back Up<br>
+    ->Fire Fighting Equipment</p>
+</div>
+<p>Dining Facilities</p>
+<button type="button" class="collapsible">Dining Facilities</button>
+<div class="content">
+  <p>Mess facility is an integral part of the campus which provides nutritious homely food to all hostellers, day scholars, faculty & staff members and visitors. It provides 4 meal a day – quality food is prepared under strict hygienic conditions. The food is served in the dining area keeping all the sensitivities in consideration.<br>
+    -> All the hostel mess serves Vegetarian Food only and operates in self-service mode.<br>
+    -> The menu of the items is designed considering the requirements of the students and nutrition is added to make it healthy and complete.<br>
+    -> We offer morning tea with regular breakfast, lunch, evening snacks and tea, dinner and milk to all hostellers.<br>
+    Mess caters to the tastes of the students of different region and students with varied food preferences.However there are certain guidelines which are to be followed while planning the meals.Mess menu is planned and managed by the management in consultation with the students.<br><br>
+
+    The hostel is equipped with a canteen offering variety of snacks available at reasonable prices in a very clean environment for the students.</p>
+</div>
+<p>Health Care</p>
+<button type="button" class="collapsible">Health Care</button>
+<div class="content">
+  <p>Poornima Group hostels provide first aid facility and medical rooms with all required arrangements for indoor treatment.<br><br>
+    -> Mahatma Gandhi hospital is situated at walking distance from the hostels.<br>
+    -> 3 ambulance are allotted for each hostel that are available 24*7.</p>
+</div>
+<p>Hostel Fest</p>
+<button type="button" class="collapsible">Hostel Fest</button>
+<div class="content">
+  <p>Poornima Group comprises of four hostels- Gayatri Girls Hostel,Gurushikhar Boys Hostel and Aravali Boys Hostel. Every year annual hostel fest is celebrated in all the four hostel with a great pomp and show.<br><br>
+
+    -> The hostel fest of Gayatri has been named as TATVA-TOQUE.<br>
+   
+    -> The hostel fest of Gurushikhar has been named as AAYAM.<br>
+ 
+    -> The hostel fest of Aravali has been named as PARAM.</p>
+    <img src="{% static 'img\HC.jpg' %}" alt="">
+</div>
+<p>Mentorship</p>
+<button type="button" class="collapsible">Mentorship</button>
+<div class="content">
+  <p>Mentorship system is a vision of our respected chairman sir Sh. Shashikant Singhi. The origination of mentorship system leads to the best possible way of managing hostel by the students themselves. Mentorship was managed by students called as mentors. Mentors are friend philosopher & guides for their juniors.</p>
+</div>
+<p>Recreational Facilities</p>
+<button type="button" class="collapsible">Recreational Facilities</button>
+<div class="content">
+  <p>Keeping in view the mental & physical growth of the students, the hostel provides an open ground for outdoor team games & athletics. A natural lawn has been laid to relax and to play games. Multi facility gym for every hostel campus has been provided which is fully equipped to keep the students fit and healthy. Indoor games like TT, Chess, Carom Board, and Squash have also been provided.</p><br><br>
+
+    <h3>Extra Curricular Facilities</h3><br>
+    -> Career counselling sessions<br>
+     
+    -> Motivational lectures<br>
+     
+    -> Social & cultural activities during festivals and other occasions</p>
+</div>
+<p>Security Parking</p>
+<button type="button" class="collapsible">Security Parking</button>
+<div class="content">
+  <p>The security of the students is of prime importance to us. We have employed efficient staff for our students to ensure that the hostel remains under a vigilant watch round the clock.<br><br>
+
+    Regular attendance is taken to keep a personal check on every student by the wardens. All the hostels have close circuit night vision cameras and a specially formulated smart cards given to each student which they use every time to enter and exit the premises. Adequate parking facility is available inside the premises for the hostellers.</p>
+</div>
+<p>Additional Benefits</p>
+<button type="button" class="collapsible">Additional Benefits</button>
+<div class="content">
+  <p><b>Personality Development Club: </b>The venture has seen many satisfied faces among the first year students. The students readily understood the need of professionalism. There were many students who have been the shy ones and find it difficult to stand in front of crowds. The extreme participation in the stage has given us enough evidence of how they have overcame their body challenges as well as their passion to create a difference.<br><br>
+
+  <b>Workshop Club:</b> Teaching and training is a full-fledged learning process in itself. Training budding technocrats to be better professionals bearing an all-round personality is our motto, helping hone one’s technical skills as well as exploring new hobbies. In the process, we as their trainers and mentors ourselves learn acute managerial and organizational skills. Preparing for various workshops includes developing a proper understanding of the skill being introduced; learning the skill themselves is must. <br><br>
+  <b>Social Activity Club:</b> We the members of Social Activity Club try to put our efforts in teaching the Mess Workers daily. We had conducted at about 40 classes. We also let them play for one day in every week in order to make them active. The learning is basic; we teach them according to their age. We had made a syllabus for them and accordingly to it we move ahead. Previously, they were not being able to write their name but now they can not only write their names but can compete with a fourth standard lad. <br><br>
+  <b>The Event management club:</b> It had a number of events organized in the session 2014-15. During these events we learned a lot of qualities and gained a lot of experience in this field of event management. All the mentors were fully enthusiastic and hard working. We learned to work as a team and lead that team to the road of success. The mentors coordinated and managed the things in time. We learned the quality of time management and work management both together.  </p>
+  
+</div>
+</div>
+
+<script>
+var coll = document.getElementsByClassName("collapsible");
+var i;
+
+for (i = 0; i < coll.length; i++) {
+  coll[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var content = this.nextElementSibling;
+    if (content.style.display === "block") {
+      content.style.display = "none";
+    } else {
+      content.style.display = "block";
+    }
+  });
+}
+</script>
+</body>
+</html>

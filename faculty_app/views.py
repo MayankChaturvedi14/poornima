@@ -3,7 +3,7 @@ from django.shortcuts import render
 
 # Create your views here.
 def home(request):
-    return render(request,"faculty_main.html")
+    return render(request,"demo.html")
 
 def place(request):
     return render(request,"placement.html")
@@ -13,6 +13,9 @@ def current_faculty(request):
 
 def facultyLogin(request):
     return render(request,"faculty_login.html")
+
+def faculty_view(request):
+    return render(request,"faculty_main.html")
 
 def faculty_profile(request):
     return render(request,"faculty_profile.html")
@@ -31,3 +34,6 @@ def download_forms(request):
 
 def admission(request):
     return render(request,"Admission.html")
+
+def hostal(request):
+    return render(request,"Hostal.html")

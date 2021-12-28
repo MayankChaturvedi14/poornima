@@ -2,40 +2,24 @@
 <html lang="en">
 
 <head>
-  {% load static %}
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>About : POORNIMA</title>
-  <link rel="stylesheet" href="{% static 'css/about.css' %}">
+
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
     integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="{% static 'js/about.js' %}"></script>
+
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <script>
-    jQuery(function ($) {
-      var specials = {
-        'Select Course': ['Select Specialization'],
-        'B-Tech': ['AI and Data Science (AI and DS)', 'Civil Engineering (CIVIL)', 'Computer Engineering (Artificial Intelligence)', 'Computer Engineering (Cyber Security)', 'Computer Science Engineering (CSE)', 'Electrical Engineering (EE)', 'Electronic and Comm. Engineering (EC)', 'Information Technology (IT)', 'Mechanical Engineering (ME)'],
-        'B-Tech (Lateral Entry)': ['Lateral AI and Data Science (AI and DS)', 'Lateral Civil Engineering (CIVIL)', 'Lateral Computer Science Engineering (CSE)', 'Lateral Electrical Engineering (EE)', 'Lateral Electronic and Comm Engineering (EC)', 'Lateral Information Technology (IT)', 'Lateral Mechanical Engineering (ME)'],
-      }
+  {% load static %}
 
-      var $specials = $('#spec');
-      $('#course').change(function () {
-        var course = $(this).val(), lcns = specials[course] || [];
 
-        var html = $.map(lcns, function (lcn) {
-          return '<option value="' + lcn + '">' + lcn + '</option>'
-        }).join('');
-        $specials.html(html)
-      });
-    });
-  </script>
 </head>
 <style>
   @import url("https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap");
@@ -207,7 +191,7 @@
     padding-left: calc(var(--nav-width) + 1rem)
   }
 
-  .active {
+  .active1 {
     background-color: red;
     border-radius: 10px;
   }
@@ -221,6 +205,46 @@
     margin-top: 80px;
     margin-left: 80px;
   }
+
+  .fa {
+
+    font-size: 30px;
+    width: 30px;
+    text-align: center;
+    text-decoration: none;
+    margin: 5px 2px;
+    border-radius: 50%;
+  }
+
+  .fa:hover {
+    opacity: 0.7;
+  }
+
+  .fa-facebook {
+    background: #3B5998;
+    color: white;
+  }
+
+  .fa-twitter {
+    background: #55ACEE;
+    color: white;
+  }
+
+  .fa-linkedin {
+    background: #007bb5;
+    color: white;
+  }
+
+  .fa-youtube {
+    background: #fa0202;
+    color: white;
+  }
+
+  .fa-instagram {
+    background: rgb(236, 107, 128);
+    color: white;
+  }
+
 
 
 
@@ -373,6 +397,13 @@
 <body id="body-pd">
   <header class="header" id="header">
     <div class="header_toggle"> <i class='bx bx-menu' id="header-toggle"></i> </div>
+    <div class="header_toggle"> <a href="https://www.facebook.com/Poornima.College.Engineering"
+        class="fa fa-facebook"></a>
+      <a href="https://twitter.com/poornimacollege" class="fa fa-twitter"></a> <a
+        href="https://www.linkedin.com/school/poornima-college-of-engineering-jaipur" class="fa fa-linkedin"></a>
+      <a href="https://www.youtube.com/channel/UC2msVsvmUenma6MNv_KWCZw?view_as=subscriber" class="fa fa-youtube"></a>
+      <a href="https://www.instagram.com/poornimacollege/" class="fa fa-instagram"></a>
+    </div>
 
   </header>
   <div class="l-navbar" id="nav-bar">
@@ -421,14 +452,14 @@
                 d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z" />
             </svg>
             <span class="nav_name">Career</span>
-          </a> <a href="#" class="nav_link" title="Hostel">
+          </a> <a href="{% url 'hostal' %}" class="nav_link" title="Hostel">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
               class="bi bi-house-door-fill" viewBox="0 0 16 16">
               <path
                 d="M6.5 14.5v-3.505c0-.245.25-.495.5-.495h2c.25 0 .5.25.5.5v3.5a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5z" />
             </svg>
             <span class="nav_name">Hostel</span> </a>
-          <a href="#" class="nav_link " title="IEEE Xplore">
+          <a href="https://ieeexplore.ieee.org/Xplore/home.jsp" class="nav_link " title="IEEE Xplore">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-newspaper"
               viewBox="0 0 16 16">
               <path
@@ -438,7 +469,7 @@
             </svg>
             <span class="nav_name">IEEE Xplore</span>
           </a>
-          <a href="{% url 'about' %}" class="nav_link active" title="About">
+          <a href="{% url 'about' %}" class="nav_link" title="About">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
               class="bi bi-question-circle-fill" viewBox="0 0 16 16">
               <path
@@ -453,273 +484,234 @@
     </nav>
   </div>
   <!-- Carousel -->
-  <div id="demo" class="carousel slide" data-bs-ride="carousel" style="margin-top: 100px;">
-
-    <!-- Indicators/dots -->
+  <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
     <div class="carousel-indicators">
-      <button type="button" data-bs-target="#demo" data-bs-slide-to="0" class="active"></button>
-      <button type="button" data-bs-target="#demo" data-bs-slide-to="1"></button>
-      <button type="button" data-bs-target="#demo" data-bs-slide-to="2"></button>
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
+        aria-current="true" aria-label="Slide 1"></button>
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+        aria-label="Slide 2"></button>
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+        aria-label="Slide 3"></button>
     </div>
-
-    <!-- The slideshow/carousel -->
     <div class="carousel-inner">
       <div class="carousel-item active">
-        <a href="https://g.page/Poornimacollege?share"><img src="{% static 'img\PCE LOCATION.png' %}" alt="Los Angeles" class="d-block"
-            style="width:100%"></a>
+        <img src="{% static 'img\banner1.jpg' %}" class="d-block w-100" alt="...">
       </div>
       <div class="carousel-item">
-        <a href="https://g.page/PoornimaInstitute?share"><img src="{% static 'img\PIET LOCATION.png' %}" alt="Chicago" class="d-block"
-            style="width:100%"></a>
+        <img src="{% static 'img\banner2.png' %}" class="d-block w-100" alt="...">
       </div>
       <div class="carousel-item">
-        <a href="https://g.page/PoornimaGroup?share"><img src="{% static 'img\PGI LOCATION.png' %}" alt="New York" class="d-block"
-            style="width:100%"></a>
+        <img src="{% static 'img\banner3.jpg' %}" class="d-block w-100" alt="...">
       </div>
     </div>
-
-    <!-- Left and right controls/icons -->
-    <button class="carousel-control-prev" type="button" data-bs-target="#demo" data-bs-slide="prev">
-      <span class="carousel-control-prev-icon" style="background-color: #555;"></span>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+      data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true" style="background-color: black ;"></span>
+      <span class="visually-hidden">Previous</span>
     </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#demo" data-bs-slide="next">
-      <span class="carousel-control-next-icon" style="background-color: #555;"></span>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+      data-bs-slide="next " >
+      <span class="carousel-control-next-icon" aria-hidden="true" style="background-color: black ;"></span>
+      <span class="visually-hidden">Next</span>
     </button>
   </div>
   <!--Container Main start-->
-  <div class="container-fluid">
+  <div class="container-fluid" style="margin-top: 10px;background-color: rgb(233, 231, 231);">
     <div class="row">
       <div class="col-md-6" style="margin: 0 auto;">
         <div class="form_container"
-          style="box-shadow: 5px 5px rgb(211, 209, 209);padding: 40px 50px;align-items: center; margin:5rem auto;background-image: linear-gradient(to right, rgba(243, 140, 172), rgba(132, 228, 247));  ">
-
-          <form id="register" method="post">
-            <H1 style="font-weight: bolder;">Contact US </H1>
-            <div class="col-md-6" style="margin: 2rem auto 0 auto ;">
-              <input type="text" name="fname" id="name" placeholder="Enter Your First*" required> <br>
-              <input type="email" name="email" id="name" placeholder="Enter Valid Email*" required> <br>
-              <input type="Phone" name="phone" id="name" placeholder="Enter Mobile Number*" required> <br>
-              <select onchange="print_city('state', this.selectedIndex);" id="sts" name="stt" class="form-control"
-                required></select><br>
-              <select value="" id="state" class="form-control" required>
-                <option>Select City*</option>
-              </select>
-              <script language="javascript">print_state("sts");</script>
-
-              <!-- <select onchange="print_courses('course', this.selectedIndex);" id="cou" name="ccc" class="control"
-                            required></select>
-                        <select id="course" class="control" required></select>
-                        <script language="javascript">print_course("cou",);</script>  --><br>
-              <div class="tooltips" title="Please choose a course">
-                <select id="course" name="course" placeholder="Phantasyland">
-                  <option>Select Course*</option>
-                  <option>B-Tech</option>
-                  <option>B-Tech (Lateral Entry)</option>
-                </select><br>
-                <select id="spec" name="spec" placeholder="Select specialization">
-                  <option>Select Specialization*</option>
-                </select>
-
+          style="align-items: center; margin:5rem auto;">
+          <h1 style="text-align: center;color: Black; font-size: 28px;font-weight:bolder  ">POORNIMA GROUP OF COLLEGES AT A GLANCE </h1>
+          <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                
+                <div class="card" style="width: 19rem; margin:0 auto;margin-top:15px">
+                  <img src="{% static 'img\piet.jpg' %}" class="card-img-top" alt="..."  style="height: 255.61px;">
+                  <div class="card-body " style="height: 176.8px;text-align:center">
+                    <h4 class="card-title">Academics</h4>
+                    <p class="card-text">3 decades of Academic exellence<br>
+                      4 Campuses<br>
+                      36000+ Alumni<br></p>
+                    
+                  </div>
+                </div>
               </div>
-
-
-
-
-
-              <br>
-
-              <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                <label class="form-check-label" for="flexCheckDefault" style="font-size: small; font-weight:bolder">
-                  I agree to recieve Information
-                </label>
-              </div><br><br>
-
-
-            </div>
-
-
-            <div class="row">
-
-              <div class="d-grid gap-2 col-6 mx-auto">
-                <button class="btn btn-primary">Submit</button>
+              <div class="carousel-item">
+                <div class="card" style="width: 19rem; margin:0 auto;margin-top:15px">
+                  <img src="{% static 'img\Highest_package.jpg' %}" class="card-img-top" alt="..." style="height: 255.61px;">
+                  <div class="card-body"  style="height: 176.8px;text-align:center">
+                    <h4 class="card-title">Packages</h4>
+                    <p class="card-text">17 LPA Highest Package<br>
+                      4.5 LPA Average Package<br>
+                      30 AIESEC Outgoing Interships</p>
+                    
+                  </div>
+                </div>
               </div>
-
+              <div class="carousel-item">
+                <div class="card" style="width: 19rem; margin:0 auto;margin-top:15px">
+                  <img src="{% static 'img\pce.jpg' %}" class="card-img-top" alt="..." style="height: 255.61px;">
+                  <div class="card-body" style="height: 176.8px;text-align:center">
+                    <h4 class="card-title">Merits</h4>
+                    <p class="card-text">100+ AIESEC Incoming Internships<br>
+                      63 Funded DST Projects<br>
+                      75+ RTU Merits in last 5 years<br></p>
+                    
+                  </div>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <div class="card" style="width: 19rem; margin:0 auto;margin-top:15px">
+                  <img src="{% static 'img\Highest_placement.jpg' %}" class="card-img-top" alt="..." style="height: 255.61px;">
+                  <div class="card-body" style="height: 176.8px;text-align:center">
+                    <h5 class="card-title">Placements</h5>
+                    <p class="card-text">45000+ Placements in last 3 years<br>
+                      250+ Placement Drive<br>
+                      36000+ Alumni<br></p>
+                    
+                  </div>
+                </div>
+              </div>
             </div>
-
-          </form>
-        </div>
-        <div class="accordion" style="margin-bottom: 80px;">
-          <div class="accordion-item">
-            <a>General Enqueries</a>
-            <div class="content">
-              <p>8875666645<br>
-
-                Alternatively you may write to us at info@poornima.org</p>
-            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true" style="background-color: black ;"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true" style="background-color: black ;"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
           </div>
-          <div class="accordion-item">
-            <a>Admission</a>
-            <div class="content">
-              <p>(Timing : 8:00 A.M. - 5:00 P.M.)<br> 9928666222 <br> 9928555222 <br> Alternatively you may write to us
-                at admission@poornima.org </p>
-            </div>
-          </div>
-          <div class="accordion-item">
-            <a>Collaboration of IBM</a>
-            <div class="content">
-              <p>You may speak us at​ ​9610654446.<br>
-
-                Alternatively you may write to us at​ ​ibm@poornima.org</p>
-            </div>
-          </div>
-          <div class="accordion-item">
-            <a>Training & Placement </a>
-            <div class="content">
-              <p>
-                You may speak to our Training Placement Office at​ ​9828510629.<br>
-
-                Alternatively you may write to us at​ ​tpo@poornima.org
-              </p>
-            </div>
-          </div>
-          <div class="accordion-item">
-            <a>Career, Jobs or Internship </a>
-            <div class="content">
-              <p>
-                You may speak to our HR Office​ ​at 8875666627.<br>
-
-                Alternatively you may write to us at​ hr@poornima.org
-              </p>
-            </div>
-          </div>
-          <div class="accordion-item">
-            <a>Store & Purchase</a>
-            <div class="content">
-              <p>
-                You may speak to Purchase Manager​ ​at​ ​9829855508.<br>
-
-                Alternatively you may write to us at​ store@poornima.org
-              </p>
-            </div>
-          </div>
-          <div class="accordion-item">
-            <a>Transport </a>
-            <div class="content">
-              <p>
-                You may speak to Transport Manager​ ​at​ ​9829855509.​<br>
-
-                Alternatively you may write to us at​ ​transport@poornima.org
-              </p>
-            </div>
-          </div>
-          <div class="accordion-item">
-            <a>​​Hostels </a>
-            <div class="content">
-              <p>
-                You may speak to Dean (​Hostels) ​at​ ​9829255103.​<br>
-
-                Alternatively you may write to us at​ ​hostels@poornima.org
-              </p>
-            </div>
-          </div>
-          <div class="accordion-item">
-            <a>​​Fees / Finance </a>
-            <div class="content">
-              <p>
-                You may speak to the Accounts Officer​ ​at​ ​9929094809.<br>
-
-                Alternatively you may write to us at​ ​accounts@poornima.org
-
-
-              </p>
-            </div>
-          </div>
-          <div class="accordion-item">
-            <a>​​Other Enquiries </a>
-            <div class="content">
-              <p>
-                ​You may speak to Poornima Informatics Centre​ ​at​ ​ 8875666645 .​<br>
-
-                Alternatively you may write to us at​ ​pic@poornima.org
-              </p>
-            </div>
-          </div>
-
-
         </div>
       </div>
-
-
     </div>
   </div>
+  <div class="container-fluid" style="margin-top: 10px;background-color: rgb(233, 231, 231);">
+    <div class="row">
+      <div class="col-md-6" style="margin: 0 auto;">
+        <div class="form_container"
+          style="align-items: center; margin:5rem auto;">
+          <h1 style="text-align: center;color: Black; font-size: 28px;font-weight:bolder  "><u style="text-decoration-color:red">Our Institutes</u> </h1>
+          <p style="text-align: center;">Poornima Group of Colleges, Comprising of Poornima College of Engineering (PCE), Poornima Institute of Engineering & Technology (PIET) was Established by Shanti Education Society in The Year 2000. All Poornima Institutions Are Affiliated to Rajasthan Technical University and Approved by All India Council of Technical Education (AICTE) & Recognised by UGC under 2(f) and Ministry of Human Resource & Development (MHRD).</p>
+          <div class="card" style="width: 18rem; margin:0 auto">
+            <img src="{% static 'img\Reap-code1023.jpg' %}" class="card-img-top" alt="...">
+            <div class="card-body">
+              <p class="card-text">Poornima College of Engineering</p>
+            </div>
+          </div>
+          <div class="card" style="width: 18rem ; margin:0 auto; margin-top:30px">
+            <img src="{% static 'img\reap-code1050.jpg' %}" class="card-img-top" alt="...">
+            <div class="card-body">
+              <p class="card-text">Poornima Institue of Engineering and Technology</p>
+            </div>
+          </div>
+        </div>
+        
+      </div>
+      
+      
+    </div>
   </div>
-  </div>
-  <script>
-    document.addEventListener("DOMContentLoaded", function (event) {
+  <div class="row">
+    <h3 style="text-align: center;margin-top:80px"><u style="font-weight:bolder;text-decoration-color:red">Our Recruiters</u></h3>
+    <div class="row" style="margin-top: 50px; ">
+      <div class="col-md-3">
+        <img src="{% static 'img\Recruiters\1.jpg' %}" width="65%">
+      </div>
+      <div class="col-md-3">
+        <img src="{% static 'img\Recruiters\2.jpg' %}" width="65%">
+      </div>
+      <div class="col-md-3">
+        <img src="{% static 'img\Recruiters\3.jpg' %}" width="65%">
+      </div>
+      <div class="col-md-3">
+        <img src="{% static 'img\Recruiters\4.jpg' %}" width="65%">
+      </div>
+    </div>
+    <div class="row" style="margin-top: 50px;margin-bottom:80px ">
+      <div class="col-md-3">
+        <img src="{% static 'img\Recruiters\5.jpg' %}" width="65%">
+      </div>
+      <div class="col-md-3">
+        <img src="{% static 'img\Recruiters\6.jpg' %}" width="65%">
+      </div>
+      <div class="col-md-3">
+        <img src="{% static 'img\Recruiters\7.png' %}" width="65%">
+      </div>
+      <div class="col-md-3">
+        <img src="{% static 'img\Recruiters\8.jpg' %}" width="65%">
+      </div>
+    </div>
+  </div>  
+  
+  
 
-      const showNavbar = (toggleId, navId, bodyId, headerId) => {
-        const toggle = document.getElementById(toggleId),
-          nav = document.getElementById(navId),
-          bodypd = document.getElementById(bodyId),
-          headerpd = document.getElementById(headerId)
+    <script>
+      document.addEventListener("DOMContentLoaded", function (event) {
 
-        // Validate that all variables exist
-        if (toggle && nav && bodypd && headerpd) {
-          toggle.addEventListener('click', () => {
-            // show navbar
-            nav.classList.toggle('show')
-            // change icon
-            toggle.classList.toggle('bx-x')
-            // add padding to body
-            bodypd.classList.toggle('body-pd')
-            // add padding to header
-            headerpd.classList.toggle('body-pd')
-          })
+        const showNavbar = (toggleId, navId, bodyId, headerId) => {
+          const toggle = document.getElementById(toggleId),
+            nav = document.getElementById(navId),
+            bodypd = document.getElementById(bodyId),
+            headerpd = document.getElementById(headerId)
+
+          // Validate that all variables exist
+          if (toggle && nav && bodypd && headerpd) {
+            toggle.addEventListener('click', () => {
+              // show navbar
+              nav.classList.toggle('show')
+              // change icon
+              toggle.classList.toggle('bx-x')
+              // add padding to body
+              bodypd.classList.toggle('body-pd')
+              // add padding to header
+              headerpd.classList.toggle('body-pd')
+            })
+          }
         }
+
+        showNavbar('header-toggle', 'nav-bar', 'body-pd', 'header')
+
+        /*===== LINK ACTIVE =====*/
+        const linkColor = document.querySelectorAll('.nav_link')
+
+        function colorLink() {
+          if (linkColor) {
+            linkColor.forEach(l => l.classList.remove('active'))
+            this.classList.add('active')
+          }
+        }
+        linkColor.forEach(l => l.addEventListener('click', colorLink))
+
+        // Your code to run since DOM is loaded and ready
+      });
+    </script>
+    <script src='https://code.jquery.com/jquery-3.2.1.min.js'></script>
+    <script>
+      // Code By Webdevtrick ( https://webdevtrick.com )
+      const items = document.querySelectorAll(".accordion a");
+
+      function toggleAccordion() {
+        this.classList.toggle('active');
+        this.nextElementSibling.classList.toggle('active');
       }
 
-      showNavbar('header-toggle', 'nav-bar', 'body-pd', 'header')
-
-      /*===== LINK ACTIVE =====*/
-      const linkColor = document.querySelectorAll('.nav_link')
-
-      function colorLink() {
-        if (linkColor) {
-          linkColor.forEach(l => l.classList.remove('active'))
-          this.classList.add('active')
-        }
-      }
-      linkColor.forEach(l => l.addEventListener('click', colorLink))
-
-      // Your code to run since DOM is loaded and ready
-    });
-  </script>
-  <script src='https://code.jquery.com/jquery-3.2.1.min.js'></script>
-  <script>
-    // Code By Webdevtrick ( https://webdevtrick.com )
-    const items = document.querySelectorAll(".accordion a");
-
-    function toggleAccordion() {
-      this.classList.toggle('active');
-      this.nextElementSibling.classList.toggle('active');
-    }
-
-    items.forEach(item => item.addEventListener('click', toggleAccordion));
-  </script>
+      items.forEach(item => item.addEventListener('click', toggleAccordion));
+    </script>
 
 
-  <!-- Optional JavaScript -->
-  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
-    integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
-    crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
-    crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
-    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
-    crossorigin="anonymous"></script>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+      integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+      crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+      integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+      crossorigin="anonymous"></script>
 </body>
 
 </html>
