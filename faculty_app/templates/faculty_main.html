@@ -1,0 +1,1110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Faculty: POORNIMA</title>
+    {% load static %}
+    <link rel="stylesheet"  href="{%  static  'css\faculty_main.css'  %}">
+    <script type='text/javascript' src= "{%  static  'js\faculty-main.js' %}"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+</head>
+<body id="body-pd">
+    <header class="header" id="header">
+        <div class="header_toggle"> <i class='bx bx-menu' id="header-toggle"></i> </div>
+        <div><button type="button" id="lgbtn" class="loginbtn">Login</button></div>
+        <script type="text/javascript">
+          document.getElementById("lgbtn").onclick = function () {
+              location.href = "{% url 'faculty_login' %}";
+          };
+      </script>
+    </header>
+    <div class="l-navbar" id="nav-bar">
+        <nav class="nav">
+            <div class="scr"> 
+                <a style="color:white; font-weight:700;" href="#" class="nav_logo"> 
+                    <span class="nav_logo-name">
+                        <img style="padding-right:30px;" class="nav-icon" src={% static 'img\POORNIMA.png' %} width=60 height=30>
+                    </span>POORNIMA</a>
+                    <hr>
+                <div class="nav_list"> 
+                      <a onclick="return Initial_View(1)" title="View All" href="#" class="nav_link active"> 
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-view-stacked" viewBox="0 0 16 16">
+                          <path d="M3 0h10a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2zm0 1a1 1 0 0 0-1 1v3a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H3zm0 8h10a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2zm0 1a1 1 0 0 0-1 1v3a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1v-3a1 1 0 0 0-1-1H3z"/>
+                        </svg>
+                        <span  class="nav_name">All</span> 
+                      </a> 
+                    <a onclick="return ImgView(1)" title="Computer Science" href="#" class="nav_link"> 
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pc-display-horizontal" viewBox="0 0 16 16">
+                            <path d="M1.5 0A1.5 1.5 0 0 0 0 1.5v7A1.5 1.5 0 0 0 1.5 10H6v1H1a1 1 0 0 0-1 1v3a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-3a1 1 0 0 0-1-1h-5v-1h4.5A1.5 1.5 0 0 0 16 8.5v-7A1.5 1.5 0 0 0 14.5 0h-13Zm0 1h13a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-.5.5h-13a.5.5 0 0 1-.5-.5v-7a.5.5 0 0 1 .5-.5ZM12 12.5a.5.5 0 1 1 1 0 .5.5 0 0 1-1 0Zm2 0a.5.5 0 1 1 1 0 .5.5 0 0 1-1 0ZM1.5 12h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1 0-1ZM1 14.25a.25.25 0 0 1 .25-.25h5.5a.25.25 0 1 1 0 .5h-5.5a.25.25 0 0 1-.25-.25Z"/>
+                          </svg>
+                        <span  class="nav_name">Computer Science  </span> 
+                    </a> 
+                    <a onclick="return ImgView(2)" title="Electronics and communication" href="#" class="nav_link"> 
+                        <svg  xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-reception-4" viewBox="0 0 16 16">
+                            <path d="M0 11.5a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1-.5-.5v-2zm4-3a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 .5.5v5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1-.5-.5v-5zm4-3a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 .5.5v8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1-.5-.5v-8zm4-3a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 .5.5v11a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1-.5-.5v-11z"/>
+                          </svg>
+                        <span class="nav_name">Electronics</span> 
+                    </a> 
+                    <a onclick="return ImgView(3)" title="Electrical Engineering" href="#" class="nav_link"> 
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-lightbulb-fill" viewBox="0 0 16 16">
+                            <path d="M2 6a6 6 0 1 1 10.174 4.31c-.203.196-.359.4-.453.619l-.762 1.769A.5.5 0 0 1 10.5 13h-5a.5.5 0 0 1-.46-.302l-.761-1.77a1.964 1.964 0 0 0-.453-.618A5.984 5.984 0 0 1 2 6zm3 8.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1l-.224.447a1 1 0 0 1-.894.553H6.618a1 1 0 0 1-.894-.553L5.5 15a.5.5 0 0 1-.5-.5z"/>
+                          </svg>
+                        <span class="nav_name">Electrical</span> 
+                    </a> 
+                    <a onclick="return ImgView(4)" title="Machenical Engineering" href="#" class="nav_link"> 
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-gear-fill" viewBox="0 0 16 16">
+                            <path d="M9.405 1.05c-.413-1.4-2.397-1.4-2.81 0l-.1.34a1.464 1.464 0 0 1-2.105.872l-.31-.17c-1.283-.698-2.686.705-1.987 1.987l.169.311c.446.82.023 1.841-.872 2.105l-.34.1c-1.4.413-1.4 2.397 0 2.81l.34.1a1.464 1.464 0 0 1 .872 2.105l-.17.31c-.698 1.283.705 2.686 1.987 1.987l.311-.169a1.464 1.464 0 0 1 2.105.872l.1.34c.413 1.4 2.397 1.4 2.81 0l.1-.34a1.464 1.464 0 0 1 2.105-.872l.31.17c1.283.698 2.686-.705 1.987-1.987l-.169-.311a1.464 1.464 0 0 1 .872-2.105l.34-.1c1.4-.413 1.4-2.397 0-2.81l-.34-.1a1.464 1.464 0 0 1-.872-2.105l.17-.31c.698-1.283-.705-2.686-1.987-1.987l-.311.169a1.464 1.464 0 0 1-2.105-.872l-.1-.34zM8 10.93a2.929 2.929 0 1 1 0-5.86 2.929 2.929 0 0 1 0 5.858z"/>
+                          </svg>
+                        <span class="nav_name">Machenical</span> 
+                    </a> 
+                    <a onclick="return ImgView(5)" title="Civil Engineering" href="#" class="nav_link"> 
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-building" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd" d="M14.763.075A.5.5 0 0 1 15 .5v15a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5V14h-1v1.5a.5.5 0 0 1-.5.5h-9a.5.5 0 0 1-.5-.5V10a.5.5 0 0 1 .342-.474L6 7.64V4.5a.5.5 0 0 1 .276-.447l8-4a.5.5 0 0 1 .487.022zM6 8.694 1 10.36V15h5V8.694zM7 15h2v-1.5a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 .5.5V15h2V1.309l-7 3.5V15z"/>
+                            <path d="M2 11h1v1H2v-1zm2 0h1v1H4v-1zm-2 2h1v1H2v-1zm2 0h1v1H4v-1zm4-4h1v1H8V9zm2 0h1v1h-1V9zm-2 2h1v1H8v-1zm2 0h1v1h-1v-1zm2-2h1v1h-1V9zm0 2h1v1h-1v-1zM8 7h1v1H8V7zm2 0h1v1h-1V7zm2 0h1v1h-1V7zM8 5h1v1H8V5zm2 0h1v1h-1V5zm2 0h1v1h-1V5zm0-2h1v1h-1V3z"/>
+                          </svg>
+                        <span class="nav_name">Civil</span> </a> 
+
+                    <a onclick="return ImgView(6)" title="Chemistry" href="#" class="nav_link "> 
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-hexagon" viewBox="0 0 16 16">
+                            <path d="M14 4.577v6.846L8 15l-6-3.577V4.577L8 1l6 3.577zM8.5.134a1 1 0 0 0-1 0l-6 3.577a1 1 0 0 0-.5.866v6.846a1 1 0 0 0 .5.866l6 3.577a1 1 0 0 0 1 0l6-3.577a1 1 0 0 0 .5-.866V4.577a1 1 0 0 0-.5-.866L8.5.134z"/>
+                          </svg>
+                        <span class="nav_name">Chemistry</span> 
+                    </a> 
+                    <a onclick="return ImgView(7)" title="Physics" href="#" class="nav_link"> 
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-journal-text" viewBox="0 0 16 16">
+                            <path d="M5 10.5a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1h-2a.5.5 0 0 1-.5-.5zm0-2a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5zm0-2a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5zm0-2a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5z"/>
+                            <path d="M3 0h10a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2v-1h1v1a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H3a1 1 0 0 0-1 1v1H1V2a2 2 0 0 1 2-2z"/>
+                            <path d="M1 5v-.5a.5.5 0 0 1 1 0V5h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1H1zm0 3v-.5a.5.5 0 0 1 1 0V8h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1H1zm0 3v-.5a.5.5 0 0 1 1 0v.5h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1H1z"/>
+                          </svg>
+                        <span class="nav_name">Physics</span> 
+                    </a> 
+                    <a onclick="return ImgView(8)" title="Mathmetics" href="#" class="nav_link"> 
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-infinity" viewBox="0 0 16 16">
+                            <path d="M5.68 5.792 7.345 7.75 5.681 9.708a2.75 2.75 0 1 1 0-3.916ZM8 6.978 6.416 5.113l-.014-.015a3.75 3.75 0 1 0 0 5.304l.014-.015L8 8.522l1.584 1.865.014.015a3.75 3.75 0 1 0 0-5.304l-.014.015L8 6.978Zm.656.772 1.663-1.958a2.75 2.75 0 1 1 0 3.916L8.656 7.75Z"/>
+                          </svg>
+                        <span class="nav_name">Mathmetics</span> 
+                    </a> 
+                    <a onclick="return ImgView(9)" title="English" href="#" class="nav_link"> 
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-book-half" viewBox="0 0 16 16">
+                            <path d="M8.5 2.687c.654-.689 1.782-.886 3.112-.752 1.234.124 2.503.523 3.388.893v9.923c-.918-.35-2.107-.692-3.287-.81-1.094-.111-2.278-.039-3.213.492V2.687zM8 1.783C7.015.936 5.587.81 4.287.94c-1.514.153-3.042.672-3.994 1.105A.5.5 0 0 0 0 2.5v11a.5.5 0 0 0 .707.455c.882-.4 2.303-.881 3.68-1.02 1.409-.142 2.59.087 3.223.877a.5.5 0 0 0 .78 0c.633-.79 1.814-1.019 3.222-.877 1.378.139 2.8.62 3.681 1.02A.5.5 0 0 0 16 13.5v-11a.5.5 0 0 0-.293-.455c-.952-.433-2.48-.952-3.994-1.105C10.413.809 8.985.936 8 1.783z"/>
+                          </svg>
+                        <span class="nav_name">English</span> 
+                    </a> 
+                </div>
+            </div> 
+        </nav>
+    </div>
+
+  {% comment %} Row 1 {% endcomment %}
+<div class="main-content"  id="main-content" style="margin-bottom:270px;margin-left:50px;">
+
+<div class="dept1" style="margin-top:100px;" id="dept1">  
+    <div class="row" style="margin-top:50px;">
+        <div class="col-md-4">
+          <div class="card" style="width:60%;">
+            <div class="card-body">
+                <img src="{% static 'img/CSE/KK.jpg' %}" style="margin:5px;border-radius:5px;-webkit-box-shadow:4px 4px 4px 4px rgb(234,234,234)" width="180" height="180" alt="">  
+              <h6 class="card-title"><br>Dr. KESHAV KRISHNA AGRAWAL
+                PROFESSOR</h6>
+              <p class="card-text"><b>Qualification:</b> Ph.D.<br><b>Experience:</b> 30+ Years</p>
+              <a href="#" class="btn btn-primary">Know more</a>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-md-4">
+          <div class="card" style="width:60%;">
+            <div class="card-body">
+                <img src="{% static 'img\CSE\VK.jpg' %}" style="margin:5px;border-radius:5px;-webkit-box-shadow:4px 4px 4px 4px rgb(234,234,234)" width="180" height="180" alt="">  
+              <h6 class="card-title"><br>Mr. VIKRAM KHANDELWAL</h6>
+              <p class="card-text"><b>Qualification:</b> M.Tech <br><b>Experience:</b> 10+ Years</p>
+              <a href="#" class="btn btn-primary">Know more</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card" style="width:60%;">
+              <div class="card-body">
+                <img src="{% static 'img\CSE\AD.jpg' %}" style="margin:5px;border-radius:5px;-webkit-box-shadow:4px 4px 4px 4px rgb(234,234,234)" width="180" height="180" alt="">  
+                <h6 class="card-title"><br>Mr. ABHISHEK DADHICH</h6>
+                <p class="card-text"><b>Qualification: </b>M.Tech <br><b>Experience: </b>12+ Years</p>
+                <a href="#" class="btn btn-primary">Know more</a>
+              </div>
+            </div>
+          </div>
+        </div>
+    <br>
+    {% comment %} Row 2 {% endcomment %}
+
+    <div class="row" style="margin-top:50px;">
+        <div class="col-md-4">
+          <div class="card" style="width:60%;">
+            <div class="card-body">
+                <img src="{% static 'img\CSE\RJ.jpg' %}" style="margin:5px;border-radius:5px;-webkit-box-shadow:4px 4px 4px 4px rgb(234,234,234)" width="180" height="180" alt="">  
+              <h6 class="card-title"><br>Dr. REKHA JAIN</h6>
+              <p class="card-text"><b>Qualification: </b>Ph.D.<br><b>Experience:</b> 15+ Years</p>
+              <a href="#" class="btn btn-primary">Know more</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="card" style="width:60%;">
+            <div class="card-body">
+                <img src="{% static 'img\CSE\RM.jpg' %}" style="margin:5px;border-radius:5px;-webkit-box-shadow:4px 4px 4px 4px rgb(234,234,234)" width="180" height="180" alt="">  
+              <h6 class="card-title"><br>Dr. RAKHI MUTHA</h6>
+              <p class="card-text"><b>Qualification:</b> Ph.D. <br><b>Experience:</b> 16+ Years</p>
+              <a href="#" class="btn btn-primary">Know more</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card" style="width:60%;">
+              <div class="card-body">
+                <img src="{% static 'img\CSE\MG.jpg' %}" style="margin:5px;border-radius:5px;-webkit-box-shadow:4px 4px 4px 4px rgb(234,234,234)" width="180" height="180" alt="">  
+                <h6 class="card-title"><br>Dr. MEGHA GUPTA</h6>
+                <p class="card-text"><b>Qualification:</b> Ph.D. <br><b>Experience:</b> 15+ Years</p>
+                <a href="#" class="btn btn-primary">Know more</a>
+              </div>
+            </div>
+          </div>
+    </div>
+
+    {% comment %} row 3 {% endcomment %}
+
+    <div class="row" style="margin-top:50px;">
+        <div class="col-md-4">
+          <div class="card" style="width:60%;">
+            <div class="card-body">
+                <img src="{% static 'img\CSE\DM.jpg' %}" style="margin:5px;border-radius:5px;-webkit-box-shadow:4px 4px 4px 4px rgb(234,234,234)" width="180" height="180" alt="">  
+              <h6 class="card-title"><br>Mr. DEEPAK MOUD</h6>
+              <p class="card-text"><b>Qualification:</b> M.Tech <br><b>Experience:</b> 16+ Years</p>
+              <a href="#" class="btn btn-primary">Know more</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="card" style="width:60%;">
+            <div class="card-body">
+                <img src="{% static 'img\CSE\ST.jpg' %}" style="margin:5px;border-radius:5px;-webkit-box-shadow:4px 4px 4px 4px rgb(234,234,234)" width="180" height="180" alt="">  
+              <h6 class="card-title"><br>Mr. SANDEEP TULI</h6>
+              <p class="card-text"><b>Qualification:</b> M.Tech <br><b>Experience:</b> 15+ Years</p>
+              <a href="#" class="btn btn-primary">Know more</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card" style="width:60%;">
+              <div class="card-body">
+                <img src="{% static 'img\CSE\AK.jpg' %}" style="margin:5px;border-radius:5px;-webkit-box-shadow:4px 4px 4px 4px rgb(234,234,234)" width="180" height="180" alt="">  
+                <h6 class="card-title"><br>Dr. ANIL KUMAR</h6>
+                <p class="card-text"><b>Qualification:</b> Ph.D.<br><b>Experience:</b> 15+ Years</p>
+                <a href="#" class="btn btn-primary">Know more</a>
+              </div>
+            </div>
+          </div>
+    </div>
+
+    {% comment %} row 4 {% endcomment %}
+        <div class="row" style="margin-top:50px;">
+            <div class="col-md-4">
+            <div class="card" style="width:60%;">
+                <div class="card-body">
+                    <img src="{% static 'img\CSE\PS.jpg' %}" style="margin:5px;border-radius:5px;-webkit-box-shadow:4px 4px 4px 4px rgb(234,234,234)" width="180" height="180" alt="">  
+                    <h6 class="card-title"><br>Ms. POOJA SHARMA</h6>
+                    <p class="card-text"><b>Qualification:</b> M.Tech<br><b>Experience:</b> 12+ Years</p>
+                    <a href="#" class="btn btn-primary">Know more</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="card" style="width:60%;">
+            <div class="card-body">
+                <img src="{% static 'img\CSE\MS.jpg' %}" style="margin:5px;border-radius:5px;-webkit-box-shadow:4px 4px 4px 4px rgb(234,234,234)" width="180" height="180" alt="">  
+              <h6 class="card-title"><br>Mrs. MAMTA SAKPAL</h6>
+              <p class="card-text"><b>Qualification:</b> M.Tech<br><b>Experience:</b> 15+ Years</p>
+              <a href="#" class="btn btn-primary">Know more</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card" style="width:60%;">
+              <div class="card-body">
+                <img src="{% static 'img\CSE\SB.jpg' %}" style="margin:5px;border-radius:5px;-webkit-box-shadow:4px 4px 4px 4px rgb(234,234,234)" width="180" height="180" alt="">  
+                <h6 class="card-title"><br>Ms. SHRUTI BIJAWAT</h6>
+                <p class="card-text"><b>Qualification:</b> M.Tech<br><b>Experience:</b> 13+ Years</p>
+                <a href="#" class="btn btn-primary">Know more</a>
+              </div>
+            </div>
+          </div>
+     </div> 
+    </div>
+<!-- Dept 1 ends here-->
+
+<div class="dept2" style="margin-top:100px;" id="dept2">  
+    <div class="row" style="margin-top:50px;">
+        <div class="col-md-4">
+          <div class="card" style="width:60%;">
+            <div class="card-body">
+                <img src="{% static 'img\EC\AC.jpg' %}" style="margin:5px;border-radius:5px;-webkit-box-shadow:4px 4px 4px 4px rgb(234,234,234)" width="180" height="180" alt="">  
+              <h6 class="card-title"><br>Mr. ASHOK CHODHARY</h6>
+              <p class="card-text"><b>Qualification:</b> M.Tech <br><b>Experience:</b> 10+ years</p>
+              <a href="#" class="btn btn-primary">Know more</a>
+            </div>
+          </div>
+        </div>
+    
+        <div class="col-md-4">
+          <div class="card" style="width:60%;">
+            <div class="card-body">
+                <img src="{% static 'img\EC\BS.jpg' %}" style="margin:5px;border-radius:5px;-webkit-box-shadow:4px 4px 4px 4px rgb(234,234,234)" width="180" height="180" alt="">  
+              <h6 class="card-title"><br>Mr. BHANWARVEER SINGH</h6>
+              <p class="card-text"><b>Qualification:</b> M.tech<br><b>Experience:</b> 12+ years</p>
+              <a href="#" class="btn btn-primary">Know more</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card" style="width:60%;">
+              <div class="card-body">
+                <img src="{% static 'img\EC\MB.jpg' %}" style="margin:5px;border-radius:5px;-webkit-box-shadow:4px 4px 4px 4px rgb(234,234,234)" width="180" height="180" alt="">  
+                <h6 class="card-title"><br>Mr. MOHIT BAJPAI</h6>
+                <p class="card-text"><b>Qualification:</b> M.Tech<br><b>Experience:</b> 9+ years</p>
+                <a href="#" class="btn btn-primary">Know more</a>
+              </div>
+            </div>
+          </div>
+        </div>
+    <br>
+    {% comment %} Row 2 {% endcomment %}
+
+    <div class="row" style="margin-top:50px;">
+        <div class="col-md-4">
+          <div class="card" style="width:60%;">
+            <div class="card-body">
+                <img src="{% static 'img\EC\GM.jpg' %}" style="margin:5px;border-radius:5px;-webkit-box-shadow:4px 4px 4px 4px rgb(234,234,234)" width="180" height="180" alt="">  
+              <h6 class="card-title"><br>Dr. GARIMA MATHUR</h6>
+              <p class="card-text"><b>Qualification:</b> Ph.D<br><b>Experience:</b> 20+ years</p>
+              <a href="#" class="btn btn-primary">Know more</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="card" style="width:60%;">
+            <div class="card-body">
+                <img src="{% static 'img\EC\AD.jpg' %}" style="margin:5px;border-radius:5px;-webkit-box-shadow:4px 4px 4px 4px rgb(234,234,234)" width="180" height="180" alt="">  
+              <h6 class="card-title"><br>Dr. ANILA DHINGRA</h6>
+              <p class="card-text"><b>Qualification:</b> Ph.D<br><b>Experience:</b> 10+ years</p>
+              <a href="#" class="btn btn-primary">Know more</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card" style="width:60%;">
+              <div class="card-body">
+                <img src="{% static 'img\EC\PS.jpg' %}" style="margin:5px;border-radius:5px;-webkit-box-shadow:4px 4px 4px 4px rgb(234,234,234)" width="180" height="180" alt="">  
+                <h6 class="card-title"><br>Ms. PRIYANKA SHARMA</h6>
+                <p class="card-text"><b>Qualification:</b> M.Tech<br><b>Experience:</b> 7+ Years</p>
+                <a href="#" class="btn btn-primary">Know more</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+    {% comment %} row 3 {% endcomment %}
+
+    <div class="row" style="margin-top:50px;">
+        <div class="col-md-4">
+          <div class="card" style="width:60%;">
+            <div class="card-body">
+                <img src="{% static 'img\EC\TM.jpg' %}" style="margin:5px;border-radius:5px;-webkit-box-shadow:4px 4px 4px 4px rgb(234,234,234)" width="180" height="180" alt="">  
+              <h6 class="card-title"><br>Mr. TARUN MISHRA</h6>
+              <p class="card-text"><b>Qualification:</b> M.Tech<br><b>Experience:</b> 10+ years</p>
+              <a href="#" class="btn btn-primary">Know more</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="card" style="width:60%;">
+            <div class="card-body">
+                <img src="{% static 'img\EC\AK.jpg' %}" style="margin:5px;border-radius:5px;-webkit-box-shadow:4px 4px 4px 4px rgb(234,234,234)" width="180" height="180" alt="">  
+              <h6 class="card-title"><br>Dr. ASHOK KAJLA</h6>
+              <p class="card-text"><b>Qualification:</b> Ph.D<br><b>Experience:</b> 20+ years</p>
+              <a href="#" class="btn btn-primary">Know more</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card" style="width:60%;">
+              <div class="card-body">
+                <img src="{% static 'img\EC\AKS.jpg' %}" style="margin:5px;border-radius:5px;-webkit-box-shadow:4px 4px 4px 4px rgb(234,234,234)" width="180" height="180" alt="">  
+                <h6 class="card-title"><br>Dr. AK SINHA</h6>
+                <p class="card-text"><b>Qualification:</b> Ph.D<br><b>Experience:</b> 30+ Years</p>
+                <a href="#" class="btn btn-primary">Know more</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+    {% comment %} row 4 {% endcomment %}
+        <div class="row" style="margin-top:50px;">
+            <div class="col-md-4">
+            <div class="card" style="width:60%;">
+                <div class="card-body">
+                    <img src="{% static 'img\EC\NG.jpg' %}" style="margin:5px;border-radius:5px;-webkit-box-shadow:4px 4px 4px 4px rgb(234,234,234)" width="180" height="180" alt="">  
+                    <h6 class="card-title"><br>Ms. NIKITA GAUTAM</h6>
+                    <p class="card-text"><b>Qualification:</b> M.Tech<br><b>Experience:</b> 8+ Years</p>
+                    <a href="#" class="btn btn-primary">Know more</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="card" style="width:60%;">
+            <div class="card-body">
+                <img src="{% static 'img\EC\VDG.jpg' %}" style="margin:5px;border-radius:5px;-webkit-box-shadow:4px 4px 4px 4px rgb(234,234,234)" width="180" height="180" alt="">  
+              <h6 class="card-title"><br>Ms. VIJAY DEEP GUPTA</h6>
+              <p class="card-text"><b>Qualification:</b> M.Tech<br><b>Experience:</b> 3+ years</p>
+              <a href="#" class="btn btn-primary">Know more</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card" style="width:60%;">
+              <div class="card-body">
+                <img src="{% static 'img\EC\PB.jpg' %}" style="margin:5px;border-radius:5px;-webkit-box-shadow:4px 4px 4px 4px rgb(234,234,234)" width="180" height="180" alt="">  
+                <h6 class="card-title"><br>Dr. PAYAL BANSAL</h6>
+                <p class="card-text"><b>Qualification:</b> Ph.D<br><b>Experience:</b> 12+ years</p>
+                <a href="#" class="btn btn-primary">Know more</a>
+              </div>
+            </div>
+          </div>
+        </div> 
+ </div>
+
+<!-- Dept 2 ends here-->
+
+<div class="dept3" style="margin-top:100px;" id="dept3">  
+    <div class="row" style="margin-top:50px;">
+        <div class="col-md-4">
+          <div class="card" style="width:60%;">
+            <div class="card-body">
+                <img src="{% static 'img\EE\ABS.jpg' %}" style="margin:5px;border-radius:5px;-webkit-box-shadow:4px 4px 4px 4px rgb(234,234,234)" width="180" height="180" alt="">  
+                <h6 class="card-title"><br>Mr. ABHISHEK SINGH</h6>
+                <p class="card-text"><b>Qualification:</b> M.Tech<br><b>Experience:</b> 17+ Years</p>
+                <a href="#" class="btn btn-primary">Know more</a>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-md-4">
+          <div class="card" style="width:60%;">
+            <div class="card-body">
+                <img src="{% static 'img\EE\AS.jpg' %}" style="margin:5px;border-radius:5px;-webkit-box-shadow:4px 4px 4px 4px rgb(234,234,234)" width="180" height="180" alt="">  
+              <h6 class="card-title"><br>Dr. AMIT SHRIVASTAVA</h6>
+              <p class="card-text"><b>Qualification:</b> Ph.D.<br><b>Experience:</b> 20+ Years</p>
+              <a href="#" class="btn btn-primary">Know more</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card" style="width:60%;">
+              <div class="card-body">
+                <img src="{% static 'img\EE\SJ.jpg' %}" style="margin:5px;border-radius:5px;-webkit-box-shadow:4px 4px 4px 4px rgb(234,234,234)" width="180" height="180" alt="">  
+                <h6 class="card-title"><br>Mr. SUHIL JAIN</h6>
+                <p class="card-text"><b>Qualification:</b> M.Tech<br><b>Experience:</b> 10+ Years</p>
+                <a href="#" class="btn btn-primary">Know more</a>
+              </div>
+            </div>
+          </div>
+        </div>
+    <br>
+    {% comment %} Row 2 {% endcomment %}
+
+    <div class="row" style="margin-top:50px;">
+        <div class="col-md-4">
+          <div class="card" style="width:60%;">
+            <div class="card-body">
+                <img src="{% static 'img\EE\BKJ.jpg' %}" style="margin:5px;border-radius:5px;-webkit-box-shadow:4px 4px 4px 4px rgb(234,234,234)" width="180" height="180" alt="">  
+              <h6 class="card-title"><br>Dr. BABITA KUMARI JAIN</h6>
+              <p class="card-text"><b>Qualification:</b> Ph.D.<br><b>Experience:</b> 18+ Years</p>
+              <a href="#" class="btn btn-primary">Know more</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="card" style="width:60%;">
+            <div class="card-body">
+                <img src="{% static 'img\EE\DC.jpg' %}" style="margin:5px;border-radius:5px;-webkit-box-shadow:4px 4px 4px 4px rgb(234,234,234)" width="180" height="180" alt="">  
+              <h6 class="card-title"><br>Dr. DEEPIKA CHAUHAN</h6>
+              <p class="card-text"><b>Qualification:</b> Ph.D <br><b>Experience:</b> 15+ Years</p>
+              <a href="#" class="btn btn-primary">Know more</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card" style="width:60%;">
+              <div class="card-body">
+                <img src="{% static 'img\EE\SS.jpg' %}" style="margin:5px;border-radius:5px;-webkit-box-shadow:4px 4px 4px 4px rgb(234,234,234)" width="180" height="180" alt="">  
+                <h6 class="card-title"><br>Mrs. SHUCHI SHUKLA</h6>
+                <p class="card-text"><b>Qualification:</b> M.Tech<br><b>Experience:</b> 14+ Years</p>
+                <a href="#" class="btn btn-primary">Know more</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+    {% comment %} row 3 {% endcomment %}
+
+    <div class="row" style="margin-top:50px;">
+        <div class="col-md-4">
+          <div class="card" style="width:60%;">
+            <div class="card-body">
+                <img src="{% static 'img\EE\SC.jpg' %}" style="margin:5px;border-radius:5px;-webkit-box-shadow:4px 4px 4px 4px rgb(234,234,234)" width="180" height="180" alt="">  
+              <h6 class="card-title"><br>Mr. SUGREEV CHAUDHARY</h6>
+              <p class="card-text"><b>Qualification:</b> Diploma<br><b>Experience:</b> 19+ Years</p>
+              <a href="#" class="btn btn-primary">Know more</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="card" style="width:60%;">
+            <div class="card-body">
+                <img src="{% static 'img\EE\MM.jpg' %}" style="margin:5px;border-radius:5px;-webkit-box-shadow:4px 4px 4px 4px rgb(234,234,234)" width="180" height="180" alt="">  
+              <h6 class="card-title"><br>Mr. MANISH MEENA</h6>
+              <p class="card-text"><b>Qualification:</b> M.Tech<br><b>Experience:</b> 17+ Years</p>
+              <a href="#" class="btn btn-primary">Know more</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card" style="width:60%;">
+              <div class="card-body">
+                <img src="{% static 'img\EE\PS.jpg' %}" style="margin:5px;border-radius:5px;-webkit-box-shadow:4px 4px 4px 4px rgb(234,234,234)" width="180" height="180" alt="">  
+                <h6 class="card-title"><br>Dr. PRAVIN SONWANET</h6>
+                <p class="card-text"><b>Qualification:</b> Ph.D. <br><b>Experience:</b> 23+ Years</p>
+                <a href="#" class="btn btn-primary">Know more</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+    {% comment %} row 4 {% endcomment %}
+        <div class="row" style="margin-top:50px;">
+            <div class="col-md-4">
+            <div class="card" style="width:60%;">
+                <div class="card-body">
+                    <img src="{% static 'img\EE\VPS.jpg' %}" style="margin:5px;border-radius:5px;-webkit-box-shadow:4px 4px 4px 4px rgb(234,234,234)" width="180" height="180" alt="">  
+                    <h6 class="card-title"><br>Mr. VISHNU PRAKASH SHARMA</h6>
+                    <p class="card-text"><b>Qualification:</b> M.Tech<br><b>Experience:</b> 7+ Years</p>
+                    <a href="#" class="btn btn-primary">Know more</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="card" style="width:60%;">
+            <div class="card-body">
+                <img src="{% static 'img\EE\DKD.jpg' %}" style="margin:5px;border-radius:5px;-webkit-box-shadow:4px 4px 4px 4px rgb(234,234,234)" width="180" height="180" alt="">  
+              <h6 class="card-title"><br>Mr. DEVENDRA KUMAR DODA</h6>
+              <p class="card-text"><b>Qualification:</b> M.Tech<br><b>Experience:</b> 15+ Years</p>
+              <a href="#" class="btn btn-primary">Know more</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card" style="width:60%;">
+              <div class="card-body">
+                <img src="{% static 'img\EE\HGS.jpg' %}" style="margin:5px;border-radius:5px;-webkit-box-shadow:4px 4px 4px 4px rgb(234,234,234)" width="180" height="180" alt="">  
+                <h6 class="card-title"><br>Dr. HIMANI GOYAL SHARMA</h6>
+                <p class="card-text"><b>Qualification:</b> <br><b>Experience:</b></p>
+                <a href="#" class="btn btn-primary">Know more</a>
+              </div>
+            </div>
+          </div>
+     </div> 
+
+    </div>
+<!-- Dept 3 ends here-->
+    
+<div class="dept4" style="margin-top:100px;" id="dept4">  
+  <div class="row" style="margin-top:50px;">
+      <div class="col-md-4">
+        <div class="card" style="width:60%;">
+          <div class="card-body">
+              <img src="{% static 'img\ME\MI.jpg' %}" style="margin:5px;border-radius:5px;-webkit-box-shadow:4px 4px 4px 4px rgb(234,234,234)" width="180" height="180" alt="">  
+              <h6 class="card-title"><br>Dr. Mohammad Israr</h6>
+              <p class="card-text"><b>Qualification:</b> Ph.D<br><b>Experience:</b> 15+ Years</p>
+              <a href="#" class="btn btn-primary">Know more</a>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-md-4">
+        <div class="card" style="width:60%;">
+          <div class="card-body">
+              <img src="{% static 'img\ME\NLJ.jpg' %}" style="margin:5px;border-radius:5px;-webkit-box-shadow:4px 4px 4px 4px rgb(234,234,234)" width="180" height="180" alt="">  
+            <h6 class="card-title"><br>Dr. Narayan Lal Jain</h6>
+            <p class="card-text"><b>Qualification:</b> Ph.D<br><b>Experience:</b> 23+ Years</p>
+            <a href="#" class="btn btn-primary">Know more</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+          <div class="card" style="width:60%;">
+            <div class="card-body">
+              <img src="{% static 'img\ME\SK.jpg' %}" style="margin:5px;border-radius:5px;-webkit-box-shadow:4px 4px 4px 4px rgb(234,234,234)" width="180" height="180" alt="">  
+              <h6 class="card-title"><br>Mr. Sanjay Kumawat</h6>
+              <p class="card-text"><b>Qualification:</b> M.Tech<br><b>Experience:</b> 11+ Years</p>
+              <a href="#" class="btn btn-primary">Know more</a>
+            </div>
+          </div>
+        </div>
+      </div>
+  <br>
+  {% comment %} Row 2 {% endcomment %}
+
+  <div class="row" style="margin-top:50px;">
+      <div class="col-md-4">
+        <div class="card" style="width:60%;">
+          <div class="card-body">
+              <img src="{% static 'img\ME\AK.jpg' %}" style="margin:5px;border-radius:5px;-webkit-box-shadow:4px 4px 4px 4px rgb(234,234,234)" width="180" height="180" alt="">  
+            <h6 class="card-title"><br>Ms. Asha Kumawat</h6>
+            <p class="card-text"><b>Qualification:</b> M.Tech<br><b>Experience:</b> 12+ years</p>
+            <a href="#" class="btn btn-primary">Know more</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="card" style="width:60%;">
+          <div class="card-body">
+              <img src="{% static 'img\ME\AM.jpg' %}" style="margin:5px;border-radius:5px;-webkit-box-shadow:4px 4px 4px 4px rgb(234,234,234)" width="180" height="180" alt="">  
+            <h6 class="card-title"><br>Mr. Amit Mandal</h6>
+            <p class="card-text"><b>Qualification:</b> M.Tech<br><b>Experience:</b> 13+ Years</p>
+            <a href="#" class="btn btn-primary">Know more</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+          <div class="card" style="width:60%;">
+            <div class="card-body">
+              <img src="{% static 'img\ME\RKS.jpg' %}" style="margin:5px;border-radius:5px;-webkit-box-shadow:4px 4px 4px 4px rgb(234,234,234)" width="180" height="180" alt="">  
+              <h6 class="card-title"><br>Dr. Raj Kumar Satankar</h6>
+              <p class="card-text"><b>Qualification:</b> Ph.D<br><b>Experience:</b> 10+ years</p>
+              <a href="#" class="btn btn-primary">Know more</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+  {% comment %} row 3 {% endcomment %}
+
+  <div class="row" style="margin-top:50px;">
+      <div class="col-md-4">
+        <div class="card" style="width:60%;">
+          <div class="card-body">
+              <img src="{% static 'img\ME\SHK.jpg' %}" style="margin:5px;border-radius:5px;-webkit-box-shadow:4px 4px 4px 4px rgb(234,234,234)" width="180" height="180" alt="">  
+            <h6 class="card-title"><br>Mr. Shailendra Kasera</h6>
+            <p class="card-text"><b>Qualification:</b> M.Tech<br><b>Experience:</b> 12+ years</p>
+            <a href="#" class="btn btn-primary">Know more</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="card" style="width:60%;">
+          <div class="card-body">
+              <img src="{% static 'img\ME\KJ.jpg' %}" style="margin:5px;border-radius:5px;-webkit-box-shadow:4px 4px 4px 4px rgb(234,234,234)" width="180" height="180" alt="">  
+            <h6 class="card-title"><br>Mr. Kalpit Jain</h6>
+            <p class="card-text"><b>Qualification:</b> M.Tech<br><b>Experience:</b> 10+ years</p>
+            <a href="#" class="btn btn-primary">Know more</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+          <div class="card" style="width:60%;">
+            <div class="card-body">
+              <img src="{% static 'img\ME\BD.jpg' %}" style="margin:5px;border-radius:5px;-webkit-box-shadow:4px 4px 4px 4px rgb(234,234,234)" width="180" height="180" alt="">  
+              <h6 class="card-title"><br>Mr. Bhavesh Devra</h6>
+              <p class="card-text"><b>Qualification:</b> M.Tech<br><b>Experience:</b> 11+ Years</p>
+              <a href="#" class="btn btn-primary">Know more</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+  {% comment %} row 4 {% endcomment %}
+      <div class="row" style="margin-top:50px;">
+          <div class="col-md-4">
+          <div class="card" style="width:60%;">
+              <div class="card-body">
+                  <img src="{% static 'img\ME\MS.jpg' %}" style="margin:5px;border-radius:5px;-webkit-box-shadow:4px 4px 4px 4px rgb(234,234,234)" width="180" height="180" alt="">  
+                  <h6 class="card-title"><br>Mr. Manoj Sharma</h6>
+                  <p class="card-text"><b>Qualification:</b> M.Tech<br><b>Experience:</b> 10+ years</p>
+                  <a href="#" class="btn btn-primary">Know more</a>
+              </div>
+          </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="card" style="width:60%;">
+          <div class="card-body">
+              <img src="{% static 'img\ME\NMM.jpg' %}" style="margin:5px;border-radius:5px;-webkit-box-shadow:4px 4px 4px 4px rgb(234,234,234)" width="180" height="180" alt="">  
+            <h6 class="card-title"><br>Mr. Nitin Mukesh Mathur</h6>
+            <p class="card-text"><b>Qualification:</b> Ph.D. (Pursuing)<br><b>Experience:</b> 10+ years</p>
+            <a href="#" class="btn btn-primary">Know more</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+          <div class="card" style="width:60%;">
+            <div class="card-body">
+              <img src="{% static 'img\ME\MP.jpg' %}" style="margin:5px;border-radius:5px;-webkit-box-shadow:4px 4px 4px 4px rgb(234,234,234)" width="180" height="180" alt="">  
+              <h6 class="card-title"><br>Mr. Manish Prakash</h6>
+              <p class="card-text"><b>Qualification:</b> M.Tech<br><b>Experience:</b> 8+ years</p>
+              <a href="#" class="btn btn-primary">Know more</a>
+            </div>
+          </div>
+        </div>
+   </div> 
+
+  </div>
+<!-- Dept 4 ends here-->
+
+<div class="dept5" style="margin-top:100px;" id="dept5">  
+  <div class="row" style="margin-top:50px;">
+      <div class="col-md-4">
+        <div class="card" style="width:60%;">
+          <div class="card-body">
+              <img src="{% static 'img\CE\B.jpg' %}" style="margin:5px;border-radius:5px;-webkit-box-shadow:4px 4px 4px 4px rgb(234,234,234)" width="180" height="180" alt="">  
+              <h6 class="card-title"><br>Mr. Balwan</h6>
+              <p class="card-text"><b>Qualification:</b> Ph.D<br><b>Experience:</b> 7+ Years</p>
+              <a href="#" class="btn btn-primary">Know more</a>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-md-4">
+        <div class="card" style="width:60%;">
+          <div class="card-body">
+              <img src="{% static 'img\CE\DV.jpg' %}" style="margin:5px;border-radius:5px;-webkit-box-shadow:4px 4px 4px 4px rgb(234,234,234)" width="180" height="180" alt="">  
+            <h6 class="card-title"><br>Mr. Divya Vishnoi</h6>
+            <p class="card-text"><b>Qualification:</b> M.Tech<br><b>Experience:</b> 8+ Years</p>
+            <a href="#" class="btn btn-primary">Know more</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+          <div class="card" style="width:60%;">
+            <div class="card-body">
+              <img src="{% static 'img\CE\HSC.jpg' %}" style="margin:5px;border-radius:5px;-webkit-box-shadow:4px 4px 4px 4px rgb(234,234,234)" width="180" height="180" alt="">  
+              <h6 class="card-title"><br>Dr. Harshwardhan Singh Chouhan</h6>
+              <p class="card-text"><b>Qualification:</b> Ph.D<br><b>Experience:</b> 8 Years</p>
+              <a href="#" class="btn btn-primary">Know more</a>
+            </div>
+          </div>
+        </div>
+      </div>
+  <br>
+  {% comment %} Row 2 {% endcomment %}
+
+  <div class="row" style="margin-top:50px;">
+      <div class="col-md-4">
+        <div class="card" style="width:60%;">
+          <div class="card-body">
+              <img src="{% static 'img\CE\S.jpg' %}" style="margin:5px;border-radius:5px;-webkit-box-shadow:4px 4px 4px 4px rgb(234,234,234)" width="180" height="180" alt="">  
+            <h6 class="card-title"><br>Ms. Shivanshi</h6>
+            <p class="card-text"><b>Qualification:</b> Ph.D (Pursuing)<br><b>Experience:</b> 7+ Years</p>
+            <a href="#" class="btn btn-primary">Know more</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="card" style="width:60%;">
+          <div class="card-body">
+              <img src="{% static 'img\CE\PG.jpg' %}" style="margin:5px;border-radius:5px;-webkit-box-shadow:4px 4px 4px 4px rgb(234,234,234)" width="180" height="180" alt="">  
+            <h6 class="card-title"><br>Dr. POOJA GUPTA</h6>
+            <p class="card-text"><b>Qualification:</b> Ph.D<br><b>Experience:</b> 16+ Years</p>
+            <a href="#" class="btn btn-primary">Know more</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+          <div class="card" style="width:60%;">
+            <div class="card-body">
+              <img src="{% static 'img\CE\PND.jpg' %}" style="margin:5px;border-radius:5px;-webkit-box-shadow:4px 4px 4px 4px rgb(234,234,234)" width="180" height="180" alt="">  
+              <h6 class="card-title"><br>Dr. Pran Nath Dadhich</h6>
+              <p class="card-text"><b>Qualification:</b> Ph.D<br><b>Experience:</b> 17+ years</p>
+              <a href="#" class="btn btn-primary">Know more</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+  {% comment %} row 3 {% endcomment %}
+
+  <div class="row" style="margin-top:50px;">
+      <div class="col-md-4">
+        <div class="card" style="width:60%;">
+          <div class="card-body">
+              <img src="{% static 'img\CE\SKG.jpg' %}" style="margin:5px;border-radius:5px;-webkit-box-shadow:4px 4px 4px 4px rgb(234,234,234)" width="180" height="180" alt="">  
+            <h6 class="card-title"><br>Dr. SUSHINDRA KUMAR GUPTAt</h6>
+            <p class="card-text"><b>Qualification:</b> Ph.D<br><b>Experience:</b> 5+ Years</p>
+            <a href="#" class="btn btn-primary">Know more</a>
+          </div>
+        </div>
+      </div>
+      </div>
+  </div>
+<!-- Dept 5 ends here-->
+
+<div class="dept6" style="margin-top:100px;" id="dept6">  
+  <div class="row" style="margin-top:50px;">
+      <div class="col-md-4">
+        <div class="card" style="width:60%;">
+          <div class="card-body">
+              <img src="{% static 'img\CHEM\RN.jpg' %}" style="margin:5px;border-radius:5px;-webkit-box-shadow:4px 4px 4px 4px rgb(234,234,234)" width="180" height="180" alt="">  
+              <h6 class="card-title"><br>Dr. Rekha Nair</h6>
+              <p class="card-text"><b>Qualification:</b> Ph.D<br><b>Experience:</b> 19+ Years</p>
+              <a href="#" class="btn btn-primary">Know more</a>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-md-4">
+        <div class="card" style="width:60%;">
+          <div class="card-body">
+              <img src="{% static 'img\CHEM\SJ.jpg' %}" style="margin:5px;border-radius:5px;-webkit-box-shadow:4px 4px 4px 4px rgb(234,234,234)" width="180" height="180" alt="">  
+            <h6 class="card-title"><br>Dr. Sama Jain</h6>
+            <p class="card-text"><b>Qualification:</b> Ph.D<br><b>Experience:</b> 19+ years</p>
+            <a href="#" class="btn btn-primary">Know more</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+          <div class="card" style="width:60%;">
+            <div class="card-body">
+              <img src="{% static 'img\CHEM\PM.jpg' %}" style="margin:5px;border-radius:5px;-webkit-box-shadow:4px 4px 4px 4px rgb(234,234,234)" width="180" height="180" alt="">  
+              <h6 class="card-title"><br>Dr. Pallavi Mishra</h6>
+              <p class="card-text"><b>Qualification:</b> Ph.D<br><b>Experience:</b> 15+ years</p>
+              <a href="#" class="btn btn-primary">Know more</a>
+            </div>
+          </div>
+        </div>
+      </div>
+  <br>
+  {% comment %} Row 2 {% endcomment %}
+
+  <div class="row" style="margin-top:50px;">
+      <div class="col-md-4">
+        <div class="card" style="width:60%;">
+          <div class="card-body">
+              <img src="{% static 'img\CHEM\AM.jpg' %}" style="margin:5px;border-radius:5px;-webkit-box-shadow:4px 4px 4px 4px rgb(234,234,234)" width="180" height="180" alt="">  
+            <h6 class="card-title"><br>Dr. Anurika Mehta</h6>
+            <p class="card-text"><b>Qualification:</b> Ph.D<br><b>Experience:</b> 12+ years</p>
+            <a href="#" class="btn btn-primary">Know more</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="card" style="width:60%;">
+          <div class="card-body">
+              <img src="{% static 'img\CHEM\MT.jpg' %}" style="margin:5px;border-radius:5px;-webkit-box-shadow:4px 4px 4px 4px rgb(234,234,234)" width="180" height="180" alt="">  
+            <h6 class="card-title"><br>Meena Tekriwal</h6>
+            <p class="card-text"><b>Qualification:</b> Ph.D<br><b>Experience:</b> 10+ years</p>
+            <a href="#" class="btn btn-primary">Know more</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+          <div class="card" style="width:60%;">
+            <div class="card-body">
+              <img src="{% static 'img\CHEM\RS.jpg' %}" style="margin:5px;border-radius:5px;-webkit-box-shadow:4px 4px 4px 4px rgb(234,234,234)" width="180" height="180" alt="">  
+              <h6 class="card-title"><br>Ms. Riddhi Shrivastava</h6>
+              <p class="card-text"><b>Qualification:</b> Ph.D<br><b>Experience:</b> 7+ Years</p>
+              <a href="#" class="btn btn-primary">Know more</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+<!-- Dept 6 ends here-->
+
+<div class="dept7" style="margin-top:100px;" id="dept7">  
+  <div class="row" style="margin-top:50px;">
+      <div class="col-md-4">
+        <div class="card" style="width:60%;">
+          <div class="card-body">
+              <img src="{% static 'img\PHY\NJ.jpg' %}" style="margin:5px;border-radius:5px;-webkit-box-shadow:4px 4px 4px 4px rgb(234,234,234)" width="180" height="180" alt="">  
+              <h6 class="card-title"><br>Dr. Neeraj Jain</h6>
+              <p class="card-text"><b>Qualification:</b> Ph.D <br><b>Experience:</b> 19+ Years</p>
+              <a href="#" class="btn btn-primary">Know more</a>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-md-4">
+        <div class="card" style="width:60%;">
+          <div class="card-body">
+              <img src="{% static 'img\PHY\MCH.jpg' %}" style="margin:5px;border-radius:5px;-webkit-box-shadow:4px 4px 4px 4px rgb(234,234,234)" width="180" height="180" alt="">  
+            <h6 class="card-title"><br>Dr. Mukesh Chandra</h6>
+            <p class="card-text"><b>Qualification:</b> Ph.D<br><b>Experience:</b> 19+ years</p>
+            <a href="#" class="btn btn-primary">Know more</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+          <div class="card" style="width:60%;">
+            <div class="card-body">
+              <img src="{% static 'img\PHY\NA.jpg' %}" style="margin:5px;border-radius:5px;-webkit-box-shadow:4px 4px 4px 4px rgb(234,234,234)" width="180" height="180" alt="">  
+              <h6 class="card-title"><br>Mr. Nagendra Agarwal</h6>
+              <p class="card-text"><b>Qualification:</b> BSc<br><b>Experience:</b> 30+ YEARS</p>
+              <a href="#" class="btn btn-primary">Know more</a>
+            </div>
+          </div>
+        </div>
+      </div>
+  <br>
+  {% comment %} Row 2 {% endcomment %}
+
+    <div class="row" style="margin-top:50px;">
+      <div class="col-md-4">
+        <div class="card" style="width:60%;">
+          <div class="card-body">
+              <img src="{% static 'img\PHY\AS.jpg' %}" style="margin:5px;border-radius:5px;-webkit-box-shadow:4px 4px 4px 4px rgb(234,234,234)" width="180" height="180" alt="">  
+            <h6 class="card-title"><br>Ashima Sharma</h6>
+            <p class="card-text"><b>Qualification:</b> MSc, MPhill<br><b>Experience:</b> 10+ Years</p>
+            <a href="#" class="btn btn-primary">Know more</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="card" style="width:60%;">
+          <div class="card-body">
+              <img src="{% static 'img\PHY\RK.jpg' %}" style="margin:5px;border-radius:5px;-webkit-box-shadow:4px 4px 4px 4px rgb(234,234,234)" width="180" height="180" alt="">  
+            <h6 class="card-title"><br>Mr. Nagendra Agarwal</h6>
+            <p class="card-text"><b>Qualification:</b> BSc<br><b>Experience:</b> 30+ Years</p>
+            <a href="#" class="btn btn-primary">Know more</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+          <div class="card" style="width:60%;">
+            <div class="card-body">
+              <img src="{% static 'img\PHY\LKG.jpg' %}" style="margin:5px;border-radius:5px;-webkit-box-shadow:4px 4px 4px 4px rgb(234,234,234)" width="180" height="180" alt="">  
+              <h6 class="card-title"><br>Mr. Laxmi Kant Gupta</h6>
+              <p class="card-text"><b>Qualification:</b>  B. Ed.<br><b>Experience:</b> 16+ years</p>
+              <a href="#" class="btn btn-primary">Know more</a>
+            </div>
+          </div>
+        </div>
+    </div>
+  </div>
+
+<!-- Dept 7 ends here-->
+
+<div class="dept8" style="margin-top:100px;" id="dept8">  
+  <div class="row" style="margin-top:50px;">
+      <div class="col-md-4">
+        <div class="card" style="width:60%;">
+          <div class="card-body">
+              <img src="{% static 'img\MATH\KKG.jpg' %}" style="margin:5px;border-radius:5px;-webkit-box-shadow:4px 4px 4px 4px rgb(234,234,234)" width="180" height="180" alt="">  
+              <h6 class="card-title"><br>Dr. Krishan Kumar Gupta</h6>
+              <p class="card-text"><b>Qualification:</b> Ph.D<br><b>Experience:</b> 5+ years</p>
+              <a href="#" class="btn btn-primary">Know more</a>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-md-4">
+        <div class="card" style="width:60%;">
+          <div class="card-body">
+              <img src="{% static 'img\MATH\AB.jpg' %}" style="margin:5px;border-radius:5px;-webkit-box-shadow:4px 4px 4px 4px rgb(234,234,234)" width="180" height="180" alt="">  
+            <h6 class="card-title"><br>Mr. Amarjeet Bharti</h6>
+            <p class="card-text"><b>Qualification:</b> M.Sc.<br><b>Experience:</b> 7+ Years</p>
+            <a href="#" class="btn btn-primary">Know more</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+          <div class="card" style="width:60%;">
+            <div class="card-body">
+              <img src="{% static 'img\MATH\OPS.jpg' %}" style="margin:5px;border-radius:5px;-webkit-box-shadow:4px 4px 4px 4px rgb(234,234,234)" width="180" height="180" alt="">  
+              <h6 class="card-title"><br>Dr. Om Prakash Sikhwal</h6>
+              <p class="card-text"><b>Qualification:</b> Ph.D<br><b>Experience:</b> 23+ years</p>
+              <a href="#" class="btn btn-primary">Know more</a>
+            </div>
+          </div>
+        </div>
+      </div>
+  <br>
+  {% comment %} Row 2 {% endcomment %}
+
+    <div class="row" style="margin-top:50px;">
+      <div class="col-md-4">
+        <div class="card" style="width:60%;">
+          <div class="card-body">
+              <img src="{% static 'img\MATH\SJ.jpg' %}" style="margin:5px;border-radius:5px;-webkit-box-shadow:4px 4px 4px 4px rgb(234,234,234)" width="180" height="180" alt="">  
+            <h6 class="card-title"><br>Dr. Shilpi Jain</h6>
+            <p class="card-text"><b>Qualification:</b> Ph.D<br><b>Experience:</b> 18+ Years</p>
+            <a href="#" class="btn btn-primary">Know more</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="card" style="width:60%;">
+          <div class="card-body">
+              <img src="{% static 'img\MATH\SD.jpg' %}" style="margin:5px;border-radius:5px;-webkit-box-shadow:4px 4px 4px 4px rgb(234,234,234)" width="180" height="180" alt="">  
+            <h6 class="card-title"><br>Dr. Shuchi Dave</h6>
+            <p class="card-text"><b>Qualification:</b> Ph.D<br><b>Experience:</b> 15+ Years</p>
+            <a href="#" class="btn btn-primary">Know more</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+          <div class="card" style="width:60%;">
+            <div class="card-body">
+              <img src="{% static 'img\MATH\AA.jpg' %}" style="margin:5px;border-radius:5px;-webkit-box-shadow:4px 4px 4px 4px rgb(234,234,234)" width="180" height="180" alt="">  
+              <h6 class="card-title"><br>Ms. Anu Arora</h6>
+              <p class="card-text"><b>Qualification:</b> M.Sc.<br><b>Experience:</b> 10+ Years</p>
+              <a href="#" class="btn btn-primary">Know more</a>
+            </div>
+          </div>
+        </div>
+    </div>
+  {% comment %} Row 3 {% endcomment %}
+    <div class="row" style="margin-top:50px;">
+      <div class="col-md-4">
+        <div class="card" style="width:60%;">
+          <div class="card-body">
+              <img src="{% static 'img\MATH\SKY.jpg' %}" style="margin:5px;border-radius:5px;-webkit-box-shadow:4px 4px 4px 4px rgb(234,234,234)" width="180" height="180" alt="">  
+              <h6 class="card-title"><br>Dr. Sunil Kumar Yadav</h6>
+              <p class="card-text"><b>Qualification:</b> Ph.D<br><b>Experience:</b> 12+ Years</p>
+              <a href="#" class="btn btn-primary">Know more</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="card" style="width:60%;">
+          <div class="card-body">
+              <img src="{% static 'img\MATH\GS.jpg' %}" style="margin:5px;border-radius:5px;-webkit-box-shadow:4px 4px 4px 4px rgb(234,234,234)" width="180" height="180" alt="">  
+              <h6 class="card-title"><br>Dr. Govind Sharma</h6>
+              <p class="card-text"><b>Qualification:</b> Ph.D<br><b>Experience:</b> 8+ Years</p>
+              <a href="#" class="btn btn-primary">Know more</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<!-- Dept 8 ends here-->
+
+<div class="dept9" style="margin-top:100px;"id="dept9">  
+  <div class="row" style="margin-top:50px;">
+      <div class="col-md-4">
+        <div class="card" style="width:60%;">
+          <div class="card-body">
+              <img src="{% static 'img\ENG\DS.jpg' %}" style="margin:5px;border-radius:5px;-webkit-box-shadow:4px 4px 4px 4px rgb(234,234,234)" width="180" height="180" alt="">  
+              <h6 class="card-title"><br>Mr. Dinesh Kumar Sharma</h6>
+              <p class="card-text"><b>Qualification:</b> M.A,M.B.A<br><b>Experience:</b> 17+ years</p>
+              <a href="#" class="btn btn-primary">Know more</a>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-md-4">
+        <div class="card" style="width:60%;">
+          <div class="card-body">
+              <img src="{% static 'img\ENG\KS.jpg' %}" style="margin:5px;border-radius:5px;-webkit-box-shadow:4px 4px 4px 4px rgb(234,234,234)" width="180" height="180" alt="">  
+            <h6 class="card-title"><br>Mr. Kuldip Sharma</h6>
+            <p class="card-text"><b>Qualification:</b> Ph.D (Pursuing )<br><b>Experience:</b> 10+ Years</p>
+            <a href="#" class="btn btn-primary">Know more</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+          <div class="card" style="width:60%;">
+            <div class="card-body">
+              <img src="{% static 'img\ENG\SR.jpg' %}" style="margin:5px;border-radius:5px;-webkit-box-shadow:4px 4px 4px 4px rgb(234,234,234)" width="180" height="180" alt="">  
+              <h6 class="card-title"><br>Dr. Sudhi Rajeev</h6>
+              <p class="card-text"><b>Qualification:</b> Ph.D<br><b>Experience:</b> 38+ Years</p>
+              <a href="#" class="btn btn-primary">Know more</a>
+            </div>
+          </div>
+        </div>
+      </div>
+  <br>
+  {% comment %} Row 2 {% endcomment %}
+
+  <div class="row" style="margin-top:50px;">
+      <div class="col-md-4">
+        <div class="card" style="width:60%;">
+          <div class="card-body">
+              <img src="{% static 'img\ENG\RS.jpg' %}" style="margin:5px;border-radius:5px;-webkit-box-shadow:4px 4px 4px 4px rgb(234,234,234)" width="180" height="180" alt="">  
+            <h6 class="card-title"><br>Dr. Ritu Soryan</h6>
+            <p class="card-text"><b>Qualification:</b> Ph.D<br><b>Experience:</b> 19+ years</p>
+            <a href="#" class="btn btn-primary">Know more</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="card" style="width:60%;">
+          <div class="card-body">
+              <img src="{% static 'img\ENG\SKS.jpg' %}" style="margin:5px;border-radius:5px;-webkit-box-shadow:4px 4px 4px 4px rgb(234,234,234)" width="180" height="180" alt="">  
+            <h6 class="card-title"><br>Ms. Sarveen Kaur Sachdeva</h6>
+            <p class="card-text"><b>Qualification:</b> Ph.D<br><b>Experience:</b> 11+ years</p>
+            <a href="#" class="btn btn-primary">Know more</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<!-- Dept 9 ends here-->
+
+
+</div>
+
+</body>
+</html>
