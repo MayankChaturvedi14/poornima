@@ -1,146 +1,818 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  {% load static %}
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <link rel="stylesheet" href="{% static 'css\hostal.css' %}">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Hostels</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+
+
 </head>
-  <body id="body-pd">
-    <button style="float:right; background-color:#0d6efd;  border: none;
-    color: white;
-    padding: 15px 32px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 4px 2px;
-    border-radius:8px;
-    cursor: pointer;
-    margin:15px;" type="button" id="home-btn">Home</button>
-    <script type="text/javascript">
-      document.getElementById("home-btn").onclick = function () {
-          location.href = "{% url 'home' %}";
-      };
-  </script>
-    <div class="first-img">
-    <img src="{% static 'img\PGC-Hostel-Banner-3.jpg' %}" alt="Hotal">
-</div>
+<style>
+    @import url("https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap");
 
-<div class="lol">
-<h1>POORNIMA HOSTELS</h1>
-<p>Poornima Hostel Details</p>
-<button type="button" class="collapsible">Open Collapsible</button>
-<div class="content">
-  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-</div>
-
-<p>Basic Essentials</p>
-<button type="button" class="collapsible">Basic Essentials</button>
-<div class="content">
-  <p>Many Students consider quality of life as one of the important factors while choosing a College. We at Poornima Group provide you a decent stay and the best possible learning environment. The stay at campus would certainly provide a wealth of experience by developing qualities such as comradeship and social responsibility.<br>Poornima Group provides separate hostel for boys and girls. Each hostel has spacious and semi furnished rooms offering a pleasant environment. The hostels are well-equipped with Wi-Fi facility, telephone, water purifier, water cooler and provision for indoor as well as outdoor games. The students housed in the campus are encouraged to use the gymnasium, playground and all indoor gaming facilities. These hostels also have home like dining facilities that offer fresh & nutritious food to the students. Hostels give an environment to create most effective conditions for student development. The hostels are located within the campus thus offering secured abode. The hostel is designed in such a way as to provide optimum utilization of student’s time for their overall personality development.
-<br>
-    ->24X7 Water Supply<br>
-    ->Well-furnished common rooms with TV<br>
-    ->Indoor & Outdoor Games<br>
-    ->Wi-Fi Internet facility<br>
-    ->Guest Room<br>
-    ->Laundry Facility<br>
-    ->Separate gymnasium for girls and boys<br>
-    ->Hot and Cold Water<br>
-    ->Medical facility<br>
-    ->Amphitheatre<br>
-    ->Regular Shuttle Service<br>
-    ->ATM’s available in the campus<br>
-    ->Daily House keeping<br>
-    ->Departmental and Stationary Stores<br>
-    ->Parking Space<br>
-    ->Power Back Up<br>
-    ->Fire Fighting Equipment</p>
-</div>
-<p>Dining Facilities</p>
-<button type="button" class="collapsible">Dining Facilities</button>
-<div class="content">
-  <p>Mess facility is an integral part of the campus which provides nutritious homely food to all hostellers, day scholars, faculty & staff members and visitors. It provides 4 meal a day – quality food is prepared under strict hygienic conditions. The food is served in the dining area keeping all the sensitivities in consideration.<br>
-    -> All the hostel mess serves Vegetarian Food only and operates in self-service mode.<br>
-    -> The menu of the items is designed considering the requirements of the students and nutrition is added to make it healthy and complete.<br>
-    -> We offer morning tea with regular breakfast, lunch, evening snacks and tea, dinner and milk to all hostellers.<br>
-    Mess caters to the tastes of the students of different region and students with varied food preferences.However there are certain guidelines which are to be followed while planning the meals.Mess menu is planned and managed by the management in consultation with the students.<br><br>
-
-    The hostel is equipped with a canteen offering variety of snacks available at reasonable prices in a very clean environment for the students.</p>
-</div>
-<p>Health Care</p>
-<button type="button" class="collapsible">Health Care</button>
-<div class="content">
-  <p>Poornima Group hostels provide first aid facility and medical rooms with all required arrangements for indoor treatment.<br><br>
-    -> Mahatma Gandhi hospital is situated at walking distance from the hostels.<br>
-    -> 3 ambulance are allotted for each hostel that are available 24*7.</p>
-</div>
-<p>Hostel Fest</p>
-<button type="button" class="collapsible">Hostel Fest</button>
-<div class="content">
-  <p>Poornima Group comprises of four hostels- Gayatri Girls Hostel,Gurushikhar Boys Hostel and Aravali Boys Hostel. Every year annual hostel fest is celebrated in all the four hostel with a great pomp and show.<br><br>
-
-    -> The hostel fest of Gayatri has been named as TATVA-TOQUE.<br>
-   
-    -> The hostel fest of Gurushikhar has been named as AAYAM.<br>
- 
-    -> The hostel fest of Aravali has been named as PARAM.</p>
-    <img src="{% static 'img\HC.jpg' %}" alt="">
-</div>
-<p>Mentorship</p>
-<button type="button" class="collapsible">Mentorship</button>
-<div class="content">
-  <p>Mentorship system is a vision of our respected chairman sir Sh. Shashikant Singhi. The origination of mentorship system leads to the best possible way of managing hostel by the students themselves. Mentorship was managed by students called as mentors. Mentors are friend philosopher & guides for their juniors.</p>
-</div>
-<p>Recreational Facilities</p>
-<button type="button" class="collapsible">Recreational Facilities</button>
-<div class="content">
-  <p>Keeping in view the mental & physical growth of the students, the hostel provides an open ground for outdoor team games & athletics. A natural lawn has been laid to relax and to play games. Multi facility gym for every hostel campus has been provided which is fully equipped to keep the students fit and healthy. Indoor games like TT, Chess, Carom Board, and Squash have also been provided.</p><br><br>
-
-    <h3>Extra Curricular Facilities</h3><br>
-    -> Career counselling sessions<br>
-     
-    -> Motivational lectures<br>
-     
-    -> Social & cultural activities during festivals and other occasions</p>
-</div>
-<p>Security Parking</p>
-<button type="button" class="collapsible">Security Parking</button>
-<div class="content">
-  <p>The security of the students is of prime importance to us. We have employed efficient staff for our students to ensure that the hostel remains under a vigilant watch round the clock.<br><br>
-
-    Regular attendance is taken to keep a personal check on every student by the wardens. All the hostels have close circuit night vision cameras and a specially formulated smart cards given to each student which they use every time to enter and exit the premises. Adequate parking facility is available inside the premises for the hostellers.</p>
-</div>
-<p>Additional Benefits</p>
-<button type="button" class="collapsible">Additional Benefits</button>
-<div class="content">
-  <p><b>Personality Development Club: </b>The venture has seen many satisfied faces among the first year students. The students readily understood the need of professionalism. There were many students who have been the shy ones and find it difficult to stand in front of crowds. The extreme participation in the stage has given us enough evidence of how they have overcame their body challenges as well as their passion to create a difference.<br><br>
-
-  <b>Workshop Club:</b> Teaching and training is a full-fledged learning process in itself. Training budding technocrats to be better professionals bearing an all-round personality is our motto, helping hone one’s technical skills as well as exploring new hobbies. In the process, we as their trainers and mentors ourselves learn acute managerial and organizational skills. Preparing for various workshops includes developing a proper understanding of the skill being introduced; learning the skill themselves is must. <br><br>
-  <b>Social Activity Club:</b> We the members of Social Activity Club try to put our efforts in teaching the Mess Workers daily. We had conducted at about 40 classes. We also let them play for one day in every week in order to make them active. The learning is basic; we teach them according to their age. We had made a syllabus for them and accordingly to it we move ahead. Previously, they were not being able to write their name but now they can not only write their names but can compete with a fourth standard lad. <br><br>
-  <b>The Event management club:</b> It had a number of events organized in the session 2014-15. During these events we learned a lot of qualities and gained a lot of experience in this field of event management. All the mentors were fully enthusiastic and hard working. We learned to work as a team and lead that team to the road of success. The mentors coordinated and managed the things in time. We learned the quality of time management and work management both together.  </p>
-  
-</div>
-</div>
-
-<script>
-var coll = document.getElementsByClassName("collapsible");
-var i;
-
-for (i = 0; i < coll.length; i++) {
-  coll[i].addEventListener("click", function() {
-    this.classList.toggle("active");
-    var content = this.nextElementSibling;
-    if (content.style.display === "block") {
-      content.style.display = "none";
-    } else {
-      content.style.display = "block";
+    :root {
+        --header-height: 3rem;
+        --nav-width: 68px;
+        --first-color: rgb(33, 37, 41);
+        --first-color-light: #ffffff;
+        --white-color: #ffffff;
+        --body-font: 'Nunito', sans-serif;
+        --normal-font-size: 1rem;
+        --z-fixed: 100;
     }
-  });
-}
-</script>
+
+    /* width */
+    ::-webkit-scrollbar {
+        width: 10px;
+    }
+
+    /* Track */
+    ::-webkit-scrollbar-track {
+        background: #f1f1f1;
+    }
+
+    /* Handle */
+    ::-webkit-scrollbar-thumb {
+        background: #888;
+    }
+
+    /* Handle on hover */
+    ::-webkit-scrollbar-thumb:hover {
+        background: #555;
+    }
+
+
+    *,
+    ::before,
+    ::after {
+        box-sizing: border-box;
+    }
+
+    body {
+        position: relative;
+        margin: var(--header-height) 0 0 0;
+        padding: 0 1rem;
+        font-family: var(--body-font);
+        font-size: var(--normal-font-size);
+        transition: .5s;
+    }
+
+    a {
+        text-decoration: none !important;
+    }
+
+    a:link {
+        text-decoration: none !important;
+    }
+
+    .header {
+        width: 100%;
+        height: var(--header-height);
+        position: fixed;
+        top: 0;
+        left: 0;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 1rem;
+        background-color: var(--white-color);
+        z-index: var(--z-fixed);
+        transition: .5s;
+    }
+
+    .header_toggle {
+        color: var(--first-color);
+        font-size: 1.5rem;
+        cursor: pointer
+    }
+
+    .header_img {
+        width: 35px;
+        height: 35px;
+        display: flex;
+        justify-content: center;
+        border-radius: 50%;
+        overflow: hidden;
+    }
+
+    .header_img img {
+        width: 40px;
+    }
+
+    .l-navbar {
+        position: fixed;
+        top: 0;
+        left: -30%;
+        width: var(--nav-width);
+        height: 100vh;
+        background-color: var(--first-color);
+        padding: .5rem 1rem 0 0;
+        transition: .5s;
+        z-index: var(--z-fixed);
+
+    }
+
+    .nav {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        overflow: hidden;
+
+    }
+
+    .nav_logo,
+    .nav_link {
+        display: grid;
+        grid-template-columns: max-content max-content;
+        align-items: center;
+        column-gap: 1rem;
+        padding: .5rem 0 .5rem 1.5rem
+    }
+
+    .scr {
+        overflow-y: scroll;
+
+    }
+
+    .nav_logo {
+        margin-bottom: 2rem
+    }
+
+    .nav_logo-icon {
+        margin: 30px;
+    }
+
+    .nav_logo-name {
+        color: var(--white-color);
+        font-weight: bold;
+        color: red;
+        margin-right: 20px;
+    }
+
+    .nav_link {
+        position: relative;
+        text-decoration: none;
+        color: var(--first-color-light);
+        margin-bottom: 1.5rem;
+        transition: .3s;
+        margin-right: 10px;
+    }
+
+    .nav_link:hover {
+        background-color: lightcoral;
+        color: white;
+        border-radius: 10px;
+    }
+
+    .nav_icon {
+        font-size: 1.25rem
+    }
+
+    .show {
+        left: 0
+    }
+
+    .body-pd {
+        padding-left: calc(var(--nav-width) + 1rem)
+    }
+
+    .active1 {
+        background-color: red;
+        border-radius: 10px;
+    }
+
+
+
+
+
+
+
+    @media screen and (min-width: 768px) {
+        body {
+            margin: calc(var(--header-height) + 1rem) 0 0 0;
+            padding-left: calc(var(--nav-width) + 2rem);
+        }
+
+        .header {
+            height: calc(var(--header-height) + 1rem);
+            padding: 0 2rem 0 calc(var(--nav-width) + 2rem);
+        }
+
+        .header_img {
+            width: 40px;
+            height: 40px;
+        }
+
+        .header_img img {
+            width: 45px;
+        }
+
+        .l-navbar {
+            left: 0;
+            padding: 1rem 1rem 0 0;
+        }
+
+        .show {
+            width: calc(var(--nav-width) + 156px);
+
+        }
+
+        .body-pd {
+            padding-left: calc(var(--nav-width) + 188px);
+        }
+    }
+
+    .container {
+        width: 100%;
+        height: 100vh;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        margin-top: 100px;
+    }
+
+    .tabs {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        max-width: 500px;
+    }
+
+    .tab {
+        font-size: 16px;
+        padding: 15px 60px;
+        cursor: pointer;
+    }
+
+    .tab.active {
+        background-color: rgb(250, 9, 9);
+    }
+
+    .content {
+        width: 100%;
+        max-width: 100%;
+
+    }
+
+    .content-item {
+        display: none;
+        margin-top: 25px;
+        margin-bottom: 80px;
+    }
+
+    .content-item.active {
+        display: block;
+
+
+    }
+</style>
+
+<body id="body-pd">
+  {% load static %}
+    <header class="header" id="header">
+        <div class="header_toggle"> <i class='bx bx-menu' id="header-toggle"></i> </div>
+
+    </header>
+    <div class="l-navbar" id="nav-bar">
+      <nav class="nav">
+          <div class="scr">
+              <a style="color:white; font-weight:700;" href="{% url 'home' %}" class="nav_logo">
+                  <span class="nav_logo-name">
+                      <img style="padding-right:30px;" class="nav-icon" src="{% static 'img\POORNIMA.png' %}" width=60 height=30>
+                  </span>POORNIMA</a>
+              <hr>
+              <div class="nav_list">
+                  <a href="{% url 'placement' %}" class="nav_link" title="Placement">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                          class="bi bi-briefcase-fill" viewBox="0 0 16 16">
+                          <path
+                              d="M6.5 1A1.5 1.5 0 0 0 5 2.5V3H1.5A1.5 1.5 0 0 0 0 4.5v1.384l7.614 2.03a1.5 1.5 0 0 0 .772 0L16 5.884V4.5A1.5 1.5 0 0 0 14.5 3H11v-.5A1.5 1.5 0 0 0 9.5 1h-3zm0 1h3a.5.5 0 0 1 .5.5V3H6v-.5a.5.5 0 0 1 .5-.5z" />
+                          <path
+                              d="M0 12.5A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5V6.85L8.129 8.947a.5.5 0 0 1-.258 0L0 6.85v5.65z" />
+                      </svg>
+                      <span class="nav_name">Placement</span>
+                  </a>
+                  <a <a href="{% url 'current_student' %}" class="nav_link " title="Current Student">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                          class="bi bi-people-fill" viewBox="0 0 16 16">
+                          <path d="M7 14s-1 0-1-1 1-4 5-4 5 3 5 4-1 1-1 1H7zm4-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
+                          <path fill-rule="evenodd"
+                              d="M5.216 14A2.238 2.238 0 0 1 5 13c0-1.355.68-2.75 1.936-3.72A6.325 6.325 0 0 0 5 9c-4 0-5 3-5 4s1 1 1 1h4.216z" />
+                          <path d="M4.5 8a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5z" />
+                      </svg>
+                      <span class="nav_name">Current Student</span>
+                  </a> 
+                  <a href="{% url 'current_faculty' %}" class="nav_link " title="Current Faculty">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                          class="bi bi-person-lines-fill" viewBox="0 0 16 16">
+                          <path
+                              d="M6 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-5 6s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H1zM11 3.5a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 0 1h-4a.5.5 0 0 1-.5-.5zm.5 2.5a.5.5 0 0 0 0 1h4a.5.5 0 0 0 0-1h-4zm2 3a.5.5 0 0 0 0 1h2a.5.5 0 0 0 0-1h-2zm0 3a.5.5 0 0 0 0 1h2a.5.5 0 0 0 0-1h-2z" />
+                      </svg>
+                      <span class="nav_name">Current Faculty</span>
+                  </a> <a href="{% url 'career' %}" class="nav_link" title="Career">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                          class="bi bi-clipboard-data" viewBox="0 0 16 16">
+                          <path
+                              d="M4 11a1 1 0 1 1 2 0v1a1 1 0 1 1-2 0v-1zm6-4a1 1 0 1 1 2 0v5a1 1 0 1 1-2 0V7zM7 9a1 1 0 0 1 2 0v3a1 1 0 1 1-2 0V9z" />
+                          <path
+                              d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z" />
+                          <path
+                              d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z" />
+                      </svg>
+                      <span class="nav_name  ">Career</span>
+                  </a> 
+                  <a href="{% url 'hostal' %}" class="nav_link active1"  title="Hostel">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                          class="bi bi-house-door-fill" viewBox="0 0 16 16">
+                          <path
+                              d="M6.5 14.5v-3.505c0-.245.25-.495.5-.495h2c.25 0 .5.25.5.5v3.5a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5z" />
+                      </svg>
+                      <span class="nav_name">Hostel</span> 
+                    </a>
+                  <a href="https://ieeexplore.ieee.org/Xplore/home.jsp" class="nav_link " title="IEEE Xplore">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                          class="bi bi-newspaper" viewBox="0 0 16 16">
+                          <path
+                              d="M0 2.5A1.5 1.5 0 0 1 1.5 1h11A1.5 1.5 0 0 1 14 2.5v10.528c0 .3-.05.654-.238.972h.738a.5.5 0 0 0 .5-.5v-9a.5.5 0 0 1 1 0v9a1.5 1.5 0 0 1-1.5 1.5H1.497A1.497 1.497 0 0 1 0 13.5v-11zM12 14c.37 0 .654-.211.853-.441.092-.106.147-.279.147-.531V2.5a.5.5 0 0 0-.5-.5h-11a.5.5 0 0 0-.5.5v11c0 .278.223.5.497.5H12z" />
+                          <path
+                              d="M2 3h10v2H2V3zm0 3h4v3H2V6zm0 4h4v1H2v-1zm0 2h4v1H2v-1zm5-6h2v1H7V6zm3 0h2v1h-2V6zM7 8h2v1H7V8zm3 0h2v1h-2V8zm-3 2h2v1H7v-1zm3 0h2v1h-2v-1zm-3 2h2v1H7v-1zm3 0h2v1h-2v-1z" />
+                      </svg>
+                      <span class="nav_name">IEEE Xplore</span>
+                  </a>
+                  <a href="{% url 'about' %}" class="nav_link" title="About">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                          class="bi bi-question-circle-fill" viewBox="0 0 16 16">
+                          <path
+                              d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM5.496 6.033h.825c.138 0 .248-.113.266-.25.09-.656.54-1.134 1.342-1.134.686 0 1.314.343 1.314 1.168 0 .635-.374.927-.965 1.371-.673.489-1.206 1.06-1.168 1.987l.003.217a.25.25 0 0 0 .25.246h.811a.25.25 0 0 0 .25-.25v-.105c0-.718.273-.927 1.01-1.486.609-.463 1.244-.977 1.244-2.056 0-1.511-1.276-2.241-2.673-2.241-1.267 0-2.655.59-2.75 2.286a.237.237 0 0 0 .241.247zm2.325 6.443c.61 0 1.029-.394 1.029-.927 0-.552-.42-.94-1.029-.94-.584 0-1.009.388-1.009.94 0 .533.425.927 1.01.927z" />
+                      </svg>
+                      <span class="nav_name">About</span>
+                  </a>
+
+              </div>
+          </div>
+
+      </nav>
+  </div>
+    <!-- Carousel -->
+    <div class="row">
+        <img src={% static 'img\PGC-Hostel-Banner-1.jpg' %} alt="" width="90%"
+            style="display:block;margin-left:auto;margin-right:auto; margin-top:20px; border-radius:10px;box-shadow:10px 10px rgb(209, 207, 207)">
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-5">
+                <ul class="list-group tabs">
+                    <li class="list-group-item tab active">Basic Essential</li>
+                    <li class="list-group-item tab">Dining Facilities</li>
+                    <li class="list-group-item tab">Health Care</li>
+                    <li class="list-group-item tab">Hostel Fest</li>
+                    <li class="list-group-item tab">Mentorship</li>
+                    <li class="list-group-item tab">Recreational Facilities</li>
+                    <li class="list-group-item tab">Security Parking</li>
+                    <li class="list-group-item tab">Additional Benefits</li>
+                </ul>
+            </div>
+            <div class="col-md-6">
+                <div class="content">
+                    <div class="content-item active">
+                        <h3>Basic Essential</h3>
+                        <h2 style="text-align: center;">Hostels – Home Away From Home</h2>
+                        <hr
+                            style="height: 3px;width:150px;background-color:#ed1c24;display:block;position:absolute;left:0;right:0;margin:auto;">
+                        <br>
+                        <p
+                            style="padding-top:16px!important;padding-bottom:16px!important;background-color: #f44336!important;color:white;text-align:center;max-width:1080px;margin:10px auto 30px;line-height:24px">
+                            Many Students consider quality of life as one of the important factors while choosing a
+                            College. We at Poornima Group provide you a decent stay and the best possible learning
+                            environment. The stay at campus would certainly provide a wealth of experience by developing
+                            qualities such as comradeship and social responsibility.</p>
+                        <p style="text-align: justify;"><strong style="font-size: larger;font-weight:bolder">Poornima
+                                Group</strong> provides separate hostel for boys and girls. Each hostel has spacious and
+                            semi furnished rooms offering a pleasant environment. The hostels are well-equipped with
+                            Wi-Fi facility, telephone, water purifier, water cooler and provision for indoor as well as
+                            outdoor games. The students housed in the campus are encouraged to use the gymnasium,
+                            playground and all indoor gaming facilities. These hostels also have home like dining
+                            facilities that offer fresh & nutritious food to the students. Hostels give an environment
+                            to create most effective conditions for student development. The hostels are located within
+                            the campus thus offering secured abode. The hostel is designed in such a way as to provide
+                            optimum utilization of student’s time for their overall personality development.</p>
+
+                        <div class="row">
+                            <div class="col-md-6">
+                                <ul class="w3-col l6 list-arrow"
+                                    style="display: block;list-style-type: disc;margin-block-start: 1em;margin-block-end: 1em;margin-inline-start: 0px;margin-inline-end: 0px;padding-inline-start: 40px;">
+                                    <li class="wow fadeInRight"
+                                        style="visibility: visible; animation-name: fadeInRight;">
+                                        24X7 Water Supply</li><br>
+                                    <li class="wow fadeInRight"
+                                        style="visibility: visible; animation-name: fadeInRight;">
+                                        Well-furnished common rooms with TV</li><br>
+                                    <li class="wow fadeInRight"
+                                        style="visibility: visible; animation-name: fadeInRight;">
+                                        Indoor &amp; Outdoor Games</li><br>
+                                    <li class="wow fadeInRight"
+                                        style="visibility: visible; animation-name: fadeInRight;">
+                                        Wi-Fi Internet facility</li><br>
+                                    <li class="wow fadeInRight"
+                                        style="visibility: visible; animation-name: fadeInRight;">
+                                        Guest Room</li><br>
+                                    <li class="wow fadeInRight"
+                                        style="visibility: visible; animation-name: fadeInRight;">
+                                        Laundry Facility</li><br>
+                                    <li class="wow fadeInRight"
+                                        style="visibility: visible; animation-name: fadeInRight;">
+                                        Separate gymnasium for girls and boys</li><br>
+                                    <li class="wow fadeInRight"
+                                        style="visibility: visible; animation-name: fadeInRight;">
+                                        Hot and Cold Water</li><br>
+                                    <li class="wow fadeInRight"
+                                        style="visibility: visible; animation-name: fadeInRight;">
+                                        Medical facility</li><br>
+                                </ul>
+                            </div>
+                            <div class="col-md-6">
+                                <ul class="w3-col l6 list-arrow"
+                                    style="display: block;list-style-type: disc;margin-block-start: 1em;margin-block-end: 1em;margin-inline-start: 0px;margin-inline-end: 0px;padding-inline-start: 40px;">
+                                    <li class="wow fadeInRight"
+                                        style="visibility: visible; animation-name: fadeInRight;">Amphitheatre</li><br>
+                                    <li class="wow fadeInRight"
+                                        style="visibility: visible; animation-name: fadeInRight;">Regular Shuttle
+                                        Service</li><br>
+                                    <li class="wow fadeInRight"
+                                        style="visibility: visible; animation-name: fadeInRight;">ATM’s available in the
+                                        campus</li><br>
+                                    <li class="wow fadeInRight"
+                                        style="visibility: visible; animation-name: fadeInRight;">Daily House keeping
+                                    </li><br>
+                                    <li class="wow fadeInRight"
+                                        style="visibility: visible; animation-name: fadeInRight;">Departmental and
+                                        Stationary Stores</li><br>
+                                    <li class="wow fadeInRight"
+                                        style="visibility: visible; animation-name: fadeInRight;">Parking Space</li><br>
+                                    <li class="wow fadeInRight"
+                                        style="visibility: visible; animation-name: fadeInRight;">Power Back Up</li><br>
+                                    <li class="wow fadeInRight"
+                                        style="visibility: visible; animation-name: fadeInRight;">Fire Fighting
+                                        Equipment</li><br>
+
+                                </ul>
+                            </div>
+
+                        </div>
+                        <div id="carouselExampleControlsNoTouching" class="carousel slide" data-bs-touch="false" data-bs-interval="false">
+                            <div class="carousel-inner">
+                              <div class="carousel-item active">
+                                <img src="{% static 'img\BF1.jpg' %}" class="d-block w-100" alt="...">
+                              </div>
+                              <div class="carousel-item">
+                                <img src="{% static 'img\BF3.jpg' %}" class="d-block w-100" alt="...">
+                              </div>
+                              <div class="carousel-item">
+                                <img src="{% static 'img\BF4.jpg' %}" class="d-block w-100" alt="...">
+                              </div>
+                              <div class="carousel-item">
+                                <img src="{% static 'img\BF33.jpg' %}" class="d-block w-100" alt="...">
+                              </div>
+                              <div class="carousel-item">
+                                <img src="{% static 'img\BF34.jpg' %}" class="d-block w-100" alt="...">
+                              </div>
+                              <div class="carousel-item">
+                                <img src="{% static 'img\BE1.jpg' %}" class="d-block w-100" alt="...">
+                              </div>
+                            </div>
+                            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControlsNoTouching" data-bs-slide="prev">
+                              <span class="carousel-control-prev-icon" aria-hidden="true" style="color: white;background-color:rgb(59, 59, 59)"></span>
+                              <span class="visually-hidden">Previous</span>
+                            </button>
+                            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControlsNoTouching" data-bs-slide="next">
+                              <span class="carousel-control-next-icon" aria-hidden="true" style="color: white;background-color:rgb(59, 59, 59)"></span>
+                              <span class="visually-hidden">Next</span>
+                            </button>
+                          </div>
+
+                    </div>
+                    <div class="content-item">
+                        <h3>Dining Facilities</h3>
+                        <h2 style="text-align: center;">Dining Facilities</h2>
+                        <hr
+                            style="height: 3px;width:150px;background-color:#ed1c24;display:block;position:absolute;left:0;right:0;margin:auto;">
+                        <br>
+                        <p
+                            style="padding-top:16px!important;padding-bottom:16px!important;background-color: #f44336!important;color:white;text-align:center;max-width:1080px;margin:10px auto 30px;line-height:24px">
+                            Mess facility is an integral part of the campus which provides nutritious homely food to all
+                            hostellers, day scholars, faculty & staff members and visitors. It provides 4 meal a day –
+                            quality food is prepared under strict hygienic conditions. The food is served in the dining
+                            area keeping all the sensitivities in consideration.</p>
+                        <ul class="list-arrow" style="text-align: justify;">
+                            <li class="wow fadeInRight" style="visibility: visible; animation-name: fadeInRight;">All
+                                the hostel mess serves Vegetarian Food only and operates in self-service mode.</li>
+                            <li class="wow fadeInRight" style="visibility: visible; animation-name: fadeInRight;">The
+                                menu of the items is designed considering the requirements of the students and nutrition
+                                is added to make it healthy and complete.</li>
+                            <li class="wow fadeInRight" style="visibility: visible; animation-name: fadeInRight;">We
+                                offer morning tea with regular breakfast, lunch, evening snacks and tea, dinner and milk
+                                to all hostellers.</li>
+                        </ul>
+                        <p style="text-align: justify;">Mess caters
+                            to the tastes of the students of different region and students with varied food
+                            preferences.However there are certain guidelines which are to be followed while planning
+                            the meals.Mess menu is planned and managed by the management in consultation with the
+                            students.<br>The hostel is equipped with a canteen offering variety of snacks available at
+                            reasonable prices in a very clean environment for the students.</p>
+                        <a style="color: red;" href="{% static 'img\Mess-Menu.jpg' %}">HOSTEL MENU</a>
+                        <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+                            <div class="carousel-inner">
+                              <div class="carousel-item active">
+                                <img src="{% static 'img\DF1.jpg' %}" class="d-block w-100" alt="...">
+                              </div>
+                              <div class="carousel-item">
+                                <img src="{% static 'img\DF2-1.jpg' %}" class="d-block w-100" alt="...">
+                              </div>
+                              <div class="carousel-item">
+                                <img src="{% static 'img\DF2.jpg' %}" class="d-block w-100" alt="...">
+                              </div>
+                              <div class="carousel-item">
+                                <img src="{% static 'img\DF4.jpg' %}" class="d-block w-100" alt="...">
+                              </div>
+                              <div class="carousel-item">
+                                <img src="{% static 'img\DF2 (1).jpg' %}" class="d-block w-100" alt="...">
+                              </div>
+                            </div>
+                            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+                              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                              <span class="visually-hidden">Previous</span>
+                            </button>
+                            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+                              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                              <span class="visually-hidden">Next</span>
+                            </button>
+                          </div>
+
+                    </div>
+                    <div class="content-item">
+                        <h3>Health Care</h3>
+                        <h2 style="text-align: center;">Health Care
+                        </h2>
+                        <hr
+                            style="height: 3px;width:150px;background-color:#ed1c24;display:block;position:absolute;left:0;right:0;margin:auto;">
+                        <br>
+                        <p
+                            style="padding-top:16px!important;padding-bottom:16px!important;background-color: #f44336!important;color:white;text-align:center;max-width:1080px;margin:10px auto 30px;line-height:24px">
+                            Poornima Group hostels provide first aid facility and medical rooms with all required
+                            arrangements for indoor treatment.</p>
+                        <ul class="listtUl2" style="text-align: justify;">
+                            <li class="wow fadeInRight" style="visibility: visible; animation-name: fadeInRight;">
+                                Mahatma Gandhi hospital is situated at walking distance from the hostels.</li>
+                            <li class="wow fadeInRight" style="visibility: visible; animation-name: fadeInRight;">3
+                                ambulance are allotted for each hostel that are available 24*7.</li>
+                        </ul>
+                        <p class="wow fadeInRight"
+                            style="text-align: center; visibility: visible; animation-name: fadeInRight;text-align: center;visibility: visible;animation-name: fadeInRight;">
+                            <img src="{% static 'img\HC.jpg' %}" alt="HC">
+                        </p>
+
+
+                    </div>
+                    <div class="content-item">
+                        <h3>Hostel Fest</h3>
+                        <h2 style="text-align: center;">Hostel Fest</h2>
+                        <hr
+                            style="height: 3px;width:150px;background-color:#ed1c24;display:block;position:absolute;left:0;right:0;margin:auto;">
+                        <br>
+                        <p
+                            style="padding-top:16px!important;padding-bottom:16px!important;background-color: #f44336!important;color:white;text-align:center;max-width:1080px;margin:10px auto 30px;line-height:24px">
+                            Poornima Group comprises of four hostels- Gayatri Girls Hostel,Gurushikhar Boys Hostel and
+                            Aravali Boys Hostel. Every year annual hostel fest is celebrated in all the four hostel with
+                            a great pomp and show.</p>
+                        <p style="text-align: justify;">The hostel fest of Gayatri has been named as TATVA-TOQUE.<br>The
+                            hostel fest of Gurushikhar has been named as AAYAM.<br>The hostel fest of Aravali has been
+                            named as PARAM.</p>
+                    </div>
+                    <div class="content-item">
+                        <h3>Mentorship</h3>
+                        <h2 style="text-align: center;">Mentorship</h2>
+                        <hr
+                            style="height: 3px;width:150px;background-color:#ed1c24;display:block;position:absolute;left:0;right:0;margin:auto;">
+                        <br>
+                        <p
+                            style="padding-top:16px!important;padding-bottom:16px!important;background-color: #f44336!important;color:white;text-align:center;max-width:1080px;margin:10px auto 30px;line-height:24px">
+                            Mentorship system is a vision of our respected chairman sir Sh. Shashikant Singhi. The
+                            origination of mentorship system leads to the best possible way of managing hostel by the
+                            students themselves. Mentorship was managed by students called as mentors. Mentors are
+                            friend philosopher & guides for their juniors.</p>
+                        <div class="Timg"><img src="{% static 'img\mentorship1.jpg' %}" alt="1" class="wow zoomIn"
+                                style="visibility: visible; animation-name: zoomIn;"></div>
+                        <div class="Timg"><img src="{% static 'img\mentoring-2.jpg' %}" alt="2" class="wow zoomIn"
+                                style="visibility: visible; animation-name: zoomIn;"></div>
+                    </div>
+                    <div class="content-item">
+                        <h3>Recreational Facilities</h3>
+                        <h2 style="text-align: center;">Recreational facilities & Sports complex</h2>
+                        <hr
+                            style="height: 3px;width:150px;background-color:#ed1c24;display:block;position:absolute;left:0;right:0;margin:auto;">
+                        <br>
+                        <p
+                            style="padding-top:16px!important;padding-bottom:16px!important;background-color: #f44336!important;color:white;text-align:center;max-width:1080px;margin:10px auto 30px;line-height:24px">
+                            Keeping in view the mental & physical growth of the students, the hostel provides an open
+                            ground for outdoor team games & athletics. A natural lawn has been laid to relax and to play
+                            games. Multi facility gym for every hostel campus has been provided which is fully equipped
+                            to keep the students fit and healthy. Indoor games like TT, Chess, Carom Board, and Squash
+                            have also been provided.</p>
+                        <h4>Extra Curricular Facilities</h4>
+                        <ul>
+                            <li>
+                                Career counselling sessions
+                            </li>
+                            <li>
+                                Motivational lectures
+                            </li>
+                            <li>
+                                Social & cultural activities during festivals and other occasions
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="content-item">
+                        <h3>Security Parking</h3>
+                        <h2 style="text-align: center;">Security & Parking</h2>
+                        <hr
+                            style="height: 3px;width:150px;background-color:#ed1c24;display:block;position:absolute;left:0;right:0;margin:auto;">
+                        <br>
+                        <p
+                            style="padding-top:16px!important;padding-bottom:16px!important;background-color: #f44336!important;color:white;text-align:center;max-width:1080px;margin:10px auto 30px;line-height:24px">
+                            The security of the students is of prime importance to us. We have employed efficient staff
+                            for our students to ensure that the hostel remains under a vigilant watch round the clock.
+                        </p>
+                        <p style="text-align: justify;">Regular attendance is taken to keep a personal check on every
+                            student by the wardens. All the hostels have close circuit night vision cameras and a
+                            specially formulated smart cards given to each student which they use every time to enter
+                            and exit the premises. Adequate parking facility is available inside the premises for the
+                            hostellers.</p>
+
+
+                    </div>
+                    <div class="content-item">
+                        <h3>Additional Benefits</h3>
+                        <h2 style="text-align: center;">Add on for Hostellers</h2>
+                        <hr
+                            style="height: 3px;width:150px;background-color:#ed1c24;display:block;position:absolute;left:0;right:0;margin:auto;">
+                        <br><br>
+                        <div class="add" style="text-align: justify;">
+                            <p class="w3-panel w3-left-align benefcl_point__ wow fadeInRight"
+                                style="visibility: visible; animation-name: fadeInRight;"><strong>Personality
+                                    Development
+                                    Club:</strong> The venture has seen many satisfied faces among the first year
+                                students.
+                                The students readily understood the need of professionalism. There were many students
+                                who
+                                have been the shy ones and find it difficult to stand in front of crowds. The extreme
+                                participation in the stage has given us enough evidence of how they have overcame their
+                                body
+                                challenges as well as their passion to create a difference.</p>
+                            <p><strong>Social Activity Club:</strong> We the members of Social Activity Club try to put
+                                our efforts in teaching the Mess Workers daily. We had conducted at about 40 classes. We
+                                also let them play for one day in every week in order to make them active. The learning
+                                is basic; we teach them according to their age. We had made a syllabus for them and
+                                accordingly to it we move ahead. Previously, they were not being able to write their
+                                name but now they can not only write their names but can compete with a fourth standard
+                                lad.</p>
+                            <strong>The Event management club:</strong> It had a number of events organized in the
+                            session 2014-15. During these events we learned a lot of qualities and gained a lot of
+                            experience in this field of event management. All the mentors were fully enthusiastic and
+                            hard working. We learned to work as a team and lead that team to the road of success. The
+                            mentors coordinated and managed the things in time. We learned the quality of time
+                            management and work management both together.
+
+                            &nbsp;
+                        </div>
+                        <br>
+                        <div id="bangonninfo" class="bangonninfo wow fadeInRight"
+                            style="visibility: visible; animation-name: fadeInRight;">
+
+                            <strong><a href="{% static 'Additional_Benefits\notice_key_info_bangon_wifi.pdf' %}"
+                                    target="_blank" rel="noopener">Key Information – Bangon Wifi</a></strong>
+
+                            &nbsp;
+
+                        </div><br>
+                        <div id="bangonninfo" class="bangonninfo wow fadeInRight"
+                            style="visibility: visible; animation-name: fadeInRight;">
+
+                            <a href="{% static 'img\poornima_free_pin_distribution_process.png' %}"
+                                target="_blank" rel="noopener">Free Pin Distribution Process</a>
+
+                            &nbsp;
+
+                        </div><br>
+                        <div id="bangonninfo" class="bangonninfo wow fadeInRight"
+                            style="visibility: visible; animation-name: fadeInRight;">
+
+                            <a href="{% static 'img\bangon_complaint_resolution_process.png' %}"
+                                target="_blank" rel="noopener">Bangon Complaint Resolution Process</a>
+
+                            &nbsp;
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function (event) {
+
+            const showNavbar = (toggleId, navId, bodyId, headerId) => {
+                const toggle = document.getElementById(toggleId),
+                    nav = document.getElementById(navId),
+                    bodypd = document.getElementById(bodyId),
+                    headerpd = document.getElementById(headerId)
+
+                // Validate that all variables exist
+                if (toggle && nav && bodypd && headerpd) {
+                    toggle.addEventListener('click', () => {
+                        // show navbar
+                        nav.classList.toggle('show')
+                        // change icon
+                        toggle.classList.toggle('bx-x')
+                        // add padding to body
+                        bodypd.classList.toggle('body-pd')
+                        // add padding to header
+                        headerpd.classList.toggle('body-pd')
+                    })
+                }
+            }
+
+            showNavbar('header-toggle', 'nav-bar', 'body-pd', 'header')
+
+            /*===== LINK ACTIVE =====*/
+            const linkColor = document.querySelectorAll('.nav_link')
+
+            function colorLink() {
+                if (linkColor) {
+                    linkColor.forEach(l => l.classList.remove('active'))
+                    this.classList.add('active')
+                }
+            }
+            linkColor.forEach(l => l.addEventListener('click', colorLink))
+
+            // Your code to run since DOM is loaded and ready
+        });
+    </script>
+    <script src='https://code.jquery.com/jquery-3.2.1.min.js'></script>
+    <script>
+        // Code By Webdevtrick ( https://webdevtrick.com )
+        let tabs = document.querySelectorAll('.tab');
+        let content = document.querySelectorAll('.content-item');
+        for (let i = 0; i < tabs.length; i++) {
+            tabs[i].addEventListener('click', () => tabClick(i));
+        }
+
+        function tabClick(currentTab) {
+            removeActive();
+            tabs[currentTab].classList.add('active');
+            content[currentTab].classList.add('active');
+            console.log(currentTab);
+        }
+
+        function removeActive() {
+            for (let i = 0; i < tabs.length; i++) {
+                tabs[i].classList.remove('active');
+                content[i].classList.remove('active');
+            }
+        }
+    </script>
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
 </body>
+
 </html>

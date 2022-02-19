@@ -410,7 +410,8 @@
                 d="M6 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-5 6s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H1zM11 3.5a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 0 1h-4a.5.5 0 0 1-.5-.5zm.5 2.5a.5.5 0 0 0 0 1h4a.5.5 0 0 0 0-1h-4zm2 3a.5.5 0 0 0 0 1h2a.5.5 0 0 0 0-1h-2zm0 3a.5.5 0 0 0 0 1h2a.5.5 0 0 0 0-1h-2z" />
             </svg>
             <span class="nav_name">Current Faculty</span>
-          </a> <a href="#" class="nav_link" title="Career">
+          </a> 
+          <a href="{% url 'career' %}" class="nav_link" title="Career">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
               class="bi bi-clipboard-data" viewBox="0 0 16 16">
               <path
@@ -421,14 +422,15 @@
                 d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z" />
             </svg>
             <span class="nav_name">Career</span>
-          </a> <a href="#" class="nav_link" title="Hostel">
+          </a> 
+          <a href="{% url 'hostal' %}" class="nav_link" title="Hostel">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
               class="bi bi-house-door-fill" viewBox="0 0 16 16">
               <path
                 d="M6.5 14.5v-3.505c0-.245.25-.495.5-.495h2c.25 0 .5.25.5.5v3.5a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5z" />
             </svg>
             <span class="nav_name">Hostel</span> </a>
-          <a href="#" class="nav_link " title="IEEE Xplore">
+          <a href="https://ieeexplore.ieee.org/Xplore/home.jsp" class="nav_link " title="IEEE Xplore">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-newspaper"
               viewBox="0 0 16 16">
               <path
@@ -493,15 +495,24 @@
         <div class="form_container"
           style="box-shadow: 5px 5px rgb(211, 209, 209);padding: 40px 50px;align-items: center; margin:5rem auto;background-image: linear-gradient(to right, rgba(243, 140, 172), rgba(132, 228, 247));  ">
 
-          <form id="register" method="post">
-            <H1 style="font-weight: bolder;">Contact US </H1>
+          <form id="register" action="{% url 'about' %}" method="post">{% csrf_token %}
+                {% if messages %}
+                <div  class="alert alert-success">
+                  <ul class="messages">
+                    {% for message in messages %}
+                      <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+                    {% endfor %}
+                  </ul>
+                </div>
+                {% endif %}
+            <h1 style="font-weight: bolder;">Contact US </h1>
             <div class="col-md-6" style="margin: 2rem auto 0 auto ;">
-              <input type="text" name="fname" id="name" placeholder="Enter Your First*" required> <br>
+              <input type="text" name="name" id="name" placeholder="Enter Your Name*" required> <br>
               <input type="email" name="email" id="name" placeholder="Enter Valid Email*" required> <br>
               <input type="Phone" name="phone" id="name" placeholder="Enter Mobile Number*" required> <br>
               <select onchange="print_city('state', this.selectedIndex);" id="sts" name="stt" class="form-control"
                 required></select><br>
-              <select value="" id="state" class="form-control" required>
+              <select value="" name="city" id="state" class="form-control" required>
                 <option>Select City*</option>
               </select>
               <script language="javascript">print_state("sts");</script>
