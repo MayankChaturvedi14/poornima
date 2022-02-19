@@ -380,11 +380,21 @@
         </nav>
     </div>
     <div class="row">
+        {% if messages %}
+        <div  class="alert alert-success">
+          <ul class="messages">
+            {% for message in messages %}
+              <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+            {% endfor %}
+          </ul>
+        </div>
+        {% endif %}
         <img src={% static 'img\Career.jpg' %} alt="" width="90%"
             style="display:block;margin-left:auto;margin-right:auto; margin-top:20px; border-radius:10px;box-shadow:10px 10px rgb(209, 207, 207)">
     </div>
     <!--Container Main start-->
-    <form>
+    <form method="POST"enctype="multipart/form-data" action="{% url 'career' %}">{% csrf_token %}
+
         <div class="container-fluid" style="margin-top: 80px;">
             <div class="row">
                 <div class="col-md-6">
@@ -409,13 +419,13 @@
                     <div class="col-md-5" style="margin-top: 20px;margin-left:auto;margin-right:auto">
 
                         <!-- <label style="font-weight: bold;font-size: medium;margin-top:20px;">Name</label> -->
-                        <input type="text" name="lastname" placeholder="Full Name"
+                        <input required type="text" name="name" placeholder="Full Name"
                             style="border: 1px solid black;width:320px">
 
                     </div>
                     <div class="col-md-5" style="margin-top: 20px;">
                         <!-- <label style="font-weight: bold;font-size: medium;margin-top:20px;">Email</label> -->
-                        <input type="text" name="lastname" placeholder="Enter Your Email"
+                        <input type="text" required name="email" placeholder="Enter Your Email"
                             style="border: 1px solid black;width:320px">
 
                     </div>
@@ -426,7 +436,7 @@
                     <div class="col-md-5" style="margin-top: 20px;margin-left:auto;margin-right:auto">
 
                         <!-- <label style="font-weight: bold;font-size: medium;margin-top:20px; "> Place</label> -->
-                        <select name="place" id="place" style="width: 320px;border:1px solid black">
+                        <select required name="place" id="place" style="width: 320px;border:1px solid black">
                             <option selected value="" style="text-align: justify;">Choose Your Birth Place</option>
                             <option value="Andaman And Nicobar Islands" style="text-align: justify;">Andaman And Nicobar
                                 Islands</option>
@@ -472,7 +482,7 @@
                     </div>
                     <div class="col-md-5" style="margin-top: 20px;">
                         <!-- <label style="font-weight: bold;font-size: medium;margin-top:20px;">Mobile </label> -->
-                        <input type="text" name="lastname" placeholder="Mobile Number"
+                        <input required type="text" name="phone" placeholder="Mobile Number"
                             style="border: 1px solid black;width:320px">
 
                     </div>
@@ -483,13 +493,13 @@
                     <div class="col-md-5" style="margin-top: 20px;margin-left:auto;margin-right:auto">
 
                         <!-- <label style="font-weight: bold;font-size: medium;margin-top:20px;">D.O.B</label> -->
-                        <input type="text" name="lastname" placeholder="Date of Birth"
+                        <input required type="date" name="dob" placeholder="Date of Birth"
                             style="border: 1px solid black;width:320px">
 
                     </div>
                     <div class="col-md-5" style="margin-top: 20px;">
                         <!-- <label style="font-weight: bold;font-size: medium;margin-top:20px;">Gender</label> -->
-                        <select name="cars" id="cars" style="width: 320px;border:1px solid black">
+                        <select required name="gender" id="cars" style="width: 320px;border:1px solid black">
                             <option selected value="">Select Your Gender</option>
                             <option value="Male">Male</option>
                             <option value="Female">Female</option>
@@ -504,13 +514,13 @@
                     <div class="col-md-5" style="margin-top: 20px;margin-left:auto;margin-right:auto;">
 
                         <!-- <label style="font-weight: bold;font-size: medium;margin-top:20px;">Post </label> -->
-                        <input type="text" name="lastname" placeholder="Post Applied For"
+                        <input required type="text" name="postappliedfor" placeholder="Post Applied For"
                             style="border: 1px solid black;width:320px">
 
                     </div>
                     <div class="col-md-5" style="margin-top: 20px;">
                         <!-- <label style="font-weight: bold;font-size: medium;margin-top:20px;">Desig.</label> -->
-                        <input type="text" name="lastname" placeholder="Designation"
+                        <input required type="text" name="designation" placeholder="Designation"
                             style="border: 1px solid black;width:320px">
 
                     </div>
@@ -521,44 +531,46 @@
                     <div class="col-md-5" style="margin-top: 20px;margin-left:auto;margin-right:auto">
 
                         <!-- <label style="font-weight: bold;font-size: medium;margin-top:20px; "> Dept</label> -->
-                        <input type="text" name="lastname" placeholder="Department"
+                        <input required type="text" name="Department" placeholder="Department"
                             style="border: 1px solid black;width:320px">
 
                     </div>
                     <div class="col-md-5" style="margin-top: 20px;">
                         <!-- <label style="font-weight: bold;font-size: medium;margin-top:20px;">Quali. </label> -->
-                        <select name="U.G" id="cars" style="width: 80px;border:1px solid black">
-                            <option selected value="">U.G</option>
+                        <select required name="U.G" id="cars" style="width: 80px;border:1px solid black">
+                            <option selected value="NA">U.G</option>
                             <option value="NA">NA</option>
                             <option value="Pursuing">Pursuing</option>
-                            <option value="Pursuing">B.Arch.</option>
-                            <option value="Pursuing">B.Des.</option>
-                            <option value="Pursuing">B.Tech.</option>
-                            <option value="Pursuing">BBA</option>
-                            <option value="Pursuing">BCA</option>
-                            <option value="Pursuing">BFA</option>
-                            <option value="Pursuing">Other</option>
+                            <option value="B.Arch.">B.Arch.</option>
+                            <option value="B.Des.">B.Des.</option>
+                            <option value="B.Tech.">B.Tech.</option>
+                            <option value="BBA">BBA</option>
+                            <option value="BCA">BCA</option>
+                            <option value="BFA">BFA</option>
+                            <option value="Other">Other</option>
 
 
                         </select>
-                        <span style="padding-left:15px;"><select name="P.G" id="cars"
+                        <span style="padding-left:15px;">
+                            <select required name="P.G" id="cars"
                                 style="width: 80px;border:1px solid black">
                                 <option selected value="">P.G</option>
-                                <option value="Male">NA</option>
-                                <option value="Female">Pursuing</option>
-                                <option value="Female">M.Sc.</option>
-                                <option value="Female">M.Tech</option>
-                                <option value="Female">MBA</option>
-                                <option value="Female">MCA</option>
-                                <option value="Female">Other</option>
+                                <option value="NA">NA</option>
+                                <option value="Pursuing">Pursuing</option>
+                                <option value="M.Sc.">M.Sc.</option>
+                                <option value="M.Tech">M.Tech</option>
+                                <option value="MBA">MBA</option>
+                                <option value="MCA">MCA</option>
+                                <option value="Other">Other</option>
 
                             </select></span>
-                        <span style="padding-left:13px;"><select name="Doctorate" id="cars"
+                        <span style="padding-left:13px;">
+                            <select notrequired name="Doctorate" id="cars"
                                 style="width: 120px;border:1px solid black">
                                 <option selected value="">Doctorate</option>
-                                <option value="Male">NA</option>
-                                <option value="Female">PHD</option>
-                                <option value="Female">Others</option>
+                                <option value="NA">NA</option>
+                                <option value="PHD">PHD</option>
+                                <option value="Others">Others</option>
 
                             </select></span>
 
@@ -570,32 +582,32 @@
                     <div class="col-md-5" style="margin-top: 20px;margin-left:auto;margin-right:auto">
 
                         <!-- <label style="font-weight: bold;font-size: medium;margin-top:20px;">Exp.</label> -->
-                        <span><select name="Doctorate" id="cars" style="width: 140px;border:1px solid black">
-                                <option selected value="">Teaching </option>
-                                <option value="Male">Fresher</option>
-                                <option value="Female">1-2 yrs</option>
-                                <option value="Female">3-5 yrs</option>
-                                <option value="Female">5-8 yrs</option>
-                                <option value="Female">>8 yrs</option>
-                                <option value="Female">....NIL....</option>
+                        <span><select name="Teaching Exp" id="cars" style="width: 140px;border:1px solid black">
+                                <option selected value="">Teaching Expertise</option>
+                                <option value="Fresher">Fresher</option>
+                                <option value="1-2 yrs">1-2 yrs</option>
+                                <option value="3-5 yrs">3-5 yrs</option>
+                                <option value="5-8 yrs">5-8 yrs</option>
+                                <option value=">8 yrs">>8 yrs</option>
+                                <option value="NILL">....NIL....</option>
 
                             </select></span>
-                        <span style="padding-left:33px;"><select name="Doctorate" id="cars"
+                        <span style="padding-left:33px;"><select name="Corporate Exp" id="cars"
                                 style="width: 140px;border:1px solid black">
-                                <option selected value="">Corporate </option>
-                                <option value="Male">Fresher</option>
-                                <option value="Female">1-2 yrs</option>
-                                <option value="Female">3-5 yrs</option>
-                                <option value="Female">5-8 yrs</option>
-                                <option value="Female">>8 yrs</option>
-                                <option value="Female">....NIL....</option>
+                                <option selected value="">Corporate Expertise</option>
+                                <option value="Fresher">Fresher</option>
+                                <option value="1-2 yrs">1-2 yrs</option>
+                                <option value="3-5 yrs">3-5 yrs</option>
+                                <option value="5-8 yrs">5-8 yrs</option>
+                                <option value=">8 yrs">>8 yrs</option>
+                                <option value="NILL">....NIL....</option>
 
                             </select></span>
 
                     </div>
                     <div class="col-md-5" style="margin-top: 20px;">
                         <!-- <label style="font-weight: bold;font-size: medium;margin-top:20px;">City.</label> -->
-                        <input type="text" name="lastname" placeholder="Current Location (City)"
+                        <input type="text" name="Cloc" placeholder="Current Location (City)"
                             style="border: 1px solid black;width:320px">
 
                     </div>
@@ -608,9 +620,10 @@
                     <div class="col-md-12" style="margin-top: 20px;margin-left:auto;margin-right:auto">
 
                         <!-- <label style="font-weight: bold;font-size: medium;margin-top:20px;">Exp.</label> -->
-                        <span style="padding-left:12px;"><select name="Doctorate" id="cars"
+                        <span style="padding-left:12px;">
+                            <select name="UGPass" id="cars"
                                 style="width: 140px;border:1px solid black">
-                                <option selected value="" disabled>Passing Year </option>
+                                <option selected value="NA">Passing Year </option>
                                 <option value="NA">NA</option>
                                 <option value="Pursuing">Pursuing</option>
                                 <option value="2017">2017</option>
@@ -682,15 +695,15 @@
                                 <option value="1951">1951</option>
 
                             </select></span>
-                        <span style="padding-left:25px;"> <input type="number" id="quantity" name="quantity" min="1"
+                        <span style="padding-left:25px;"> <input name="percent" type="number" id="quantity" min="1"
                                 max="1000" style="width: 140px;" placeholder="CGPA or %Age"></span>
-                        <span style="padding-left:25px;"><input type="text" name="lastname" placeholder="College Name"
+                        <span style="padding-left:25px;"><input type="text" name="college_name" placeholder="College Name"
                                 style="width: 140px;"></span>
-                        <span style="padding-left:25px;"><input type="text" name="lastname"
+                        <span style="padding-left:25px;"><input type="text" name="University_name"
                                 placeholder="University Name" style="width: 140px;"></span>
-                        <span style="padding-left:25px;"><input type="text" name="lastname"
+                        <span style="padding-left:25px;"><input type="text" name="city"
                                 placeholder="City Name(College)" style="width: 140px;"></span>
-                        <span style="padding-left:25px;"><input type="text" name="lastname" placeholder="Branch"
+                        <span style="padding-left:25px;"><input type="text" name="branch" placeholder="Branch"
                                 style="width: 140px;"></span>
                     </div>
 
@@ -701,9 +714,9 @@
                     <div class="col-md-12" style="margin-top: 20px;margin-left:auto;margin-right:auto">
 
                         <!-- <label style="font-weight: bold;font-size: medium;margin-top:20px;">Exp.</label> -->
-                        <span style="padding-left:12px;"><select name="Doctorate" id="cars"
+                        <span style="padding-left:12px;"><select name="PGPass" id="cars"
                                 style="width: 140px;border:1px solid black">
-                                <option selected value="" disabled>Passing Year </option>
+                                <option selected value="NA">Passing Year </option>
                                 <option value="NA">NA</option>
                                 <option value="Pursuing">Pursuing</option>
                                 <option value="2017">2017</option>
@@ -775,17 +788,17 @@
                                 <option value="1951">1951</option>
 
                             </select></span>
-                        <span style="padding-left:25px;"> <input type="number" id="quantity" name="quantity" min="1"
+                        <span style="padding-left:25px;"> <input type="number" id="quantity" name="PGpercent" min="1"
                                 max="1000" style="width: 140px;" placeholder="CGPA or %Age"></span>
-                        <span style="padding-left:25px;"><input type="text" name="lastname" placeholder="College Name"
+                        <span style="padding-left:25px;"><input type="text" name="PGcollege_name" placeholder="College Name"
                                 style="width: 140px;"></span>
-                        <span style="padding-left:25px;"><input type="text" name="lastname"
+                        <span style="padding-left:25px;"><input type="text" name="PGuniversity_name"
                                 placeholder="University Name" style="width: 140px;"></span>
-                        <span style="padding-left:25px;"><input type="text" name="lastname"
+                        <span style="padding-left:25px;"><input type="text" name="PGCity"
                                 placeholder="City Name(College)" style="width: 140px;"></span>
-                        <span style="padding-left:25px;"><input type="text" name="lastname"
+                        <span style="padding-left:25px;"><input type="text" name="PGAOExp"
                                 placeholder="Area of Expertise" style="width: 140px;"></span>
-                        <span style="padding-left:25px;"><input type="text" name="lastname" placeholder="Thesis Title"
+                        <span style="padding-left:25px;"><input type="text" name="PGThesis" placeholder="Thesis Title"
                                 style="width: 140px;"></span>
                     </div>
 
@@ -796,10 +809,10 @@
                     <div class="col-md-12" style="margin-top: 20px;margin-left:auto;margin-right:auto">
 
                         <!-- <label style="font-weight: bold;font-size: medium;margin-top:20px;">Exp.</label> -->
-                        <span style="padding-left:12px;"><select name="Doctorate" id="cars"
+                        <span style="padding-left:12px;"><select name="PHDPass" id="cars"
                                 style="width: 140px;border:1px solid black">
-                                <option selected value="" disabled>Passing Year </option>
-                                <option value="NA">NA</option>
+                                <option selected value="NA">Passing Year </option>
+                                <option value="2017">NA</option>
                                 <option value="Pursuing">Pursuing</option>
                                 <option value="2017">2017</option>
                                 <option value="2016">2016</option>
@@ -870,24 +883,24 @@
                                 <option value="1951">1951</option>
 
                             </select></span>
-                        <span style="padding-left:25px;"><select name="Doctorate" id="cars"
+                        <span style="padding-left:25px;"><select name="PHDstate" id="cars"
                                 style="width: 140px;border:1px solid black">
-
-                                <option value="" selected="selected" disabled="">PhD Status</option>
+                                <option selected value="NA">PhD status</option>
+                                <option value="NA">NA</option>
                                 <option value="Enrolled">Enrolled</option>
                                 <option value="Submitted">Submitted</option>
                                 <option value="Awarded">Awarded</option>
 
                             </select></span>
-                        <span style="padding-left:25px;"><input type="text" name="lastname" placeholder="College Name"
+                        <span style="padding-left:25px;"><input type="text" name="PHDcollege_name" placeholder="College Name"
                                 style="width: 140px;"></span>
-                        <span style="padding-left:25px;"><input type="text" name="lastname"
+                        <span style="padding-left:25px;"><input type="text" name="PHDUniversity_name"
                                 placeholder="University Name" style="width: 140px;"></span>
-                        <span style="padding-left:25px;"><input type="text" name="lastname"
+                        <span style="padding-left:25px;"><input type="text" name="PHDcity"
                                 placeholder="City Name(College)" style="width: 140px;"></span>
-                        <span style="padding-left:25px;"><input type="text" name="lastname"
+                        <span style="padding-left:25px;"><input type="text" name="PHDAExp"
                                 placeholder="Area of Expertise" style="width: 140px;"></span>
-                        <span style="padding-left:25px;"><input type="text" name="lastname" placeholder="Thesis Title"
+                        <span style="padding-left:25px;"><input type="text" name="PHDThesis" placeholder="Thesis Title"
                                 style="width: 140px;"></span>
                     </div>
 
@@ -896,14 +909,14 @@
                     <div class="col-md-6" style="margin: 0 auto;margin-bottom:80px">
                         <div class="input-group mb-3" style="border: none;width:320px">
                             <label for="inputGroupFile02">Upload Resume</label>
-                            <input type="file" class="form-control" id="inputGroupFile02" name="resume"
+                            <input type="file" required class="form-control" enctype="multipart/form-data" id="inputGroupFile02" name="resume"
                                 style="width:340px">
                             <br>
                             <span style="font-size: 12px;">File format should be .pdf,.doc,.docx and file size less then
                                 2MB.</span>
                         </div>
                         <div class="d-grid gap-2 col-6 mx-auto">
-                            <button class="btn" type="button">submit</button>
+                            <button class="btn" type="submit">submit</button>
                         </div>
 
                     </div>
