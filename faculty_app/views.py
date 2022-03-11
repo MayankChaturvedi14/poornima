@@ -12,7 +12,7 @@ def place(request):
     return render(request,"placement.html")
 
 def current_faculty(request):
-    return render(request,'faculty.html')
+    return render(request,'Faculty.html')
 
 def facultyLogin(request):
     return render(request,"faculty_login.html")
@@ -21,7 +21,7 @@ def faculty_view(request):
     return render(request,"faculty_main.html")
 
 def faculty_profile(request):
-    return render(request,"faculty_profile.html")
+    return render(request,"Faculty_profile.html")
 
 def current_student(request):
     return render(request,"Current_Students.html")
