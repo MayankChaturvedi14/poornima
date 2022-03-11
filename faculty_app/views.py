@@ -1,5 +1,3 @@
-from atexit import register
-from tkinter import Place
 from django.http import request
 from django.shortcuts import render,redirect
 from django.http import HttpResponse, HttpResponseRedirect
