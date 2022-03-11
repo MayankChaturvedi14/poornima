@@ -2,14 +2,27 @@
 <html lang="en">
 
 <head>
-    {% load static %}
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Current Student</title>
+    <title>Technical Events</title>
+    <link rel="stylesheet" href="about.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="about.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+    {% load static %}
 </head>
 <style>
     @import url("https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap");
@@ -181,21 +194,10 @@
         padding-left: calc(var(--nav-width) + 1rem)
     }
 
-    .active {
+    .active1 {
         background-color: red;
         border-radius: 10px;
     }
-
-
-
-    .card {
-        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-        transition: 0.3s;
-        width: 60%;
-        margin-top: 50px;
-
-    }
-
 
 
     @media screen and (min-width: 768px) {
@@ -233,59 +235,29 @@
         }
     }
 
-    #more {
-        display: none;
+    div.gallery {
+        margin: 5px;
+        border: 1px solid #ccc;
+        float: left;
+        width: 180px;
     }
 
-    .btn {
-        border: none;
-        color: black;
-        padding: 16px 32px;
+    div.gallery:hover {
+        border: 1px solid #777;
+    }
+
+    div.gallery img {
+        width: 100%;
+        height: auto;
+    }
+
+    div.desc {
+        padding: 15px;
         text-align: center;
-        font-size: 16px;
-        transition: 0.3s;
     }
-
-    .btn:hover {
-        background-color: #22ca28;
-        color: white;
-        font-size: large;
-        font-weight: bolder;
-        font-family: 'Nunito Sans';
-    }
-
-    .col-md-6 {
-        text-align: justify;
-    }
-
-    p {
-        margin-left: 10px;
-        margin-right: 10px;
-    }
-
-    h2 {
-        margin-left: 10px;
-        color: red;
-        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    }
-
-    .dropdown {
-        position: relative;
-        display: inline-block;
-    }
-
-    .dropdown-content {
-        display: none;
-        width: 160px;
-        background-color: rgb(22, 22, 22);
-        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-        padding: 12px 16px;
-        z-index: -1;
-    }
-
-    .dropdown:hover .dropdown-content {
-        display: block;
-        margin-top: 20px;
+    .container{
+        margin-bottom: 80px;
+        
     }
 </style>
 
@@ -372,175 +344,205 @@
 
         </nav>
     </div>
-    <div class="row">
-        <img src="{% static 'img\Current Student.jpg' %}" alt="" width="90%"
-            style="display:block;margin-left:auto;margin-right:auto; margin-top:20px; border-radius:10px;box-shadow:10px 10px rgb(209, 207, 207)">
+    <!-- Carousel -->
+    <div class="heading row" style="margin-top:20px;background-image:linear-gradient(to right, rgb(247, 3, 3), rgb(111, 113, 114));color:white">
+        <h1>TECHNICAL EVENTS</h1>
     </div>
-    <!--Container Main start-->
-    <div class="container-fluid">
-        <form>
-            <div class="row" style="margin-top: 50px; ">
-                <div class="col-md-4 ">
-                    <div class="card"
-                        style="width: 16rem; text-align:center; background-color:BLACK; color:white;font-size:large; border-radius:10px; box-shadow: 5px 5px grey">
-                        <div class="card-body">
-                            ATTENDANCE
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 ">
-                    <a href="http://www.esuvidha.info/">
-                        <div class="card"
-                            style="width: 16rem; text-align:center; background-color:RED; color:white;font-size:large; border-radius:10px; box-shadow: 5px 5px grey">
-                            <div class="card-body">
-                                RTU RESULT
-                            </div>
-                        </div>
-                    </a>
-
-                </div>
-                <div class="col-md-4 ">
-                    <a href="https://rtu.ac.in/index/view_menudata.php?page=RTU-Syllabus4">
-                        <div class="card"
-                            style="width: 16rem; text-align:center; background-color:BLACK; color:white;font-size:large; border-radius:10px; box-shadow: 5px 5px grey">
-                            <div class="card-body">
-                                SYLLABUS
-                            </div>
-                        </div>
-                    </a>
-
-                </div>
+    <div class="container" style="margin-top: 80px;">
+        <div class="row" style="column-gap: 30px;">
+            <div class="col-md-3" >
+                <a href="{% static 'img\Technical Events\DSC_0045.jpg' %}">
+                    <img src="{% static 'img\Technical Events\DSC_0045.jpg' %}" width="300px">
+                </a>
+            </div><br>
+            <div class="col-md-3">
+                <a href="{% static 'img\Technical Events\DSC_0376.jpg' %}">
+                    <img src="{% static 'img\Technical Events\DSC_0376.jpg' %}" width="300px">
+                </a>
+            </div><br>
+            <div class="col-md-3">
+                <a href="{% static 'img\Technical Events\DSC_1017.jpg' %}">
+                    <img src="{% static 'img\Technical Events\DSC_1017.jpg' %}" width="300px">
+                </a>
             </div>
-            <div class="row" style="margin-top: 50px;">
-                <div class="col-md-4 ">
-                    <a href="https://rtupaper.com/">
-                        <div class="card"
-                            style="width: 16rem; text-align:center; background-color:RED; color:white;font-size:large; border-radius:10px; box-shadow: 5px 5px grey">
-                            <div class="card-body">
-                                RTU PAPER
-                            </div>
-                        </div>
-                    </a>
-
-                </div>
-                <div class="col-md-4 ">
-                    <a href="https://rtu.ac.in/index/viewdata.php?page=Academic-Calendar1">
-                        <div class="card"
-                            style="width: 16rem; text-align:center; background-color:BLACK; color:white;font-size:large ; border-radius:10px; box-shadow: 5px 5px grey">
-                            <div class="card-body">
-                                ACADEMIC CALENDER
-                            </div>
-                        </div>
-                    </a>
-
-                </div>
-                <div class="col-md-4 ">
-                    <div class="card"
-                        style="width: 16rem; text-align:center; background-color:RED; color:white;font-size:large; border-radius:10px; box-shadow: 5px 5px grey">
-                        <div class="card-body">
-                            MID TERM PAPERS
-                        </div>
-                    </div>
-                </div>
+        </div><br>
+        <div class="row" style="column-gap: 30px;">
+            <div class="col-md-3" >
+                <a href="{% static 'img\Technical Events\DSC_0236.jpg' %}">
+                    <img src="{% static 'img\Technical Events\DSC_0236.jpg' %}" width="300px">
+                </a>
+            </div><br>
+            <div class="col-md-3">
+                <a href="{% static 'img\Technical Events\DSC_0334.jpg' %}">
+                    <img src="{% static 'img\Technical Events\DSC_0334.jpg' %}" width="300px">
+                </a>
+            </div><br>
+            <div class="col-md-3">
+                <a href="{% static 'img\Technical Events\DSC_0057.jpg' %}">
+                    <img src="{% static 'img\Technical Events\DSC_0057.jpg' %}" width="300px">
+                </a>
             </div>
-            <div class="row" style="margin-top: 50px;">
-                <div class="col-md-4 ">
-                    <a href="https://rtu.ac.in/index/view_menudata.php?page=Time-Table29">
-                        <div class="card"
-                            style="width: 16rem; text-align:center; background-color:BLACK; color:white;font-size:large; border-radius:10px; box-shadow: 5px 5px grey">
-                            <div class="card-body">
-                                TIME TABLE
-                            </div>
-                        </div>
-                    </a>
-
-                </div>
-                <div class="col-md-4 ">
-                    <a href="https://www.poornima.org/current-students/online-fee-portal/">
-                        <div class="card"
-                            style="width: 16rem; text-align:center; background-color:RED; color:white;font-size:large; border-radius:10px; box-shadow: 5px 5px grey">
-                            <div class="card-body">
-                                ONLINE FEE PORTAL
-                            </div>
-                        </div>
-                    </a>
-
-                </div>
-                <div class="col-md-4 ">
-                    <div class="card"
-                        style="width: 16rem; text-align:center; background-color:BLACK; color:white;font-size:large; border-radius:10px; box-shadow: 5px 5px grey">
-                        <div class="card-body">
-                            IMPORTANT NOTICES
-                        </div>
-                    </div>
-                </div>
+        </div><br>
+        <div class="row" style="column-gap: 30px;">
+            <div class="col-md-3" >
+                <a href="{% static 'img\Technical Events\DSC_0010.jpg' %}">
+                    <img src="{% static 'img\Technical Events\DSC_0010.jpg' %}" width="300px">
+                </a>
+            </div><br>
+            <div class="col-md-3">
+                <a href="{% static 'img\Technical Events\DSC_0011.jpg' %}">
+                    <img src="{% static 'img\Technical Events\DSC_0011.jpg' %}" width="300px">
+                </a>
+            </div><br>
+            <div class="col-md-3">
+                <a href="{% static 'img\Technical Events\DSC_0008.jpg' %}">
+                    <img src="{% static 'img\Technical Events\DSC_0008.jpg' %}" width="300px">
+                </a>
             </div>
-            <div class="row" style="margin-top: 50px;">
-                <div class="col-md-4 ">
-                    <a href="{% url 'download_forms' %}">
-                        <div class="card"
-                        style="width: 16rem; text-align:center; background-color:RED; color:white;font-size:large; border-radius:10px; box-shadow: 5px 5px grey">
-                        <div class="card-body">
-                            DOWNLOAD FORMS
-                        </div>
-                    </div>
-                    </a>
-                    
-                </div>
-                <div class="col-md-4 ">
-                    <a style="text-decoration:none;color:white" href="{% url 'admission' %}">
-                    <div class="card"
-                        style="width: 16rem; text-align:center; background-color:BLACK; color:white;font-size:large; border-radius:10px; box-shadow: 5px 5px grey">
-                        <div class="card-body">
-                            ADMISSION FORM
-                        </div>
-                    </a>
-                    </div>
-                </div>
-                <div class="col-md-4 ">
-                    <a style="text-decoration:none;color:white" href="{% url 'techevents' %}">
-                    <div class="card"
-                        style="width: 16rem; text-align:center; background-color:RED; color:white;font-size:large; border-radius:10px; box-shadow: 5px 5px grey">
-                        <div class="card-body">
-                            TECHNICAL EVENTS
-                        </div>
-                    </a>
-                    </div>
-                </div>
+        </div><br>
+        <div class="row" style="column-gap: 30px;">
+            <div class="col-md-3" >
+                <a href="{% static 'img\Technical Events\9J4A9514.jpg' %}">
+                    <img src="{% static 'img\Technical Events\9J4A9514.jpg' %}" width="300px">
+                </a>
+            </div><br>
+            <div class="col-md-3">
+                <a href="{% static 'img\Technical Events\9J4A9625.jpg' %}">
+                    <img src="{% static 'img\Technical Events\9J4A9625.jpg' %}" width="300px">
+                </a>
+            </div><br>
+            <div class="col-md-3">
+                <a href="{% static 'img\Technical Events\DSC01873.jpg' %}">
+                    <img src="{% static 'img\Technical Events\DSC01873.jpg' %}" width="300px" height="200px">
+                </a>
             </div>
-            <div class="row" style="margin-top: 50px; margin-bottom:30px">
-                <div class="col-md-4 ">
-                    <div class="card"
-                        style="width: 16rem; text-align:center; background-color:BLACK; color:white;font-size:large; border-radius:10px; box-shadow: 5px 5px grey">
-                        <div class="card-body">
-                            TRANSPORT INFO
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 ">
-                    <a href="{% url 'review' %}">
-                        <div class="card"
-                            style="width: 16rem; text-align:center; background-color:RED; color:white;font-size:large;border-radius:10px; box-shadow: 5px 5px grey">
-                            <div class="card-body">
-                                Feedback / Review Form
-                            </div>
-                        </div>
-                    </a>
-
-                </div>
-                <div class="col-md-4 ">
-                    <div class="card"
-                        style="width: 16rem; text-align:center; background-color:BLACK; color:white;font-size:large;border-radius:10px; box-shadow: 5px 5px grey">
-                        <div class="card-body">
-                            FACULTY NOTES
-                        </div>
-                    </div>
-                </div>
+        </div><br>
+        <div class="row" style="column-gap: 30px;">
+            <div class="col-md-3" >
+                <a href="{% static 'img\Technical Events\DSC01856.jpg' %}">
+                    <img src="{% static 'img\Technical Events\DSC01856.jpg' %}" width="300px">
+                </a>
+            </div><br>
+            <div class="col-md-3">
+                <a href="{% static 'img\Technical Events\DSC01871.jpg' %}">
+                    <img src="{% static 'img\Technical Events\DSC01871.jpg' %}" width="300px">
+                </a>
+            </div><br>
+            <div class="col-md-3">
+                <a href="{% static 'img\Technical Events\DSC01580.jpg' %}">
+                    <img src="{% static 'img\Technical Events\DSC01580.jpg' %}" width="300px">
+                </a>
             </div>
-        </form>
+        </div><br>
+        <div class="row" style="column-gap: 30px;">
+            <div class="col-md-3" >
+                <a href="{% static 'img\Technical Events\DSC01528.jpg' %}">
+                    <img src="{% static 'img\Technical Events\DSC01528.jpg' %}" width="300px" height="200px">
+                </a>
+            </div><br>
+            <div class="col-md-3">
+                <a href="{% static 'img\Technical Events\DSC_0841.jpg' %}">
+                    <img src="{% static 'img\Technical Events\DSC_0841.jpg' %}" width="300px" height="200px">
+                </a>
+            </div><br>
+            <div class="col-md-3">
+                <a href="{% static 'img\Technical Events\20934850_1597179686979412_8556126019390644068_o.jpg' %}">
+                    <img src="{% static 'img\Technical Events\20934850_1597179686979412_8556126019390644068_o.jpg' %}" width="300px" height="200px">
+                </a>
+            </div>
+        </div><br>
+        <div class="row" style="column-gap: 30px;">
+            <div class="col-md-3" >
+                <a href="{% static 'img\Technical Events\20901778_1597179850312729_6034501357316556875_o.jpg' %}">
+                    <img src="{% static 'img\Technical Events\20901778_1597179850312729_6034501357316556875_o.jpg' %}" width="300px" height="200px">
+                </a>
+            </div><br>
+            <div class="col-md-3">
+                <a href="{% static 'img\Technical Events\121.jpg' %}">
+                    <img src="{% static 'img\Technical Events\121.jpg' %}" width="300px" height="200px">
+                </a>
+            </div><br>
+            <div class="col-md-3">
+                <a href="{% static 'img\Technical Events\14.jpg' %}">
+                    <img src="{% static 'img\Technical Events\14.jpg' %}" width="300px" height="200px">
+                </a>
+            </div>
+        </div><br>
+        <div class="row" style="column-gap: 30px;">
+            <div class="col-md-3" >
+                <a href="{% static 'img\Technical Events\13.jpg' %}">
+                    <img src="{% static 'img\Technical Events\13.jpg' %}" width="300px" height="200px">
+                </a>
+            </div><br>
+            <div class="col-md-3">
+                <a href="{% static 'img\Technical Events\11.jpg' %}">
+                    <img src="{% static 'img\Technical Events\11.jpg' %}" width="300px" height="200px">
+                </a>
+            </div><br>
+            <div class="col-md-3">
+                <a href="{% static 'img\Technical Events\9.jpg' %}">
+                    <img src="{% static 'img\Technical Events\9.jpg' %}" width="300px" height="200px">
+                </a>
+            </div>
+        </div><br>
+        <div class="row" style="column-gap: 30px;">
+            <div class="col-md-3" >
+                <a href="{% static 'img\Technical Events\10.jpg' %}">
+                    <img src="{% static 'img\Technical Events\10.jpg' %}" width="300px" height="200px">
+                </a>
+            </div><br>
+            <div class="col-md-3">
+                <a href="{% static 'img\Technical Events\8.jpg' %}">
+                    <img src="{% static 'img\Technical Events\8.jpg' %}" width="300px" height="200px">
+                </a>
+            </div><br>
+            <div class="col-md-3">
+                <a href="{% static 'img\Technical Events\7.jpg' %}">
+                    <img src="{% static 'img\Technical Events\7.jpg' %}" width="300px" height="200px">
+                </a>
+            </div>
+        </div><br>
+        <div class="row" style="column-gap: 30px;">
+            <div class="col-md-3" >
+                <a href="{% static 'img\Technical Events\6.jpg' %}">
+                    <img src="{% static 'img\Technical Events\6.jpg' %}" width="300px" height="200px">
+                </a>
+            </div><br>
+            <div class="col-md-3">
+                <a href="{% static 'img\Technical Events\5.jpg' %}">
+                    <img src="{% static 'img\Technical Events\5.jpg' %}" width="300px" height="200px">
+                </a>
+            </div><br>
+            <div class="col-md-3">
+                <a href="{% static 'img\Technical Events\3.jpg' %}">
+                    <img src="{% static 'img\Technical Events\3.jpg' %}" width="300px" height="200px">
+                </a>
+            </div>
+        </div><br>
+        <div class="row" style="column-gap: 30px;">
+            <div class="col-md-3" >
+                <a href="{% static 'img\Technical Events\4.jpg' %}">
+                    <img src="{% static 'img\Technical Events\4.jpg' %}" width="300px" height="200px">
+                </a>
+            </div><br>
+            <div class="col-md-3">
+                <a href="{% static 'img\Technical Events\1.jpg' %}">
+                    <img src="{% static 'img\Technical Events\1.jpg' %}" width="300px" height="200px">
+                </a>
+            </div><br>
+            <div class="col-md-3">
+                <a href="{% static 'img\Technical Events\2.jpg' %}">
+                    <img src="{% static 'img\Technical Events\2.jpg' %}" width="300px" height="200px">
+                </a>
+            </div>
+        </div><br>
 
 
     </div>
+
+
+
+
     <script>
         document.addEventListener("DOMContentLoaded", function (event) {
 
@@ -580,22 +582,24 @@
 
             // Your code to run since DOM is loaded and ready
         });
-        function myFunction() {
-            var dots = document.getElementById("dots");
-            var moreText = document.getElementById("more");
-            var btnText = document.getElementById("myBtn");
 
-            if (dots.style.display === "none") {
-                dots.style.display = "inline";
-                btnText.innerHTML = "Read more";
-                moreText.style.display = "none";
-            } else {
-                dots.style.display = "none";
-                btnText.innerHTML = "Read less";
-                moreText.style.display = "inline";
-            }
-        }
+
     </script>
+    <script src='https://code.jquery.com/jquery-3.2.1.min.js'></script>
+
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
 </body>
 
 </html>

@@ -54,8 +54,9 @@ def review(request):
         record.save()
         messages.info(request, 'Record saved successfully!')
         peak = Feedback.objects.all()
-        return redirect(review,{'views':peak})
-    peak = Feedback.objects.all()
+        return render(request,"Review.html",{'views':peak})
+    peak = Feedback.objects.all()  
+    messages.info(request, None)
     return render(request,"Review.html",{'views':peak})
 
 def download_forms(request):
@@ -141,3 +142,6 @@ def career(request):
 
 def hostal(request):
     return render(request,"hostal.html")
+
+def technical_events(request):
+    return render(request,"technical events.html")
