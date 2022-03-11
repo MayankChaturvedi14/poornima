@@ -52,10 +52,10 @@ def review(request):
         record.save()
         messages.info(request, 'Record saved successfully!')
         peak = Feedback.objects.all()
-        return render(request,"Review.html",{'views':peak})
+        return render(request,"review.html",{'views':peak})
     peak = Feedback.objects.all()  
     messages.info(request, None)
-    return render(request,"Review.html",{'views':peak})
+    return render(request,"review.html",{'views':peak})
 
 def download_forms(request):
     return render(request,"downloadforms.html")
