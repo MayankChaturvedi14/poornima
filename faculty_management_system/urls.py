@@ -25,6 +25,7 @@ urlpatterns = [
     path('career',views.career,name="career"),
     path('logout',views.logout,name="logout"),
     path('tech-events',views.technical_events,name="techevents"),
+    path('profile/<str:username>/', views.get_user_profile,name="individual_profile"),
 ]
 if settings.DEBUG:
         urlpatterns += static(settings.MEDIA_URL,

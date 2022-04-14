@@ -26,7 +26,7 @@
             <div class="scr"> 
                 <a style="color:white; font-weight:700;" href="{% url 'home' %}" class="nav_logo"> 
                     <span class="nav_logo-name">
-                        <img style="padding-right:30px;" class="nav-icon" src={% static 'img\POORNIMA.png' %} width=60 height=30>
+                        <img style="padding-right:30px;" class="nav-icon" src={% static 'img\POORNIMA.png' %} width=80 height=30>
                     </span>POORNIMA</a>
                     <hr>
                 <div class="nav_list"> 
@@ -103,36 +103,36 @@
 
 <div class="dept1" style="margin-top:100px;" id="dept1">  
     <div class="row" style="margin-top:50px;">
-        <div class="col-md-4">
-          <div class="card" style="width:60%;">
+        <div class="col-md-3">
+          <div class="card" style="width:80%;">
             <div class="card-body">
                 <img src="{% static 'img/CSE/KK.jpg' %}" style="margin:5px;border-radius:5px;-webkit-box-shadow:4px 4px 4px 4px rgb(234,234,234)" width="180" height="180" alt="">  
               <h6 class="card-title"><br>Dr. KESHAV KRISHNA AGRAWAL
                 PROFESSOR</h6>
               <p class="card-text"><b>Qualification:</b> Ph.D.<br><b>Experience:</b> 30+ Years</p>
-              <a href="#" class="btn btn-primary">Know more</a>
+              <a href="{% url 'individual_profile' username="keshav" %}" class="btn btn-primary">Know more</a>
             </div>
           </div>
         </div>
         
-        <div class="col-md-4">
-          <div class="card" style="width:60%;">
+        <div class="col-md-3">
+          <div class="card" style="width:80%;">
             <div class="card-body">
                 <img src="{% static 'img\CSE\VK.jpg' %}" style="margin:5px;border-radius:5px;-webkit-box-shadow:4px 4px 4px 4px rgb(234,234,234)" width="180" height="180" alt="">  
               <h6 class="card-title"><br>Mr. VIKRAM KHANDELWAL</h6>
               <p class="card-text"><b>Qualification:</b> M.Tech <br><b>Experience:</b> 10+ Years</p>
-              <a href="#" class="btn btn-primary">Know more</a>
+              <a href="{% url 'individual_profile' username="vikram" %}" class="btn btn-primary">Know more</a>
             </div>
           </div>
         </div>
 
-        <div class="col-md-4">
-            <div class="card" style="width:60%;">
+        <div class="col-md-3">
+            <div class="card" style="width:80%;">
               <div class="card-body">
                 <img src="{% static 'img\CSE\AD.jpg' %}" style="margin:5px;border-radius:5px;-webkit-box-shadow:4px 4px 4px 4px rgb(234,234,234)" width="180" height="180" alt="">  
                 <h6 class="card-title"><br>Mr. ABHISHEK DADHICH</h6>
                 <p class="card-text"><b>Qualification: </b>M.Tech <br><b>Experience: </b>12+ Years</p>
-                <a href="#" class="btn btn-primary">Know more</a>
+                <a href="{% url 'individual_profile' username="abhishek" %}" class="btn btn-primary">Know more</a>
               </div>
             </div>
           </div>
@@ -141,35 +141,35 @@
     {% comment %} Row 2 {% endcomment %}
 
     <div class="row" style="margin-top:50px;">
-        <div class="col-md-4">
-          <div class="card" style="width:60%;">
+        <div class="col-md-3">
+          <div class="card" style="width:80%;">
             <div class="card-body">
                 <img src="{% static 'img\CSE\RJ.jpg' %}" style="margin:5px;border-radius:5px;-webkit-box-shadow:4px 4px 4px 4px rgb(234,234,234)" width="180" height="180" alt="">  
               <h6 class="card-title"><br>Dr. REKHA JAIN</h6>
               <p class="card-text"><b>Qualification: </b>Ph.D.<br><b>Experience:</b> 15+ Years</p>
-              <a href="#" class="btn btn-primary">Know more</a>
+              <a href="{% url 'individual_profile' username="rekha" %}" class="btn btn-primary">Know more</a>
             </div>
           </div>
         </div>
 
-        <div class="col-md-4">
-          <div class="card" style="width:60%;">
+        <div class="col-md-3">
+          <div class="card" style="width:80%;">
             <div class="card-body">
                 <img src="{% static 'img\CSE\RM.jpg' %}" style="margin:5px;border-radius:5px;-webkit-box-shadow:4px 4px 4px 4px rgb(234,234,234)" width="180" height="180" alt="">  
               <h6 class="card-title"><br>Dr. RAKHI MUTHA</h6>
               <p class="card-text"><b>Qualification:</b> Ph.D. <br><b>Experience:</b> 16+ Years</p>
-              <a href="#" class="btn btn-primary">Know more</a>
+              <a href="{% url 'individual_profile' username="rakhi" %}" class="btn btn-primary">Know more</a>
             </div>
           </div>
         </div>
 
-        <div class="col-md-4">
-            <div class="card" style="width:60%;">
+        <div class="col-md-3">
+            <div class="card" style="width:80%;">
               <div class="card-body">
                 <img src="{% static 'img\CSE\MG.jpg' %}" style="margin:5px;border-radius:5px;-webkit-box-shadow:4px 4px 4px 4px rgb(234,234,234)" width="180" height="180" alt="">  
                 <h6 class="card-title"><br>Dr. MEGHA GUPTA</h6>
                 <p class="card-text"><b>Qualification:</b> Ph.D. <br><b>Experience:</b> 15+ Years</p>
-                <a href="#" class="btn btn-primary">Know more</a>
+                <a href="{% url 'individual_profile' username="megha" %}" class="btn btn-primary">Know more</a>
               </div>
             </div>
           </div>
@@ -178,35 +178,35 @@
     {% comment %} row 3 {% endcomment %}
 
     <div class="row" style="margin-top:50px;">
-        <div class="col-md-4">
-          <div class="card" style="width:60%;">
+        <div class="col-md-3">
+          <div class="card" style="width:80%;">
             <div class="card-body">
                 <img src="{% static 'img\CSE\DM.jpg' %}" style="margin:5px;border-radius:5px;-webkit-box-shadow:4px 4px 4px 4px rgb(234,234,234)" width="180" height="180" alt="">  
               <h6 class="card-title"><br>Mr. DEEPAK MOUD</h6>
               <p class="card-text"><b>Qualification:</b> M.Tech <br><b>Experience:</b> 16+ Years</p>
-              <a href="#" class="btn btn-primary">Know more</a>
+              <a href="{% url 'individual_profile' username="deepak" %}" class="btn btn-primary">Know more</a>
             </div>
           </div>
         </div>
 
-        <div class="col-md-4">
-          <div class="card" style="width:60%;">
+        <div class="col-md-3">
+          <div class="card" style="width:80%;">
             <div class="card-body">
                 <img src="{% static 'img\CSE\ST.jpg' %}" style="margin:5px;border-radius:5px;-webkit-box-shadow:4px 4px 4px 4px rgb(234,234,234)" width="180" height="180" alt="">  
               <h6 class="card-title"><br>Mr. SANDEEP TULI</h6>
               <p class="card-text"><b>Qualification:</b> M.Tech <br><b>Experience:</b> 15+ Years</p>
-              <a href="#" class="btn btn-primary">Know more</a>
+              <a href="{% url 'individual_profile' username="sandeep" %}" class="btn btn-primary">Know more</a>
             </div>
           </div>
         </div>
 
-        <div class="col-md-4">
-            <div class="card" style="width:60%;">
+        <div class="col-md-3">
+            <div class="card" style="width:80%;">
               <div class="card-body">
                 <img src="{% static 'img\CSE\AK.jpg' %}" style="margin:5px;border-radius:5px;-webkit-box-shadow:4px 4px 4px 4px rgb(234,234,234)" width="180" height="180" alt="">  
                 <h6 class="card-title"><br>Dr. ANIL KUMAR</h6>
                 <p class="card-text"><b>Qualification:</b> Ph.D.<br><b>Experience:</b> 15+ Years</p>
-                <a href="#" class="btn btn-primary">Know more</a>
+                <a href="{% url 'individual_profile' username="anil" %}" class="btn btn-primary">Know more</a>
               </div>
             </div>
           </div>
@@ -214,35 +214,35 @@
 
     {% comment %} row 4 {% endcomment %}
         <div class="row" style="margin-top:50px;">
-            <div class="col-md-4">
-            <div class="card" style="width:60%;">
+            <div class="col-md-3">
+            <div class="card" style="width:80%;">
                 <div class="card-body">
                     <img src="{% static 'img\CSE\PS.jpg' %}" style="margin:5px;border-radius:5px;-webkit-box-shadow:4px 4px 4px 4px rgb(234,234,234)" width="180" height="180" alt="">  
                     <h6 class="card-title"><br>Ms. POOJA SHARMA</h6>
                     <p class="card-text"><b>Qualification:</b> M.Tech<br><b>Experience:</b> 12+ Years</p>
-                    <a href="#" class="btn btn-primary">Know more</a>
+                    <a href="{% url 'individual_profile' username="pooja" %}" class="btn btn-primary">Know more</a>
                 </div>
             </div>
         </div>
 
-        <div class="col-md-4">
-          <div class="card" style="width:60%;">
+        <div class="col-md-3">
+          <div class="card" style="width:80%;">
             <div class="card-body">
                 <img src="{% static 'img\CSE\MS.jpg' %}" style="margin:5px;border-radius:5px;-webkit-box-shadow:4px 4px 4px 4px rgb(234,234,234)" width="180" height="180" alt="">  
               <h6 class="card-title"><br>Mrs. MAMTA SAKPAL</h6>
               <p class="card-text"><b>Qualification:</b> M.Tech<br><b>Experience:</b> 15+ Years</p>
-              <a href="#" class="btn btn-primary">Know more</a>
+              <a href="{% url 'individual_profile' username="mamta" %}" class="btn btn-primary">Know more</a>
             </div>
           </div>
         </div>
 
-        <div class="col-md-4">
-            <div class="card" style="width:60%;">
+        <div class="col-md-3">
+            <div class="card" style="width:80%;">
               <div class="card-body">
                 <img src="{% static 'img\CSE\SB.jpg' %}" style="margin:5px;border-radius:5px;-webkit-box-shadow:4px 4px 4px 4px rgb(234,234,234)" width="180" height="180" alt="">  
                 <h6 class="card-title"><br>Ms. SHRUTI BIJAWAT</h6>
                 <p class="card-text"><b>Qualification:</b> M.Tech<br><b>Experience:</b> 13+ Years</p>
-                <a href="#" class="btn btn-primary">Know more</a>
+                <a href="{% url 'individual_profile' username="shruti" %}" class="btn btn-primary">Know more</a>
               </div>
             </div>
           </div>
@@ -252,8 +252,8 @@
 
 <div class="dept2" style="margin-top:100px;" id="dept2">  
     <div class="row" style="margin-top:50px;">
-        <div class="col-md-4">
-          <div class="card" style="width:60%;">
+        <div class="col-md-3">
+          <div class="card" style="width:80%;">
             <div class="card-body">
                 <img src="{% static 'img\EC\AC.jpg' %}" style="margin:5px;border-radius:5px;-webkit-box-shadow:4px 4px 4px 4px rgb(234,234,234)" width="180" height="180" alt="">  
               <h6 class="card-title"><br>Mr. ASHOK CHODHARY</h6>
@@ -263,8 +263,8 @@
           </div>
         </div>
     
-        <div class="col-md-4">
-          <div class="card" style="width:60%;">
+        <div class="col-md-3">
+          <div class="card" style="width:80%;">
             <div class="card-body">
                 <img src="{% static 'img\EC\BS.jpg' %}" style="margin:5px;border-radius:5px;-webkit-box-shadow:4px 4px 4px 4px rgb(234,234,234)" width="180" height="180" alt="">  
               <h6 class="card-title"><br>Mr. BHANWARVEER SINGH</h6>
@@ -274,8 +274,8 @@
           </div>
         </div>
 
-        <div class="col-md-4">
-            <div class="card" style="width:60%;">
+        <div class="col-md-3">
+            <div class="card" style="width:80%;">
               <div class="card-body">
                 <img src="{% static 'img\EC\MB.jpg' %}" style="margin:5px;border-radius:5px;-webkit-box-shadow:4px 4px 4px 4px rgb(234,234,234)" width="180" height="180" alt="">  
                 <h6 class="card-title"><br>Mr. MOHIT BAJPAI</h6>
@@ -289,8 +289,8 @@
     {% comment %} Row 2 {% endcomment %}
 
     <div class="row" style="margin-top:50px;">
-        <div class="col-md-4">
-          <div class="card" style="width:60%;">
+        <div class="col-md-3">
+          <div class="card" style="width:80%;">
             <div class="card-body">
                 <img src="{% static 'img\EC\GM.jpg' %}" style="margin:5px;border-radius:5px;-webkit-box-shadow:4px 4px 4px 4px rgb(234,234,234)" width="180" height="180" alt="">  
               <h6 class="card-title"><br>Dr. GARIMA MATHUR</h6>
@@ -300,8 +300,8 @@
           </div>
         </div>
 
-        <div class="col-md-4">
-          <div class="card" style="width:60%;">
+        <div class="col-md-3">
+          <div class="card" style="width:80%;">
             <div class="card-body">
                 <img src="{% static 'img\EC\AD.jpg' %}" style="margin:5px;border-radius:5px;-webkit-box-shadow:4px 4px 4px 4px rgb(234,234,234)" width="180" height="180" alt="">  
               <h6 class="card-title"><br>Dr. ANILA DHINGRA</h6>
@@ -311,8 +311,8 @@
           </div>
         </div>
 
-        <div class="col-md-4">
-            <div class="card" style="width:60%;">
+        <div class="col-md-3">
+            <div class="card" style="width:80%;">
               <div class="card-body">
                 <img src="{% static 'img\EC\PS.jpg' %}" style="margin:5px;border-radius:5px;-webkit-box-shadow:4px 4px 4px 4px rgb(234,234,234)" width="180" height="180" alt="">  
                 <h6 class="card-title"><br>Ms. PRIYANKA SHARMA</h6>
@@ -326,8 +326,8 @@
     {% comment %} row 3 {% endcomment %}
 
     <div class="row" style="margin-top:50px;">
-        <div class="col-md-4">
-          <div class="card" style="width:60%;">
+        <div class="col-md-3">
+          <div class="card" style="width:80%;">
             <div class="card-body">
                 <img src="{% static 'img\EC\TM.jpg' %}" style="margin:5px;border-radius:5px;-webkit-box-shadow:4px 4px 4px 4px rgb(234,234,234)" width="180" height="180" alt="">  
               <h6 class="card-title"><br>Mr. TARUN MISHRA</h6>
@@ -337,8 +337,8 @@
           </div>
         </div>
 
-        <div class="col-md-4">
-          <div class="card" style="width:60%;">
+        <div class="col-md-3">
+          <div class="card" style="width:80%;">
             <div class="card-body">
                 <img src="{% static 'img\EC\AK.jpg' %}" style="margin:5px;border-radius:5px;-webkit-box-shadow:4px 4px 4px 4px rgb(234,234,234)" width="180" height="180" alt="">  
               <h6 class="card-title"><br>Dr. ASHOK KAJLA</h6>
@@ -348,8 +348,8 @@
           </div>
         </div>
 
-        <div class="col-md-4">
-            <div class="card" style="width:60%;">
+        <div class="col-md-3">
+            <div class="card" style="width:80%;">
               <div class="card-body">
                 <img src="{% static 'img\EC\AKS.jpg' %}" style="margin:5px;border-radius:5px;-webkit-box-shadow:4px 4px 4px 4px rgb(234,234,234)" width="180" height="180" alt="">  
                 <h6 class="card-title"><br>Dr. AK SINHA</h6>
@@ -362,8 +362,8 @@
 
     {% comment %} row 4 {% endcomment %}
         <div class="row" style="margin-top:50px;">
-            <div class="col-md-4">
-            <div class="card" style="width:60%;">
+            <div class="col-md-3">
+            <div class="card" style="width:80%;">
                 <div class="card-body">
                     <img src="{% static 'img\EC\NG.jpg' %}" style="margin:5px;border-radius:5px;-webkit-box-shadow:4px 4px 4px 4px rgb(234,234,234)" width="180" height="180" alt="">  
                     <h6 class="card-title"><br>Ms. NIKITA GAUTAM</h6>
@@ -373,8 +373,8 @@
             </div>
         </div>
 
-        <div class="col-md-4">
-          <div class="card" style="width:60%;">
+        <div class="col-md-3">
+          <div class="card" style="width:80%;">
             <div class="card-body">
                 <img src="{% static 'img\EC\VDG.jpg' %}" style="margin:5px;border-radius:5px;-webkit-box-shadow:4px 4px 4px 4px rgb(234,234,234)" width="180" height="180" alt="">  
               <h6 class="card-title"><br>Ms. VIJAY DEEP GUPTA</h6>
@@ -384,8 +384,8 @@
           </div>
         </div>
 
-        <div class="col-md-4">
-            <div class="card" style="width:60%;">
+        <div class="col-md-3">
+            <div class="card" style="width:80%;">
               <div class="card-body">
                 <img src="{% static 'img\EC\PB.jpg' %}" style="margin:5px;border-radius:5px;-webkit-box-shadow:4px 4px 4px 4px rgb(234,234,234)" width="180" height="180" alt="">  
                 <h6 class="card-title"><br>Dr. PAYAL BANSAL</h6>
@@ -401,8 +401,8 @@
 
 <div class="dept3" style="margin-top:100px;" id="dept3">  
     <div class="row" style="margin-top:50px;">
-        <div class="col-md-4">
-          <div class="card" style="width:60%;">
+        <div class="col-md-3">
+          <div class="card" style="width:80%;">
             <div class="card-body">
                 <img src="{% static 'img\EE\ABS.jpg' %}" style="margin:5px;border-radius:5px;-webkit-box-shadow:4px 4px 4px 4px rgb(234,234,234)" width="180" height="180" alt="">  
                 <h6 class="card-title"><br>Mr. ABHISHEK SINGH</h6>
@@ -412,8 +412,8 @@
           </div>
         </div>
         
-        <div class="col-md-4">
-          <div class="card" style="width:60%;">
+        <div class="col-md-3">
+          <div class="card" style="width:80%;">
             <div class="card-body">
                 <img src="{% static 'img\EE\AS.jpg' %}" style="margin:5px;border-radius:5px;-webkit-box-shadow:4px 4px 4px 4px rgb(234,234,234)" width="180" height="180" alt="">  
               <h6 class="card-title"><br>Dr. AMIT SHRIVASTAVA</h6>
@@ -423,8 +423,8 @@
           </div>
         </div>
 
-        <div class="col-md-4">
-            <div class="card" style="width:60%;">
+        <div class="col-md-3">
+            <div class="card" style="width:80%;">
               <div class="card-body">
                 <img src="{% static 'img\EE\SJ.jpg' %}" style="margin:5px;border-radius:5px;-webkit-box-shadow:4px 4px 4px 4px rgb(234,234,234)" width="180" height="180" alt="">  
                 <h6 class="card-title"><br>Mr. SUHIL JAIN</h6>
@@ -438,8 +438,8 @@
     {% comment %} Row 2 {% endcomment %}
 
     <div class="row" style="margin-top:50px;">
-        <div class="col-md-4">
-          <div class="card" style="width:60%;">
+        <div class="col-md-3">
+          <div class="card" style="width:80%;">
             <div class="card-body">
                 <img src="{% static 'img\EE\BKJ.jpg' %}" style="margin:5px;border-radius:5px;-webkit-box-shadow:4px 4px 4px 4px rgb(234,234,234)" width="180" height="180" alt="">  
               <h6 class="card-title"><br>Dr. BABITA KUMARI JAIN</h6>
@@ -449,8 +449,8 @@
           </div>
         </div>
 
-        <div class="col-md-4">
-          <div class="card" style="width:60%;">
+        <div class="col-md-3">
+          <div class="card" style="width:80%;">
             <div class="card-body">
                 <img src="{% static 'img\EE\DC.jpg' %}" style="margin:5px;border-radius:5px;-webkit-box-shadow:4px 4px 4px 4px rgb(234,234,234)" width="180" height="180" alt="">  
               <h6 class="card-title"><br>Dr. DEEPIKA CHAUHAN</h6>
@@ -460,8 +460,8 @@
           </div>
         </div>
 
-        <div class="col-md-4">
-            <div class="card" style="width:60%;">
+        <div class="col-md-3">
+            <div class="card" style="width:80%;">
               <div class="card-body">
                 <img src="{% static 'img\EE\SS.jpg' %}" style="margin:5px;border-radius:5px;-webkit-box-shadow:4px 4px 4px 4px rgb(234,234,234)" width="180" height="180" alt="">  
                 <h6 class="card-title"><br>Mrs. SHUCHI SHUKLA</h6>
@@ -475,8 +475,8 @@
     {% comment %} row 3 {% endcomment %}
 
     <div class="row" style="margin-top:50px;">
-        <div class="col-md-4">
-          <div class="card" style="width:60%;">
+        <div class="col-md-3">
+          <div class="card" style="width:80%;">
             <div class="card-body">
                 <img src="{% static 'img\EE\SC.jpg' %}" style="margin:5px;border-radius:5px;-webkit-box-shadow:4px 4px 4px 4px rgb(234,234,234)" width="180" height="180" alt="">  
               <h6 class="card-title"><br>Mr. SUGREEV CHAUDHARY</h6>
@@ -486,8 +486,8 @@
           </div>
         </div>
 
-        <div class="col-md-4">
-          <div class="card" style="width:60%;">
+        <div class="col-md-3">
+          <div class="card" style="width:80%;">
             <div class="card-body">
                 <img src="{% static 'img\EE\MM.jpg' %}" style="margin:5px;border-radius:5px;-webkit-box-shadow:4px 4px 4px 4px rgb(234,234,234)" width="180" height="180" alt="">  
               <h6 class="card-title"><br>Mr. MANISH MEENA</h6>
@@ -497,8 +497,8 @@
           </div>
         </div>
 
-        <div class="col-md-4">
-            <div class="card" style="width:60%;">
+        <div class="col-md-3">
+            <div class="card" style="width:80%;">
               <div class="card-body">
                 <img src="{% static 'img\EE\PS.jpg' %}" style="margin:5px;border-radius:5px;-webkit-box-shadow:4px 4px 4px 4px rgb(234,234,234)" width="180" height="180" alt="">  
                 <h6 class="card-title"><br>Dr. PRAVIN SONWANET</h6>
@@ -511,8 +511,8 @@
 
     {% comment %} row 4 {% endcomment %}
         <div class="row" style="margin-top:50px;">
-            <div class="col-md-4">
-            <div class="card" style="width:60%;">
+            <div class="col-md-3">
+            <div class="card" style="width:80%;">
                 <div class="card-body">
                     <img src="{% static 'img\EE\VPS.jpg' %}" style="margin:5px;border-radius:5px;-webkit-box-shadow:4px 4px 4px 4px rgb(234,234,234)" width="180" height="180" alt="">  
                     <h6 class="card-title"><br>Mr. VISHNU PRAKASH SHARMA</h6>
@@ -522,8 +522,8 @@
             </div>
         </div>
 
-        <div class="col-md-4">
-          <div class="card" style="width:60%;">
+        <div class="col-md-3">
+          <div class="card" style="width:80%;">
             <div class="card-body">
                 <img src="{% static 'img\EE\DKD.jpg' %}" style="margin:5px;border-radius:5px;-webkit-box-shadow:4px 4px 4px 4px rgb(234,234,234)" width="180" height="180" alt="">  
               <h6 class="card-title"><br>Mr. DEVENDRA KUMAR DODA</h6>
@@ -533,8 +533,8 @@
           </div>
         </div>
 
-        <div class="col-md-4">
-            <div class="card" style="width:60%;">
+        <div class="col-md-3">
+            <div class="card" style="width:80%;">
               <div class="card-body">
                 <img src="{% static 'img\EE\HGS.jpg' %}" style="margin:5px;border-radius:5px;-webkit-box-shadow:4px 4px 4px 4px rgb(234,234,234)" width="180" height="180" alt="">  
                 <h6 class="card-title"><br>Dr. HIMANI GOYAL SHARMA</h6>
@@ -550,8 +550,8 @@
     
 <div class="dept4" style="margin-top:100px;" id="dept4">  
   <div class="row" style="margin-top:50px;">
-      <div class="col-md-4">
-        <div class="card" style="width:60%;">
+      <div class="col-md-3">
+        <div class="card" style="width:80%;">
           <div class="card-body">
               <img src="{% static 'img\ME\MI.jpg' %}" style="margin:5px;border-radius:5px;-webkit-box-shadow:4px 4px 4px 4px rgb(234,234,234)" width="180" height="180" alt="">  
               <h6 class="card-title"><br>Dr. Mohammad Israr</h6>
@@ -561,8 +561,8 @@
         </div>
       </div>
       
-      <div class="col-md-4">
-        <div class="card" style="width:60%;">
+      <div class="col-md-3">
+        <div class="card" style="width:80%;">
           <div class="card-body">
               <img src="{% static 'img\ME\NLJ.jpg' %}" style="margin:5px;border-radius:5px;-webkit-box-shadow:4px 4px 4px 4px rgb(234,234,234)" width="180" height="180" alt="">  
             <h6 class="card-title"><br>Dr. Narayan Lal Jain</h6>
@@ -572,8 +572,8 @@
         </div>
       </div>
 
-      <div class="col-md-4">
-          <div class="card" style="width:60%;">
+      <div class="col-md-3">
+          <div class="card" style="width:80%;">
             <div class="card-body">
               <img src="{% static 'img\ME\SK.jpg' %}" style="margin:5px;border-radius:5px;-webkit-box-shadow:4px 4px 4px 4px rgb(234,234,234)" width="180" height="180" alt="">  
               <h6 class="card-title"><br>Mr. Sanjay Kumawat</h6>
@@ -587,8 +587,8 @@
   {% comment %} Row 2 {% endcomment %}
 
   <div class="row" style="margin-top:50px;">
-      <div class="col-md-4">
-        <div class="card" style="width:60%;">
+      <div class="col-md-3">
+        <div class="card" style="width:80%;">
           <div class="card-body">
               <img src="{% static 'img\ME\AK.jpg' %}" style="margin:5px;border-radius:5px;-webkit-box-shadow:4px 4px 4px 4px rgb(234,234,234)" width="180" height="180" alt="">  
             <h6 class="card-title"><br>Ms. Asha Kumawat</h6>
@@ -598,8 +598,8 @@
         </div>
       </div>
 
-      <div class="col-md-4">
-        <div class="card" style="width:60%;">
+      <div class="col-md-3">
+        <div class="card" style="width:80%;">
           <div class="card-body">
               <img src="{% static 'img\ME\AM.jpg' %}" style="margin:5px;border-radius:5px;-webkit-box-shadow:4px 4px 4px 4px rgb(234,234,234)" width="180" height="180" alt="">  
             <h6 class="card-title"><br>Mr. Amit Mandal</h6>
@@ -609,8 +609,8 @@
         </div>
       </div>
 
-      <div class="col-md-4">
-          <div class="card" style="width:60%;">
+      <div class="col-md-3">
+          <div class="card" style="width:80%;">
             <div class="card-body">
               <img src="{% static 'img\ME\RKS.jpg' %}" style="margin:5px;border-radius:5px;-webkit-box-shadow:4px 4px 4px 4px rgb(234,234,234)" width="180" height="180" alt="">  
               <h6 class="card-title"><br>Dr. Raj Kumar Satankar</h6>
@@ -624,8 +624,8 @@
   {% comment %} row 3 {% endcomment %}
 
   <div class="row" style="margin-top:50px;">
-      <div class="col-md-4">
-        <div class="card" style="width:60%;">
+      <div class="col-md-3">
+        <div class="card" style="width:80%;">
           <div class="card-body">
               <img src="{% static 'img\ME\SHK.jpg' %}" style="margin:5px;border-radius:5px;-webkit-box-shadow:4px 4px 4px 4px rgb(234,234,234)" width="180" height="180" alt="">  
             <h6 class="card-title"><br>Mr. Shailendra Kasera</h6>
@@ -635,8 +635,8 @@
         </div>
       </div>
 
-      <div class="col-md-4">
-        <div class="card" style="width:60%;">
+      <div class="col-md-3">
+        <div class="card" style="width:80%;">
           <div class="card-body">
               <img src="{% static 'img\ME\KJ.jpg' %}" style="margin:5px;border-radius:5px;-webkit-box-shadow:4px 4px 4px 4px rgb(234,234,234)" width="180" height="180" alt="">  
             <h6 class="card-title"><br>Mr. Kalpit Jain</h6>
@@ -646,8 +646,8 @@
         </div>
       </div>
 
-      <div class="col-md-4">
-          <div class="card" style="width:60%;">
+      <div class="col-md-3">
+          <div class="card" style="width:80%;">
             <div class="card-body">
               <img src="{% static 'img\ME\BD.jpg' %}" style="margin:5px;border-radius:5px;-webkit-box-shadow:4px 4px 4px 4px rgb(234,234,234)" width="180" height="180" alt="">  
               <h6 class="card-title"><br>Mr. Bhavesh Devra</h6>
@@ -660,8 +660,8 @@
 
   {% comment %} row 4 {% endcomment %}
       <div class="row" style="margin-top:50px;">
-          <div class="col-md-4">
-          <div class="card" style="width:60%;">
+          <div class="col-md-3">
+          <div class="card" style="width:80%;">
               <div class="card-body">
                   <img src="{% static 'img\ME\MS.jpg' %}" style="margin:5px;border-radius:5px;-webkit-box-shadow:4px 4px 4px 4px rgb(234,234,234)" width="180" height="180" alt="">  
                   <h6 class="card-title"><br>Mr. Manoj Sharma</h6>
@@ -671,8 +671,8 @@
           </div>
       </div>
 
-      <div class="col-md-4">
-        <div class="card" style="width:60%;">
+      <div class="col-md-3">
+        <div class="card" style="width:80%;">
           <div class="card-body">
               <img src="{% static 'img\ME\NMM.jpg' %}" style="margin:5px;border-radius:5px;-webkit-box-shadow:4px 4px 4px 4px rgb(234,234,234)" width="180" height="180" alt="">  
             <h6 class="card-title"><br>Mr. Nitin Mukesh Mathur</h6>
@@ -682,8 +682,8 @@
         </div>
       </div>
 
-      <div class="col-md-4">
-          <div class="card" style="width:60%;">
+      <div class="col-md-3">
+          <div class="card" style="width:80%;">
             <div class="card-body">
               <img src="{% static 'img\ME\MP.jpg' %}" style="margin:5px;border-radius:5px;-webkit-box-shadow:4px 4px 4px 4px rgb(234,234,234)" width="180" height="180" alt="">  
               <h6 class="card-title"><br>Mr. Manish Prakash</h6>
@@ -699,8 +699,8 @@
 
 <div class="dept5" style="margin-top:100px;" id="dept5">  
   <div class="row" style="margin-top:50px;">
-      <div class="col-md-4">
-        <div class="card" style="width:60%;">
+      <div class="col-md-3">
+        <div class="card" style="width:80%;">
           <div class="card-body">
               <img src="{% static 'img\CE\B.jpg' %}" style="margin:5px;border-radius:5px;-webkit-box-shadow:4px 4px 4px 4px rgb(234,234,234)" width="180" height="180" alt="">  
               <h6 class="card-title"><br>Mr. Balwan</h6>
@@ -710,8 +710,8 @@
         </div>
       </div>
       
-      <div class="col-md-4">
-        <div class="card" style="width:60%;">
+      <div class="col-md-3">
+        <div class="card" style="width:80%;">
           <div class="card-body">
               <img src="{% static 'img\CE\DV.jpg' %}" style="margin:5px;border-radius:5px;-webkit-box-shadow:4px 4px 4px 4px rgb(234,234,234)" width="180" height="180" alt="">  
             <h6 class="card-title"><br>Mr. Divya Vishnoi</h6>
@@ -721,8 +721,8 @@
         </div>
       </div>
 
-      <div class="col-md-4">
-          <div class="card" style="width:60%;">
+      <div class="col-md-3">
+          <div class="card" style="width:80%;">
             <div class="card-body">
               <img src="{% static 'img\CE\HSC.jpg' %}" style="margin:5px;border-radius:5px;-webkit-box-shadow:4px 4px 4px 4px rgb(234,234,234)" width="180" height="180" alt="">  
               <h6 class="card-title"><br>Dr. Harshwardhan Singh Chouhan</h6>
@@ -736,8 +736,8 @@
   {% comment %} Row 2 {% endcomment %}
 
   <div class="row" style="margin-top:50px;">
-      <div class="col-md-4">
-        <div class="card" style="width:60%;">
+      <div class="col-md-3">
+        <div class="card" style="width:80%;">
           <div class="card-body">
               <img src="{% static 'img\CE\S.jpg' %}" style="margin:5px;border-radius:5px;-webkit-box-shadow:4px 4px 4px 4px rgb(234,234,234)" width="180" height="180" alt="">  
             <h6 class="card-title"><br>Ms. Shivanshi</h6>
@@ -747,8 +747,8 @@
         </div>
       </div>
 
-      <div class="col-md-4">
-        <div class="card" style="width:60%;">
+      <div class="col-md-3">
+        <div class="card" style="width:80%;">
           <div class="card-body">
               <img src="{% static 'img\CE\PG.jpg' %}" style="margin:5px;border-radius:5px;-webkit-box-shadow:4px 4px 4px 4px rgb(234,234,234)" width="180" height="180" alt="">  
             <h6 class="card-title"><br>Dr. POOJA GUPTA</h6>
@@ -758,8 +758,8 @@
         </div>
       </div>
 
-      <div class="col-md-4">
-          <div class="card" style="width:60%;">
+      <div class="col-md-3">
+          <div class="card" style="width:80%;">
             <div class="card-body">
               <img src="{% static 'img\CE\PND.jpg' %}" style="margin:5px;border-radius:5px;-webkit-box-shadow:4px 4px 4px 4px rgb(234,234,234)" width="180" height="180" alt="">  
               <h6 class="card-title"><br>Dr. Pran Nath Dadhich</h6>
@@ -773,8 +773,8 @@
   {% comment %} row 3 {% endcomment %}
 
   <div class="row" style="margin-top:50px;">
-      <div class="col-md-4">
-        <div class="card" style="width:60%;">
+      <div class="col-md-3">
+        <div class="card" style="width:80%;">
           <div class="card-body">
               <img src="{% static 'img\CE\SKG.jpg' %}" style="margin:5px;border-radius:5px;-webkit-box-shadow:4px 4px 4px 4px rgb(234,234,234)" width="180" height="180" alt="">  
             <h6 class="card-title"><br>Dr. SUSHINDRA KUMAR GUPTAt</h6>
@@ -789,8 +789,8 @@
 
 <div class="dept6" style="margin-top:100px;" id="dept6">  
   <div class="row" style="margin-top:50px;">
-      <div class="col-md-4">
-        <div class="card" style="width:60%;">
+      <div class="col-md-3">
+        <div class="card" style="width:80%;">
           <div class="card-body">
               <img src="{% static 'img\CHEM\RN.jpg' %}" style="margin:5px;border-radius:5px;-webkit-box-shadow:4px 4px 4px 4px rgb(234,234,234)" width="180" height="180" alt="">  
               <h6 class="card-title"><br>Dr. Rekha Nair</h6>
@@ -800,8 +800,8 @@
         </div>
       </div>
       
-      <div class="col-md-4">
-        <div class="card" style="width:60%;">
+      <div class="col-md-3">
+        <div class="card" style="width:80%;">
           <div class="card-body">
               <img src="{% static 'img\CHEM\SJ.jpg' %}" style="margin:5px;border-radius:5px;-webkit-box-shadow:4px 4px 4px 4px rgb(234,234,234)" width="180" height="180" alt="">  
             <h6 class="card-title"><br>Dr. Sama Jain</h6>
@@ -811,8 +811,8 @@
         </div>
       </div>
 
-      <div class="col-md-4">
-          <div class="card" style="width:60%;">
+      <div class="col-md-3">
+          <div class="card" style="width:80%;">
             <div class="card-body">
               <img src="{% static 'img\CHEM\PM.jpg' %}" style="margin:5px;border-radius:5px;-webkit-box-shadow:4px 4px 4px 4px rgb(234,234,234)" width="180" height="180" alt="">  
               <h6 class="card-title"><br>Dr. Pallavi Mishra</h6>
@@ -826,8 +826,8 @@
   {% comment %} Row 2 {% endcomment %}
 
   <div class="row" style="margin-top:50px;">
-      <div class="col-md-4">
-        <div class="card" style="width:60%;">
+      <div class="col-md-3">
+        <div class="card" style="width:80%;">
           <div class="card-body">
               <img src="{% static 'img\CHEM\AM.jpg' %}" style="margin:5px;border-radius:5px;-webkit-box-shadow:4px 4px 4px 4px rgb(234,234,234)" width="180" height="180" alt="">  
             <h6 class="card-title"><br>Dr. Anurika Mehta</h6>
@@ -837,8 +837,8 @@
         </div>
       </div>
 
-      <div class="col-md-4">
-        <div class="card" style="width:60%;">
+      <div class="col-md-3">
+        <div class="card" style="width:80%;">
           <div class="card-body">
               <img src="{% static 'img\CHEM\MT.jpg' %}" style="margin:5px;border-radius:5px;-webkit-box-shadow:4px 4px 4px 4px rgb(234,234,234)" width="180" height="180" alt="">  
             <h6 class="card-title"><br>Meena Tekriwal</h6>
@@ -848,8 +848,8 @@
         </div>
       </div>
 
-      <div class="col-md-4">
-          <div class="card" style="width:60%;">
+      <div class="col-md-3">
+          <div class="card" style="width:80%;">
             <div class="card-body">
               <img src="{% static 'img\CHEM\RS.jpg' %}" style="margin:5px;border-radius:5px;-webkit-box-shadow:4px 4px 4px 4px rgb(234,234,234)" width="180" height="180" alt="">  
               <h6 class="card-title"><br>Ms. Riddhi Shrivastava</h6>
@@ -864,8 +864,8 @@
 
 <div class="dept7" style="margin-top:100px;" id="dept7">  
   <div class="row" style="margin-top:50px;">
-      <div class="col-md-4">
-        <div class="card" style="width:60%;">
+      <div class="col-md-3">
+        <div class="card" style="width:80%;">
           <div class="card-body">
               <img src="{% static 'img\PHY\NJ.jpg' %}" style="margin:5px;border-radius:5px;-webkit-box-shadow:4px 4px 4px 4px rgb(234,234,234)" width="180" height="180" alt="">  
               <h6 class="card-title"><br>Dr. Neeraj Jain</h6>
@@ -875,8 +875,8 @@
         </div>
       </div>
       
-      <div class="col-md-4">
-        <div class="card" style="width:60%;">
+      <div class="col-md-3">
+        <div class="card" style="width:80%;">
           <div class="card-body">
               <img src="{% static 'img\PHY\MCH.jpg' %}" style="margin:5px;border-radius:5px;-webkit-box-shadow:4px 4px 4px 4px rgb(234,234,234)" width="180" height="180" alt="">  
             <h6 class="card-title"><br>Dr. Mukesh Chandra</h6>
@@ -886,8 +886,8 @@
         </div>
       </div>
 
-      <div class="col-md-4">
-          <div class="card" style="width:60%;">
+      <div class="col-md-3">
+          <div class="card" style="width:80%;">
             <div class="card-body">
               <img src="{% static 'img\PHY\NA.jpg' %}" style="margin:5px;border-radius:5px;-webkit-box-shadow:4px 4px 4px 4px rgb(234,234,234)" width="180" height="180" alt="">  
               <h6 class="card-title"><br>Mr. Nagendra Agarwal</h6>
@@ -901,8 +901,8 @@
   {% comment %} Row 2 {% endcomment %}
 
     <div class="row" style="margin-top:50px;">
-      <div class="col-md-4">
-        <div class="card" style="width:60%;">
+      <div class="col-md-3">
+        <div class="card" style="width:80%;">
           <div class="card-body">
               <img src="{% static 'img\PHY\AS.jpg' %}" style="margin:5px;border-radius:5px;-webkit-box-shadow:4px 4px 4px 4px rgb(234,234,234)" width="180" height="180" alt="">  
             <h6 class="card-title"><br>Ashima Sharma</h6>
@@ -912,8 +912,8 @@
         </div>
       </div>
 
-      <div class="col-md-4">
-        <div class="card" style="width:60%;">
+      <div class="col-md-3">
+        <div class="card" style="width:80%;">
           <div class="card-body">
               <img src="{% static 'img\PHY\RK.jpg' %}" style="margin:5px;border-radius:5px;-webkit-box-shadow:4px 4px 4px 4px rgb(234,234,234)" width="180" height="180" alt="">  
             <h6 class="card-title"><br>Mr. Nagendra Agarwal</h6>
@@ -923,8 +923,8 @@
         </div>
       </div>
 
-      <div class="col-md-4">
-          <div class="card" style="width:60%;">
+      <div class="col-md-3">
+          <div class="card" style="width:80%;">
             <div class="card-body">
               <img src="{% static 'img\PHY\LKG.jpg' %}" style="margin:5px;border-radius:5px;-webkit-box-shadow:4px 4px 4px 4px rgb(234,234,234)" width="180" height="180" alt="">  
               <h6 class="card-title"><br>Mr. Laxmi Kant Gupta</h6>
@@ -940,8 +940,8 @@
 
 <div class="dept8" style="margin-top:100px;" id="dept8">  
   <div class="row" style="margin-top:50px;">
-      <div class="col-md-4">
-        <div class="card" style="width:60%;">
+      <div class="col-md-3">
+        <div class="card" style="width:80%;">
           <div class="card-body">
               <img src="{% static 'img\MATH\KKG.jpg' %}" style="margin:5px;border-radius:5px;-webkit-box-shadow:4px 4px 4px 4px rgb(234,234,234)" width="180" height="180" alt="">  
               <h6 class="card-title"><br>Dr. Krishan Kumar Gupta</h6>
@@ -951,8 +951,8 @@
         </div>
       </div>
       
-      <div class="col-md-4">
-        <div class="card" style="width:60%;">
+      <div class="col-md-3">
+        <div class="card" style="width:80%;">
           <div class="card-body">
               <img src="{% static 'img\MATH\AB.jpg' %}" style="margin:5px;border-radius:5px;-webkit-box-shadow:4px 4px 4px 4px rgb(234,234,234)" width="180" height="180" alt="">  
             <h6 class="card-title"><br>Mr. Amarjeet Bharti</h6>
@@ -962,8 +962,8 @@
         </div>
       </div>
 
-      <div class="col-md-4">
-          <div class="card" style="width:60%;">
+      <div class="col-md-3">
+          <div class="card" style="width:80%;">
             <div class="card-body">
               <img src="{% static 'img\MATH\OPS.jpg' %}" style="margin:5px;border-radius:5px;-webkit-box-shadow:4px 4px 4px 4px rgb(234,234,234)" width="180" height="180" alt="">  
               <h6 class="card-title"><br>Dr. Om Prakash Sikhwal</h6>
@@ -977,8 +977,8 @@
   {% comment %} Row 2 {% endcomment %}
 
     <div class="row" style="margin-top:50px;">
-      <div class="col-md-4">
-        <div class="card" style="width:60%;">
+      <div class="col-md-3">
+        <div class="card" style="width:80%;">
           <div class="card-body">
               <img src="{% static 'img\MATH\SJ.jpg' %}" style="margin:5px;border-radius:5px;-webkit-box-shadow:4px 4px 4px 4px rgb(234,234,234)" width="180" height="180" alt="">  
             <h6 class="card-title"><br>Dr. Shilpi Jain</h6>
@@ -988,8 +988,8 @@
         </div>
       </div>
 
-      <div class="col-md-4">
-        <div class="card" style="width:60%;">
+      <div class="col-md-3">
+        <div class="card" style="width:80%;">
           <div class="card-body">
               <img src="{% static 'img\MATH\SD.jpg' %}" style="margin:5px;border-radius:5px;-webkit-box-shadow:4px 4px 4px 4px rgb(234,234,234)" width="180" height="180" alt="">  
             <h6 class="card-title"><br>Dr. Shuchi Dave</h6>
@@ -999,8 +999,8 @@
         </div>
       </div>
 
-      <div class="col-md-4">
-          <div class="card" style="width:60%;">
+      <div class="col-md-3">
+          <div class="card" style="width:80%;">
             <div class="card-body">
               <img src="{% static 'img\MATH\AA.jpg' %}" style="margin:5px;border-radius:5px;-webkit-box-shadow:4px 4px 4px 4px rgb(234,234,234)" width="180" height="180" alt="">  
               <h6 class="card-title"><br>Ms. Anu Arora</h6>
@@ -1012,8 +1012,8 @@
     </div>
   {% comment %} Row 3 {% endcomment %}
     <div class="row" style="margin-top:50px;">
-      <div class="col-md-4">
-        <div class="card" style="width:60%;">
+      <div class="col-md-3">
+        <div class="card" style="width:80%;">
           <div class="card-body">
               <img src="{% static 'img\MATH\SKY.jpg' %}" style="margin:5px;border-radius:5px;-webkit-box-shadow:4px 4px 4px 4px rgb(234,234,234)" width="180" height="180" alt="">  
               <h6 class="card-title"><br>Dr. Sunil Kumar Yadav</h6>
@@ -1023,8 +1023,8 @@
         </div>
       </div>
 
-      <div class="col-md-4">
-        <div class="card" style="width:60%;">
+      <div class="col-md-3">
+        <div class="card" style="width:80%;">
           <div class="card-body">
               <img src="{% static 'img\MATH\GS.jpg' %}" style="margin:5px;border-radius:5px;-webkit-box-shadow:4px 4px 4px 4px rgb(234,234,234)" width="180" height="180" alt="">  
               <h6 class="card-title"><br>Dr. Govind Sharma</h6>
@@ -1040,8 +1040,8 @@
 
 <div class="dept9" style="margin-top:100px;"id="dept9">  
   <div class="row" style="margin-top:50px;">
-      <div class="col-md-4">
-        <div class="card" style="width:60%;">
+      <div class="col-md-3">
+        <div class="card" style="width:80%;">
           <div class="card-body">
               <img src="{% static 'img\ENG\DS.jpg' %}" style="margin:5px;border-radius:5px;-webkit-box-shadow:4px 4px 4px 4px rgb(234,234,234)" width="180" height="180" alt="">  
               <h6 class="card-title"><br>Mr. Dinesh Kumar Sharma</h6>
@@ -1051,8 +1051,8 @@
         </div>
       </div>
       
-      <div class="col-md-4">
-        <div class="card" style="width:60%;">
+      <div class="col-md-3">
+        <div class="card" style="width:80%;">
           <div class="card-body">
               <img src="{% static 'img\ENG\KS.jpg' %}" style="margin:5px;border-radius:5px;-webkit-box-shadow:4px 4px 4px 4px rgb(234,234,234)" width="180" height="180" alt="">  
             <h6 class="card-title"><br>Mr. Kuldip Sharma</h6>
@@ -1062,8 +1062,8 @@
         </div>
       </div>
 
-      <div class="col-md-4">
-          <div class="card" style="width:60%;">
+      <div class="col-md-3">
+          <div class="card" style="width:80%;">
             <div class="card-body">
               <img src="{% static 'img\ENG\SR.jpg' %}" style="margin:5px;border-radius:5px;-webkit-box-shadow:4px 4px 4px 4px rgb(234,234,234)" width="180" height="180" alt="">  
               <h6 class="card-title"><br>Dr. Sudhi Rajeev</h6>
@@ -1077,8 +1077,8 @@
   {% comment %} Row 2 {% endcomment %}
 
   <div class="row" style="margin-top:50px;">
-      <div class="col-md-4">
-        <div class="card" style="width:60%;">
+      <div class="col-md-3">
+        <div class="card" style="width:80%;">
           <div class="card-body">
               <img src="{% static 'img\ENG\RS.jpg' %}" style="margin:5px;border-radius:5px;-webkit-box-shadow:4px 4px 4px 4px rgb(234,234,234)" width="180" height="180" alt="">  
             <h6 class="card-title"><br>Dr. Ritu Soryan</h6>
@@ -1088,8 +1088,8 @@
         </div>
       </div>
 
-      <div class="col-md-4">
-        <div class="card" style="width:60%;">
+      <div class="col-md-3">
+        <div class="card" style="width:80%;">
           <div class="card-body">
               <img src="{% static 'img\ENG\SKS.jpg' %}" style="margin:5px;border-radius:5px;-webkit-box-shadow:4px 4px 4px 4px rgb(234,234,234)" width="180" height="180" alt="">  
             <h6 class="card-title"><br>Ms. Sarveen Kaur Sachdeva</h6>

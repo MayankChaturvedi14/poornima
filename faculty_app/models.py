@@ -69,12 +69,15 @@ class Career(models.Model):
 
 
 class FacultyProfile(models.Model):
-    email = models.CharField(max_length=100)
+    user = models.CharField(default=None, blank=True, null=True,max_length=100)
+    f_name = models.CharField(default=None, blank=True, null=True,max_length=100)
+    l_name = models.CharField(default=None, blank=True, null=True,max_length=100)
+    email = models.CharField(default=None, blank=True, null=True,max_length=100)
     education = models.CharField(default=None, blank=True, null=True,max_length=20,)
     areaofinterest = models.CharField(default=None, blank=True, null=True,max_length=50)
     subjects = models.CharField(default=None, blank=True, null=True,max_length=500)
     publications = models.CharField(default=None, blank=True, null=True,max_length=500)
     research = models.CharField(default=None, blank=True, null=True,max_length=500)
-    image = models.ImageField(upload_to='profile_image' , blank=True)
-    
+    image = models.ImageField(default=None,upload_to='profile_image' , blank=True)
+
     

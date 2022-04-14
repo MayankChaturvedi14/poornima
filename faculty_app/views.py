@@ -1,5 +1,6 @@
 from django.shortcuts import render,redirect
 from .models import ContactUs,Feedback,Career,FacultyProfile
+from django.http import HttpResponse
 from django.contrib import messages
 from django.contrib.auth import login
 from django.contrib.auth import logout as django_logout
@@ -43,6 +44,7 @@ def faculty_profile(request):
         record.save()
     try:
         at = FacultyProfile.objects.get(email=user_email)
+        print("\n\n\n=======>",at.publications,"\n\n\n")
         return render(request,"Faculty_profile.html",{"user_details":request.user,"profile_details":at})
     except:
         return render(request,"Faculty_profile.html",{"user_details":request.user,"profile_details":"Non available","media_url":settings.MEDIA_URL})
@@ -197,3 +199,8 @@ def hostal(request):
 
 def technical_events(request):
     return render(request,"technical events.html")
+
+def get_user_profile(request,username):
+    user = User.objects.get(username=username)
+    at = FacultyProfile.objects.get(email=user.email)
+    return render(request, 'user_profile.html', {"user_details":user,"profile_details":at,"media_url":settings.MEDIA_URL})
