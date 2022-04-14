@@ -23,6 +23,7 @@ urlpatterns = [
     path('ad',views.admission,name="admission"),
     path('hostals',views.hostal,name="hostal"),
     path('career',views.career,name="career"),
+    path('logout',views.logout,name="logout"),
     path('tech-events',views.technical_events,name="techevents"),
 ]
 if settings.DEBUG:

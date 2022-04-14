@@ -1,9 +1,11 @@
-from django.http import request
 from django.shortcuts import render,redirect
-from django.http import HttpResponse, HttpResponseRedirect
-from .models import ContactUs,Feedback,Career
+from .models import ContactUs,Feedback,Career,FacultyProfile
 from django.contrib import messages
-
+from django.contrib.auth import login
+from django.contrib.auth import logout as django_logout
+from django.contrib.auth.models import User
+from django.contrib.auth.decorators import login_required
+from django.conf import settings
 # Create your views here.
 def home(request):
     return render(request,"demo.html")
@@ -14,14 +16,66 @@ def place(request):
 def current_faculty(request):
     return render(request,'Faculty.html')
 
-def facultyLogin(request):
-    return render(request,"faculty_login.html")
 
 def faculty_view(request):
     return render(request,"faculty_main.html")
 
+@login_required(login_url='/f/')
 def faculty_profile(request):
-    return render(request,"Faculty_profile.html")
+    user_email = request.user.email
+    if request.method=="POST":
+        edu = request.POST["edu"]
+        aoi = request.POST["aoi"]
+        sub = request.POST["sub"]
+        publications = request.POST["publications"]
+        research_papers = request.POST["research_papers"]
+        record = FacultyProfile.objects.get(email=user_email)
+        if not edu==record.education:
+            record.education = edu
+        if not aoi==record.areaofinterest:
+            record.areaofinterest = aoi
+        if not sub==record.subjects:
+            record.subjects=sub
+        if not publications==record.publications:
+            record.publications = publications
+        if not research_papers==record.research:
+            record.research=research_papers
+        record.save()
+    try:
+        at = FacultyProfile.objects.get(email=user_email)
+        return render(request,"Faculty_profile.html",{"user_details":request.user,"profile_details":at})
+    except:
+        return render(request,"Faculty_profile.html",{"user_details":request.user,"profile_details":"Non available","media_url":settings.MEDIA_URL})
+   
+
+@login_required(login_url='/f/')
+def logout(request):
+    django_logout(request)
+    return redirect(current_faculty)
+
+def authenticate_user(email, password):
+    try:
+        user = User.objects.get(email=email)
+    except User.DoesNotExist:
+        return None
+    else:
+        if user.check_password(password):
+            return user
+    return None
+
+def facultyLogin(request):
+    if not request.user.is_authenticated:
+        if request.method=="POST":
+            f_email = request.POST["Email"]
+            f_password = request.POST["Password"]
+            user = authenticate_user(f_email, f_password)
+            if user is not None:
+                login(request,user)
+                if request.GET.get('next', None):
+                    return redirect(request.GET['next']) 
+                return redirect(faculty_profile)
+        return render(request,"faculty_login.html")
+    return redirect(faculty_profile)
 
 def current_student(request):
     return render(request,"Current_Students.html")

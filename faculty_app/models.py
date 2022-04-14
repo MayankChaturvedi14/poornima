@@ -66,3 +66,15 @@ class Career(models.Model):
 
     #Resume
     resume = models.FileField(upload_to='documents/%Y/%m/%d')
+
+
+class FacultyProfile(models.Model):
+    email = models.CharField(max_length=100)
+    education = models.CharField(default=None, blank=True, null=True,max_length=20,)
+    areaofinterest = models.CharField(default=None, blank=True, null=True,max_length=50)
+    subjects = models.CharField(default=None, blank=True, null=True,max_length=500)
+    publications = models.CharField(default=None, blank=True, null=True,max_length=500)
+    research = models.CharField(default=None, blank=True, null=True,max_length=500)
+    image = models.ImageField(upload_to='profile_image' , blank=True)
+    
+    

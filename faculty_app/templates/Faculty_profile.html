@@ -40,42 +40,48 @@
 <div class="main-content"  id="main-content" style="margin-bottom:270px;margin-left:50px;">
   <div class="container rounded bg-white mt-5 mb-5">
     <div class="row">
-        <div class="col-md-3 border-right">
+        <div readonly class="col-md-3 border-right">
             <div class="d-flex flex-column align-items-center text-center p-3 py-5"><img style="    box-shadow:
               0 1px 1px hsl(0deg 0% 0% / 0.075),
               0 2px 2px hsl(0deg 0% 0% / 0.075),
               0 4px 4px hsl(0deg 0% 0% / 0.075),
               0 8px 8px hsl(0deg 0% 0% / 0.075),
               0 16px 16px hsl(0deg 0% 0% / 0.075)
-            ;" class="rounded-circle mb-3" height="180px" width="170px" src="{% static 'img\CSE\VK.jpg' %}"><span class="font-weight-bold" style="color:#111111;"><b>Virkam Khandelwal</b></span><span class="text-black-50">vikram.khandelwal@poornima.org</span><span> </span></div>
-        </div>
-        <div class="col-md-5 border-right">
-            <div class="p-3 py-5">
-                <div class="d-flex justify-content-between align-items-center mb-3">
-                    <h4 class="text-right mt-2">Profile Settings</h4>
-                </div>
-                <div class="row mt-2">
-                    <div class="col-md-6"><label class="labels">Name</label><input type="text" class="form-control" placeholder="first name" value=""></div>
-                    <div class="col-md-6"><label class="labels">Surname</label><input type="text" class="form-control" value="" placeholder="surname"></div>
-                </div>
-                <div class="row mt-3">
-                    <div class="col-md-12"><label class="labels">Education</label><input type="text" class="form-control" placeholder="education" value=""></div>
-                    <div class="col-md-12"><label class="labels">Area of interest</label><input type="text" class="form-control" placeholder="enter the area of interests" value=""></div>
-                    <div class="col-md-12"><label class="labels">Subjects Taught</label><input type="text" class="form-control" placeholder="specify subjects taught" value=""></div>
-                </div>
-                <div class="row mt-3">
-                    <div class="col-md-12">
-                        <div class="col-md-12"><label class="labels">Publications</label><textArea type="text" class="form-control" placeholder="add Publications if any" value=""></textArea></div>
-                <div class="row mt-3">
-                    <div class="col-md-12"><label class="labels">Research papers</label><textArea type="text" class="form-control" placeholder="add research papers if any" value=""></textArea></div>
-                </div>
+            ;" class="rounded-circle mb-3" height="180px" width="170px" src="media/{{profile_details.image}}"><span class="font-weight-bold" style="color:#111111;"><b>{{user.first_name}} {{user.last_name}}</b></span><span readonly class="text-black-50">{{user.email}}</span><span> </span></div>
             </div>
-                <div class="mt-5 text-center"><button href="https:\\www.google.com\" class="btn btn-primary profile-button" type="button">Save Profile</button></div>
+            
+            <div class="col-md-5 border-right">
+            <form action="{% url 'faculty_profile' %}" method="POST">
+                {% csrf_token %}
+                <div class="p-3 py-5">
+                    <div class="d-flex justify-content-between align-items-center mb-3">
+                        <h4 class="text-right mt-2">Profile Settings</h4>
+                    </div>
+                    <div class="row mt-2">
+                        <div  class="col-md-6"><label class="labels">Name</label><input readonly type="text" class="form-control" placeholder="first name" value="{{user.first_name}}"></div>
+                        <div class="col-md-6"><label class="labels">Surname</label><input readonly type="text" class="form-control" value="" placeholder="{{user.last_name}}"></div>
+                    </div>
+                    <div class="row mt-3">
+                        <div class="col-md-12"><label class="labels">Education</label><input type="text" class="form-control" placeholder="education" name="edu" value="{{profile_details.education}}"></div>
+                        <div class="col-md-12"><label class="labels">Area of interest</label><input type="text" class="form-control" placeholder="enter the area of interests" name="aoi" value="{{profile_details.areaofinterest}}"></div>
+                        <div class="col-md-12"><label class="labels">Subjects Taught</label><input type="text" class="form-control" placeholder="specify subjects taught" name="sub"value="{{profile_details.subjects}}"></div>
+                    </div>
+                    <div class="row mt-3">
+                        <div class="col-md-12">
+                            <div class="col-md-12"><label class="labels">Publications</label><textArea type="text" class="form-control" placeholder="add Publications if any" name="publications" value="{{profile_details.publications}}"></textArea></div>
+                    <div class="row mt-3">
+                        <div class="col-md-12"><label class="labels">Research papers</label><textArea type="text" class="form-control" placeholder="add research papers if any" name="research_papers" value="{{profile_details.research}}"></textArea></div>
+                    </div>
+                </div>
+                <div class="mt-5 text-center"><button class="btn btn-primary profile-button" type="submit">Save Profile</button></div>
+                <div class="mt-5 text-center"><a href="{% url 'logout' %}"><button  class="btn btn-danger profile-button" type="button">Logout</button></a></div>
+            </div>
+        </form>
             </div>
         </div>
     </div>
-</div>
-</div>
+    </div>
+
 </div>
 </div>
 

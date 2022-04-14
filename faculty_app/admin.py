@@ -1,6 +1,6 @@
 from django.contrib import admin
 from .models import ContactUs
-from .models import Feedback,Career
+from .models import Feedback,Career,FacultyProfile
 # Register your models here.
 @admin.register(ContactUs)
 class SudoContact(admin.ModelAdmin):
@@ -9,6 +9,10 @@ class SudoContact(admin.ModelAdmin):
 @admin.register(Feedback)
 class SudoFeedback(admin.ModelAdmin):
     list_display = ['id','user_name','reg_id','review']
+
+@admin.register(FacultyProfile)
+class SudoFaculty(admin.ModelAdmin):
+    list_display = [f.name for f in FacultyProfile._meta.fields]
 
 @admin.register(Career)
 class SudoCareer(admin.ModelAdmin):
