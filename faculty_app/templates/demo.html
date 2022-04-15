@@ -11,12 +11,21 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
   {% load static %}
 
 
@@ -25,372 +34,593 @@
   @import url("https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap");
 
   :root {
-    --header-height: 3rem;
-    --nav-width: 68px;
-    --first-color: rgb(33, 37, 41);
-    --first-color-light: #ffffff;
-    --white-color: #ffffff;
-    --body-font: 'Nunito', sans-serif;
-    --normal-font-size: 1rem;
-    --z-fixed: 100;
+      --header-height: 3rem;
+      --nav-width: 68px;
+      --first-color: rgb(33, 37, 41);
+      --first-color-light: #ffffff;
+      --white-color: #ffffff;
+      --body-font: 'Nunito', sans-serif;
+      --normal-font-size: 1rem;
+      --z-fixed: 100;
   }
 
   /* width */
   ::-webkit-scrollbar {
-    width: 10px;
+      width: 10px;
   }
 
   /* Track */
   ::-webkit-scrollbar-track {
-    background: #f1f1f1;
+      background: #f1f1f1;
   }
 
   /* Handle */
   ::-webkit-scrollbar-thumb {
-    background: #888;
+      background: #888;
   }
 
   /* Handle on hover */
   ::-webkit-scrollbar-thumb:hover {
-    background: #555;
+      background: #555;
   }
 
 
   *,
   ::before,
   ::after {
-    box-sizing: border-box;
+      box-sizing: border-box;
   }
 
   body {
-    position: relative;
-    margin: var(--header-height) 0 0 0;
-    padding: 0 1rem;
-    font-family: var(--body-font);
-    font-size: var(--normal-font-size);
-    transition: .5s;
+      position: relative;
+      margin: var(--header-height) 0 0 0;
+      padding: 0 1rem;
+      font-family: var(--body-font);
+      font-size: var(--normal-font-size);
+      transition: .5s;
   }
 
   a {
-    text-decoration: none !important;
+      text-decoration: none !important;
   }
 
   a:link {
-    text-decoration: none !important;
+      text-decoration: none !important;
   }
 
   .header {
-    width: 100%;
-    height: var(--header-height);
-    position: fixed;
-    top: 0;
-    left: 0;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0 1rem;
-    background-color: var(--white-color);
-    z-index: var(--z-fixed);
-    transition: .5s;
+      width: 100%;
+      height: var(--header-height);
+      position: fixed;
+      top: 0;
+      left: 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 1rem;
+      background-color: var(--white-color);
+      z-index: var(--z-fixed);
+      transition: .5s;
   }
 
   .header_toggle {
-    color: var(--first-color);
-    font-size: 1.5rem;
-    cursor: pointer
+      color: var(--first-color);
+      font-size: 1.5rem;
+      cursor: pointer
   }
 
   .header_img {
-    width: 35px;
-    height: 35px;
-    display: flex;
-    justify-content: center;
-    border-radius: 50%;
-    overflow: hidden;
+      width: 35px;
+      height: 35px;
+      display: flex;
+      justify-content: center;
+      border-radius: 50%;
+      overflow: hidden;
   }
 
   .header_img img {
-    width: 40px;
+      width: 40px;
   }
 
   .l-navbar {
-    position: fixed;
-    top: 0;
-    left: -30%;
-    width: var(--nav-width);
-    height: 100vh;
-    background-color: var(--first-color);
-    padding: .5rem 1rem 0 0;
-    transition: .5s;
-    z-index: var(--z-fixed);
+      position: fixed;
+      top: 0;
+      left: -30%;
+      width: var(--nav-width);
+      height: 100vh;
+      background-color: var(--first-color);
+      padding: .5rem 1rem 0 0;
+      transition: .5s;
+      z-index: var(--z-fixed);
 
   }
 
   .nav {
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    overflow: hidden;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      overflow: hidden;
 
   }
 
   .nav_logo,
   .nav_link {
-    display: grid;
-    grid-template-columns: max-content max-content;
-    align-items: center;
-    column-gap: 1rem;
-    padding: .5rem 0 .5rem 1.5rem
+      display: grid;
+      grid-template-columns: max-content max-content;
+      align-items: center;
+      column-gap: 1rem;
+      padding: .5rem 0 .5rem 1.5rem
   }
 
   .scr {
-    overflow-y: scroll;
+      overflow-y: scroll;
 
   }
 
   .nav_logo {
-    margin-bottom: 2rem
+      margin-bottom: 2rem
   }
 
   .nav_logo-icon {
-    margin: 30px;
+      margin: 30px;
   }
 
   .nav_logo-name {
-    color: var(--white-color);
-    font-weight: bold;
-    color: red;
-    margin-right: 20px;
+      color: var(--white-color);
+      font-weight: bold;
+      color: red;
+      margin-right: 20px;
   }
 
   .nav_link {
-    position: relative;
-    text-decoration: none;
-    color: var(--first-color-light);
-    margin-bottom: 1.5rem;
-    transition: .3s;
-    margin-right: 10px;
+      position: relative;
+      text-decoration: none;
+      color: var(--first-color-light);
+      margin-bottom: 1.5rem;
+      transition: .3s;
+      margin-right: 10px;
   }
 
   .nav_link:hover {
-    background-color: lightcoral;
-    color: white;
-    border-radius: 10px;
+      background-color: lightcoral;
+      color: white;
+      border-radius: 10px;
   }
 
   .nav_icon {
-    font-size: 1.25rem
+      font-size: 1.25rem
   }
 
   .show {
-    left: 0
+      left: 0
   }
 
   .body-pd {
-    padding-left: calc(var(--nav-width) + 1rem)
+      padding-left: calc(var(--nav-width) + 1rem)
   }
 
   .active1 {
-    background-color: red;
-    border-radius: 10px;
+      background-color: red;
+      border-radius: 10px;
   }
 
 
 
-  .card {
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-    transition: 0.3s;
-    width: 60%;
-    margin-top: 80px;
-    margin-left: 80px;
-  }
+
 
   .fa {
 
-    font-size: 30px;
-    width: 30px;
-    text-align: center;
-    text-decoration: none;
-    margin: 5px 2px;
-    border-radius: 50%;
+      font-size: 30px;
+      width: 30px;
+      text-align: center;
+      text-decoration: none;
+      margin: 5px 2px;
+      border-radius: 50%;
   }
 
   .fa:hover {
-    opacity: 0.7;
+      opacity: 0.7;
   }
 
   .fa-facebook {
-    background: #3B5998;
-    color: white;
+      background: #3B5998;
+      color: white;
   }
 
   .fa-twitter {
-    background: #55ACEE;
-    color: white;
+      background: #55ACEE;
+      color: white;
   }
 
   .fa-linkedin {
-    background: #007bb5;
-    color: white;
+      background: #007bb5;
+      color: white;
   }
 
   .fa-youtube {
-    background: #fa0202;
-    color: white;
+      background: #fa0202;
+      color: white;
   }
 
   .fa-instagram {
-    background: rgb(236, 107, 128);
-    color: white;
+      background: rgb(236, 107, 128);
+      color: white;
   }
 
 
 
 
   @media screen and (min-width: 768px) {
-    body {
-      margin: calc(var(--header-height) + 1rem) 0 0 0;
-      padding-left: calc(var(--nav-width) + 2rem);
-    }
+      body {
+          margin: calc(var(--header-height) + 1rem) 0 0 0;
+          padding-left: calc(var(--nav-width) + 2rem);
+      }
 
-    .header {
-      height: calc(var(--header-height) + 1rem);
-      padding: 0 2rem 0 calc(var(--nav-width) + 2rem);
-    }
+      .header {
+          height: calc(var(--header-height) + 1rem);
+          padding: 0 2rem 0 calc(var(--nav-width) + 2rem);
+      }
 
-    .header_img {
-      width: 40px;
-      height: 40px;
-    }
+      .header_img {
+          width: 40px;
+          height: 40px;
+      }
 
-    .header_img img {
-      width: 45px;
-    }
+      .header_img img {
+          width: 45px;
+      }
 
-    .l-navbar {
-      left: 0;
-      padding: 1rem 1rem 0 0;
-    }
+      .l-navbar {
+          left: 0;
+          padding: 1rem 1rem 0 0;
+      }
 
-    .show {
-      width: calc(var(--nav-width) + 156px);
+      .show {
+          width: calc(var(--nav-width) + 156px);
 
-    }
+      }
 
-    .body-pd {
-      padding-left: calc(var(--nav-width) + 188px);
-    }
+      .body-pd {
+          padding-left: calc(var(--nav-width) + 188px);
+      }
   }
 
-  .btn {
-    display: block;
-    border: none;
-    color: black;
-    padding: 16px 32px;
-    text-align: center;
-    font-size: 16px;
-    transition: 0.3s;
+  .button {
+      display: block;
+      border: none;
+      color: black;
+      padding: 16px 32px;
+      text-align: center;
+      font-size: 16px;
+      transition: 0.3s;
   }
 
-  .btn:hover {
-    background-color: #22ca28;
-    color: white;
-    font-size: large;
-    font-weight: bolder;
-    font-family: 'Nunito Sans';
+  .button:hover {
+      background-color: #22ca28;
+      color: white;
+      font-size: large;
+      font-weight: bolder;
+      font-family: 'Nunito Sans';
   }
 
   *:before,
   *:after {
-    -webkit-box-sizing: inherit;
-    box-sizing: inherit;
+      -webkit-box-sizing: inherit;
+      box-sizing: inherit;
   }
 
   .accordion a {
-    position: relative;
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -webkit-flex-direction: column;
-    -ms-flex-direction: column;
-    flex-direction: column;
-    width: 100%;
-    padding: 1rem 3rem 1rem 1rem;
-    color: #7288a2;
-    font-size: 1.15rem;
-    font-weight: 400;
-    border-bottom: 1px solid #e5e5e5;
+      position: relative;
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+      -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+      flex-direction: column;
+      width: 100%;
+      padding: 1rem 3rem 1rem 1rem;
+      color: #7288a2;
+      font-size: 1.15rem;
+      font-weight: 400;
+      border-bottom: 1px solid #e5e5e5;
   }
 
   .accordion a:hover,
   .accordion a:hover::after {
-    cursor: pointer;
-    color: #ff5353;
+      cursor: pointer;
+      color: #ff5353;
   }
 
   .accordion a:hover::after {
-    border: 1px solid #ff5353;
+      border: 1px solid #ff5353;
   }
 
   .accordion a.active {
-    color: white;
-    border-bottom: 1px solid #ff5353;
+      color: white;
+      border-bottom: 1px solid #ff5353;
   }
 
   .accordion a::after {
-    font-family: 'Ionicons';
-    content: '\f218';
-    position: absolute;
-    float: right;
-    right: 1rem;
-    font-size: 1rem;
-    color: #7288a2;
-    padding: 5px;
-    width: 30px;
-    height: 30px;
-    -webkit-border-radius: 50%;
-    -moz-border-radius: 50%;
-    border-radius: 50%;
-    border: 1px solid #7288a2;
-    text-align: center;
+      font-family: 'Ionicons';
+      content: '\f218';
+      position: absolute;
+      float: right;
+      right: 1rem;
+      font-size: 1rem;
+      color: #7288a2;
+      padding: 5px;
+      width: 30px;
+      height: 30px;
+      -webkit-border-radius: 50%;
+      -moz-border-radius: 50%;
+      border-radius: 50%;
+      border: 1px solid #7288a2;
+      text-align: center;
   }
 
   .accordion a.active::after {
-    font-family: 'Ionicons';
-    content: '\f209';
-    color: white;
-    border: 1px solid white;
+      font-family: 'Ionicons';
+      content: '\f209';
+      color: white;
+      border: 1px solid white;
   }
 
   .accordion .content {
-    opacity: 0;
-    padding: 0 1rem;
-    max-height: 0;
-    border-bottom: 1px solid black;
-    overflow: hidden;
-    clear: both;
-    -webkit-transition: all 0.2s ease 0.15s;
-    -o-transition: all 0.2s ease 0.15s;
-    transition: all 0.2s ease 0.15s;
-    color: white;
+      opacity: 0;
+      padding: 0 1rem;
+      max-height: 0;
+      border-bottom: 1px solid black;
+      overflow: hidden;
+      clear: both;
+      -webkit-transition: all 0.2s ease 0.15s;
+      -o-transition: all 0.2s ease 0.15s;
+      transition: all 0.2s ease 0.15s;
+      color: white;
   }
 
   .accordion .content p {
-    font-size: 1rem;
-    font-weight: 300;
+      font-size: 1rem;
+      font-weight: 300;
   }
 
   .accordion .content.active {
-    opacity: 1;
-    padding: 1rem;
-    max-height: 100%;
-    -webkit-transition: all 0.35s ease 0.15s;
-    -o-transition: all 0.35s ease 0.15s;
-    transition: all 0.35s ease 0.15s;
+      opacity: 1;
+      padding: 1rem;
+      max-height: 100%;
+      -webkit-transition: all 0.35s ease 0.15s;
+      -o-transition: all 0.35s ease 0.15s;
+      transition: all 0.35s ease 0.15s;
+  }
+
+  .lifeatpgc {
+      background-color: rgb(14, 14, 112);
+      color: white;
+      text-align: center;
+      padding-bottom: 80px;
+      margin-left: 18px;
+      margin-right: -18px;
+  }
+
+  /* ========== 00. General Styling ========== */
+
+  @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap');
+
+
+  blockquote {
+      padding: 0;
+      margin: 0;
+  }
+
+  section.t-bq-section {
+      padding: 30px;
+      margin-bottom: 60px;
+  }
+
+  .t-bq-wrapper.t-bq-wrapper-boxed {
+      max-width: 576px;
+      margin: 0 auto;
+  }
+
+  .t-bq-wrapper.t-bq-wrapper-fullwidth {
+      max-width: 100%;
+  }
+
+
+
+
+  /* ========== 05. Paul ========== */
+
+  .t-bq-quote-paul {
+      position: relative;
+      display: flex;
+      flex-direction: row;
+      min-height: 250px;
+      box-shadow: 2px 2px 25px #cecece;
+      border-radius: 10px;
+  }
+
+  .t-bq-quote-paul .t-bq-quote-paul-pattern {
+      flex-basis: 80px;
+      background: url("https://raw.githubusercontent.com/taviskaron/t-div-blockquotes/main/img/hexabump.png") repeat;
+      border-radius: 10px 0 0 10px;
+  }
+
+  .t-bq-quote-paul .t-bq-quote-paul-base {
+      flex-basis: calc(100% - 80px);
+      background: #2e08d8;
+      padding: 40px 30px 50px 80px;
+      font-size: 11pt;
+      line-height: 1.62em;
+      border-radius: 0 10px 10px 0;
+      color: white;
+  }
+
+  .t-bq-quote-paul .t-bq-quote-paul-qmark {
+      position: absolute;
+      top: 50px;
+      left: 105px;
+      font-family: Garamond, Georgia, "Times New Roman", serif;
+      font-size: 42pt;
+      color: #fae104;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      -webkit-user-select: none;
+      user-select: none;
+  }
+
+  .t-bq-quote-paul .t-bq-quote-paul-userpic {
+      position: absolute;
+      top: 90px;
+      left: 45px;
+      width: 90px;
+      height: 90px;
+      background: url("https://www.poornima.org/wp-content/uploads/2017/07/Pritam.jpg") center center no-repeat;
+      background-size: cover;
+      border-radius: 50%;
+  }
+
+  .t-bq-quote-paul .t-bq-quote-paul-meta {
+      margin-top: 30px;
+      padding-top: 10px;
+      border-top: 2px dotted #ffffff;
+  }
+
+  .t-bq-quote-paul .t-bq-quote-paul-meta .t-bq-quote-paul-author,
+  .t-bq-quote-paul .t-bq-quote-paul-meta .t-bq-quote-paul-source {
+      color: #ffffff;
+  }
+
+  .t-bq-quote-paul .t-bq-quote-paul-meta .t-bq-quote-paul-author {
+      font-style: normal;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+      font-size: 10pt;
+      font-weight: bold;
+  }
+
+  .t-bq-quote-paul .t-bq-quote-paul-meta .t-bq-quote-paul-author cite {
+      font-style: normal;
+  }
+
+  .t-bq-quote-paul .t-bq-quote-paul-meta .t-bq-quote-paul-source {
+      font-size: 9pt;
+  }
+
+  @media screen and (max-width: 768px) {
+
+      .t-bq-quote-paul .t-bq-quote-paul-pattern {
+          flex-basis: 20px;
+      }
+
+      .t-bq-quote-paul .t-bq-quote-paul-base {
+          flex-basis: calc(100% - 20px);
+          padding: 100px 30px 50px 30px;
+      }
+
+      .t-bq-quote-paul .t-bq-quote-paul-userpic {
+          width: 50px;
+          height: 50px;
+          left: 40px;
+          top: 20px;
+      }
+
+      .t-bq-quote-paul .t-bq-quote-paul-qmark {
+          left: 100px;
+          top: 45px;
+      }
+  }
+
+  /* ========== 06. Jasper ========== */
+
+  .t-bq-quote-jasper {
+      position: relative;
+      box-shadow: 2px 2px 25px #cecece;
+      border-radius: 10px;
+  }
+
+  .t-bq-quote-jasper .t-bq-quote-jasper-pattern {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      height: 80px;
+      align-items: center;
+      justify-content: flex-start;
+      background: url("https://raw.githubusercontent.com/taviskaron/t-div-blockquotes/main/img/hexabump.png") repeat;
+      border-radius: 10px 10px 0 0;
+  }
+
+  .t-bq-quote-jasper .t-bq-quote-jasper-pattern .t-bq-quote-jasper-qmark {
+      flex-basis: 100px;
+      font-family: Garamond, Georgia, "Times New Roman", serif;
+      font-size: 60pt;
+      color: #fae104;
+      text-align: center;
+      height: 80px;
+      line-height: 90pt;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      -webkit-user-select: none;
+      user-select: none;
+  }
+
+  .t-bq-quote-jasper .t-bq-quote-jasper-userpic {
+      position: absolute;
+      top: 45px;
+      left: calc(50% - 35px);
+      width: 90px;
+      height: 90px;
+      background: url("https://www.poornima.org/wp-content/uploads/2017/07/Heena-Azad-1.jpg") center center no-repeat;
+      background-size: cover;
+      border-radius: 50%;
+  }
+
+  .t-bq-quote-jasper .t-bq-quote-jasper-base {
+      flex-basis: calc(100% - 80px);
+      background: #fc0505;
+      padding: 60px 30px 50px 100px;
+      font-size: 11pt;
+      line-height: 1.62em;
+      border-radius: 0 0 10px 10px;
+      color: white;
+  }
+
+  .t-bq-quote-jasper .t-bq-quote-jasper-meta {
+      margin-top: 30px;
+      padding-top: 10px;
+      border-top: 2px dotted #fcf6f6;
+      text-align: center;
+  }
+
+  .t-bq-quote-jasper .t-bq-quote-jasper-meta .t-bq-quote-jasper-author,
+  .t-bq-quote-jasper .t-bq-quote-jasper-meta .t-bq-quote-jasper-source {
+      color: #fdfcfc;
+  }
+
+  .t-bq-quote-jasper .t-bq-quote-jasper-meta .t-bq-quote-jasper-author {
+      font-style: normal;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+      font-size: 10pt;
+      font-weight: bold;
+  }
+
+  .t-bq-quote-jasper .t-bq-quote-jasper-meta .t-bq-quote-jasper-author cite {
+      font-style: normal;
+  }
+
+  .t-bq-quote-jasper .t-bq-quote-jasper-meta .t-bq-quote-jasper-source {
+      font-size: 9pt;
+  }
+
+  @media screen and (max-width: 768px) {
+
+      .t-bq-quote-jasper .t-bq-quote-jasper-base {
+          padding-left: 30px;
+      }
   }
 </style>
 
@@ -441,7 +671,7 @@
                 d="M6 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-5 6s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H1zM11 3.5a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 0 1h-4a.5.5 0 0 1-.5-.5zm.5 2.5a.5.5 0 0 0 0 1h4a.5.5 0 0 0 0-1h-4zm2 3a.5.5 0 0 0 0 1h2a.5.5 0 0 0 0-1h-2zm0 3a.5.5 0 0 0 0 1h2a.5.5 0 0 0 0-1h-2z" />
             </svg>
             <span class="nav_name">Current Faculty</span>
-          </a> <a href="#" class="nav_link" title="Career">
+          </a> <a href="{% url 'career' %}" class="nav_link" title="Career">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
               class="bi bi-clipboard-data" viewBox="0 0 16 16">
               <path
@@ -586,64 +816,337 @@
         </div>
       </div>
     </div>
-  </div>
+  </div> <br>
   <div class="container-fluid" style="margin-top: 10px;background-color: rgb(233, 231, 231);">
     <div class="row">
-      <div class="col-md-6" style="margin: 0 auto;">
-        <div class="form_container"
-          style="align-items: center; margin:5rem auto;">
-          <h1 style="text-align: center;color: Black; font-size: 28px;font-weight:bolder  "><u style="text-decoration-color:red">Our Institutes</u> </h1>
-          <p style="text-align: center;">Poornima Group of Colleges, Comprising of Poornima College of Engineering (PCE), Poornima Institute of Engineering & Technology (PIET) was Established by Shanti Education Society in The Year 2000. All Poornima Institutions Are Affiliated to Rajasthan Technical University and Approved by All India Council of Technical Education (AICTE) & Recognised by UGC under 2(f) and Ministry of Human Resource & Development (MHRD).</p>
-          <div class="card" style="width: 18rem; margin:0 auto">
-            <img src="{% static 'img\Reap-code1023.jpg' %}" class="card-img-top" alt="...">
-            <div class="card-body">
-              <p class="card-text">Poornima College of Engineering</p>
+        <div class="col" style="margin: 0 auto;">
+            <div class="form_container" style="align-items: center; margin:5rem auto;">
+                <h1 style="text-align: center;color: Black; font-size: 28px;font-weight:bolder  "><u
+                        style="text-decoration-color:red">Our Institutes</u> </h1>
+                <p style="text-align: center;">Poornima Group of Colleges, Comprising of Poornima College of
+                    Engineering (PCE), Poornima Institute of Engineering & Technology (PIET) was Established by
+                    Shanti Education Society in The Year 2000. All Poornima Institutions Are Affiliated to Rajasthan
+                    Technical University and Approved by All India Council of Technical Education (AICTE) &
+                    Recognised by UGC under 2(f) and Ministry of Human Resource & Development (MHRD).</p>
             </div>
-          </div>
-          <div class="card" style="width: 18rem ; margin:0 auto; margin-top:30px">
-            <img src="{% static 'img\reap-code1050.jpg' %}" class="card-img-top" alt="...">
-            <div class="card-body">
-              <p class="card-text">Poornima Institue of Engineering and Technology</p>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="card" style="width: 15rem; margin:0 auto">
+                        <img src="{% static 'img\Reap-code1023.jpg' %}" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <p class="card-text">Poornima College of Engineering</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card" style="width: 15rem ; margin:0 auto; ">
+                        <img src="{% static 'img\reap-code1050.jpg' %}" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <p class="card-text" style="font-size: 15px;">Poornima Institue of Engineering and
+                                Technology</p>
+                        </div>
+                    </div>
+                </div>
+
             </div>
-          </div>
+
+
         </div>
-        
-      </div>
-      
-      
+
+
     </div>
-  </div>
-  <div class="row">
-    <h3 style="text-align: center;margin-top:80px"><u style="font-weight:bolder;text-decoration-color:red">Our Recruiters</u></h3>
-    <div class="row" style="margin-top: 50px; ">
-      <div class="col-md-3">
-        <img src="{% static 'img\Recruiters\1.jpg' %}" width="65%">
-      </div>
-      <div class="col-md-3">
-        <img src="{% static 'img\Recruiters\2.jpg' %}" width="65%">
-      </div>
-      <div class="col-md-3">
-        <img src="{% static 'img\Recruiters\3.jpg' %}" width="65%">
-      </div>
-      <div class="col-md-3">
-        <img src="{% static 'img\Recruiters\4.jpg' %}" width="65%">
-      </div>
+</div> <br>
+  <div class="row">    
+        <h3 style="text-align: center;margin-top:80px"><u style="font-weight:bolder;text-decoration-color:red">Our
+                Recruiters</u></h3>
+        <div class="row" style="margin-top: 50px; ">
+            <div class="col-md-3">
+                <img src="{% static 'img\Recruiters\1.jpg' %}" width="65%">
+            </div>
+            <div class="col-md-3">
+                <img src="{% static 'img\Recruiters\2.jpg' %}" width="65%">
+            </div>
+            <div class="col-md-3">
+                <img src="{% static 'img\Recruiters\3.jpg' %}" width="65%">
+            </div>
+            <div class="col-md-3">
+                <img src="{% static 'img\Recruiters\4.jpg' %}" width="65%">
+            </div>
+        </div>
+        <div class="row" style="margin-top: 50px;margin-bottom:80px ">
+            <div class="col-md-3">
+                <img src="{% static 'img\Recruiters\5.jpg' %}" width="65%">
+            </div>
+            <div class="col-md-3">
+                <img src="{% static 'img\Recruiters\6.jpg' %}" width="65%">
+            </div>
+            <div class="col-md-3">
+                <img src="{% static 'img\Recruiters\7.png' %}" width="65%">
+            </div>
+            <div class="col-md-3">
+                <img src="{% static 'img\Recruiters\8.jpg' %}" width="65%">
+            </div>
+        </div>
+        <div class="d-grid gap-2 col-6 mx-auto">
+            <a  class="btn btn-primary button" href="{% url 'placement' %}" style="color: white;">View All</a> 
+        </div>
+  </div><br><br>
+  
+  <div class="container-fluid" style="margin-top: 10px;background-color: rgb(252, 2, 2);">
+        <div class="row">
+            <div class="col" style="margin: 0 auto;">
+                <div class="form_container" style="align-items: center; margin:5rem auto;">
+                    <h1 style="text-align: center;color: rgb(245, 241, 241); font-size: 28px;font-weight:bolder  "><u
+                            style="text-decoration-color:rgb(253, 251, 251)">Our Faculty</u> </h1>
+                    <p style="text-align: center;color:white">The faculty members at Poornima Group of Colleges are
+                        dedicated to student learning and are highly accessible which makes student's education
+                        experience a unique one. Publications in academic journals, membership of editorial boards &amp;
+                        various organization make the faculty leading thinkers whose research &amp; teaching are second
+                        to none. It is a perfect blend of core and visiting members.</p>
+                        <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+                            <div class="carousel-inner">
+                              <div class="carousel-item active">
+                                <div class="row" style="column-gap: 80px;">
+                                    <div class="card col-md-2" style="width: 18rem;height:24rem">
+                                        <img src="https://www.poornima.org/wp-content/uploads/2021/01/faculty01-1.jpg" class="card-img-top" alt="..." width="256px" height="226.81px">
+                                        <div class="card-body">
+                                            <p class="card-title"><h5  style="text-align: center;">Dr. Narayan Lal Jain</h5></p>
+                                          <p class="card-text" style="text-align: center;font-size: 12px;"> HOD <br> Ph.D.</p>
+                                        </div>
+                                    </div>
+                                    <div class="card col-md-2" style="width: 18rem;height:24rem">
+                                        <img src="https://www.poornima.org/wp-content/uploads/2018/05/Dr.-Himani-Goyal-Sharma-1.jpg" class="card-img-top" alt="..."  width="256px" height="226.81px">
+                                        <div class="card-body">
+                                            <p class="card-title"><h5  style="text-align: center;">Dr. Himani Goyal Sharma</h5></p>
+                                          <p class="card-text" style="text-align: center;font-size: 12px;"> Professor <br> B-Tech,M-Tech & Ph.D.</p>
+                                        </div>
+                                    </div>
+                                    <div class="card col-md-2" style="width: 18rem;height:24rem">
+                                        <img src="https://www.poornima.org/wp-content/uploads/2018/03/neeraj-386-1.jpg" class="card-img-top" alt="..."  width="256px" height="226.81px">
+                                        <div class="card-body">
+                                            <p class="card-title"><h5  style="text-align: center;">Dr. Neeraj Jain</h5></p>
+                                          <p class="card-text" style="text-align: center;font-size: 12px;"> Director(Admissions) <br> B.Sc. , M.Sc. & Ph.D.</p>
+                                        </div>
+                                    </div>
+                                    <div class="card col-md-2" style="width: 18rem;height:24rem">
+                                        <img src="https://www.poornima.org/wp-content/uploads/2018/05/Dr.-Sama-Jain-min.jpg" class="card-img-top" alt="..."  width="256px" height="226.81px">
+                                        <div class="card-body">
+                                            <p class="card-title"><h5  style="text-align: center;">Dr. Sama Jain</h5></p>
+                                          <p class="card-text" style="text-align: center;font-size: 12px;"> HOD,1 Year  (PIET) <br> B.Sc. ,M.Sc. & Ph.D.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                              </div>
+                              <div class="carousel-item" style="transition:.8s ease-in-out left">
+                                <div class="row" style="column-gap: 80px;">
+                                    
+                                    <div class="card col-md-2" style="width: 18rem;height:24rem">
+                                        <img src="https://www.poornima.org/wp-content/uploads/2018/05/Shazia-Haque-1.jpg" class="card-img-top" alt="..."  width="256px" height="226.81px">
+                                        <div class="card-body">
+                                            <p class="card-title"><h5  style="text-align: center;">Ms. Shazia Haque</h5></p>
+                                          <p class="card-text" style="text-align: center;font-size: 12px;"> Assoc. Pro. <br> M-Tech </p>
+                                        </div>
+                                    </div>
+                                    <div class="card col-md-2" style="width: 18rem;height:24rem">
+                                        <img src="https://www.poornima.org/wp-content/uploads/2018/05/Rekha-Nair-214x300.jpeg" class="card-img-top" alt="..."  width="256px" height="226.81px">
+                                        <div class="card-body">
+                                            <p class="card-title"><h5  style="text-align: center;">Dr. Rekha Nair</h5></p>
+                                          <p class="card-text" style="text-align: center;font-size: 12px;"> Dean (1 Year, PCE) <br> B.Sc. , M.Sc. & Ph.D.</p>
+                                        </div>
+                                    </div>
+                                    <div class="card col-md-2" style="width: 18rem;height:24rem">
+                                        <img src="https://www.poornima.org/wp-content/uploads/2020/02/Mr.-VIKRAM-KHANDELWAL.jpg" class="card-img-top" alt="..."  width="256px" height="226.81px">
+                                        <div class="card-body">
+                                            <p class="card-title"><h5  style="text-align: center;">Mr. Vikram Khandelwal</h5></p>
+                                          <p class="card-text" style="text-align: center;font-size: 12px;">Assi. Pro. <br> M-Tech </p>
+                                        </div>
+                                    </div>
+                                    <div class="card col-md-2" style="width: 18rem;height:24rem">
+                                        <img src="https://www.poornima.org/wp-content/uploads/2020/02/Mr.-ABHISHEK-DADHICH.jpg" class="card-img-top" alt="..."  width="256px" height="226.81px">
+                                        <div class="card-body">
+                                            <p class="card-title"><h5  style="text-align: center;">Mr. Abhishek Dadhich</h5></p>
+                                          <p class="card-text" style="text-align: center;font-size: 12px;"> Assi. Pro. <br> M-Tech</p>
+                                        </div>
+                                    </div>
+                                </div>
+                              </div>
+                              
+                            </div>
+                            
+                          </div> <br> <br>
+                          <div class="d-grid gap-2 col-6 mx-auto">
+                            <a class="btn btn-primary button" href="{% url 'faculty-view' %}" style="color:white">View All</a>
+                        </div>
+                </div>
+
+
+
+            </div>
+
+
+        </div>
+  </div> <br>
+
+  <div class="container" style="margin-bottom: 80px;">
+    <h3 style="text-align: center;margin-top:80px"><u style="font-weight:bolder;text-decoration-color:red">Life at
+            PGC</u></h3>
+    <div class="row">
+        <div class="col-md-2">
+            <img src="{% static 'collage\Photo_Life_at_PGC_001.jpg' %}" alt="">
+        </div>
+        <div class="col-md-2">
+            <img src="{% static 'collage\unnamed-10.jpg' %}" alt="">
+        </div>
+        <div class="col-md-2">
+            <img src="{% static 'collage\unnamed-21.jpg' %}" alt="">
+        </div>
+        <div class="col-md-2">
+            <img src="{% static 'collage\unnamed-19.jpg' %}" alt="">
+        </div>
+        <div class="col-md-2">
+            <img src="{% static 'collage\unnamed-15.jpg' %}" alt="">
+        </div>
+        <div class="col-md-2">
+            <img src="{% static 'collage\Photo_Life_at_PGC_003.jpg' %}" alt="">
+        </div>
+    </div><br>
+    <div class="row">
+        <div class="col-md-2">
+            <img src="{% static 'collage\Photo_Life_at_PGC_002.jpg' %}" alt="">
+        </div>
+        <div class="col-md-2">
+            <img src="{% static 'collage\unnamed-13.jpg' %}" alt="">
+        </div>
+        <div class="col-md-2">
+            <img src="{% static 'collage\unnamed-17.jpg' %}" alt="">
+        </div>
+        <div class="col-md-2">
+            <img src="{% static 'collage\unnamed-18.jpg' %}" alt="">
+        </div>
+
+        <div class="col-md-2">
+            <img src="{% static 'collage\Photo_Life_at_PGC_004.jpg' %}" alt="">
+        </div>
+        <div class="col-md-2">
+            <img src="{% static 'collage\unnamed-20.jpg' %}" alt="">
+        </div>
+    </div><br>
+    <div class="row">
+        <div class="col lifeatpgc">
+            <h1 style="padding-top: 105px;">MEMORIES</h1>
+            <h1 style="padding-top: 5px;">MADE</h1>
+            <h1 style="padding-top: 5px;">FOR LIFE</h1>
+        </div>
+    </div><br>
+    <div class="row">
+        <div class="col-md-2">
+            <img src="{% static 'collage\Photo_Life_at_PGC_009.jpg' %}" alt="">
+        </div>
+        <div class="col-md-2">
+            <img src="{% static 'collage\Photo_Life_at_PGC_008.jpg' %}" alt="">
+        </div>
+        <div class="col-md-2">
+            <img src="{% static 'collage\unnamed-22.jpg' %}" alt="">
+        </div>
+        <div class="col-md-2">
+            <img src="{% static 'collage\Photo_Life_at_PGC_010.jpg' %}" alt="">
+        </div>
+        <div class="col-md-2">
+            <img src="{% static 'collage\unnamed-8.jpg' %}" alt="">
+        </div>
+        <div class="col-md-2">
+            <img src="{% static 'collage\Photo_Life_at_PGC_005.jpg' %}" alt="">
+        </div>
+    </div><br>
+    <div class="row">
+        <div class="col-md-2">
+            <img src="{% static 'collage\IMG_6962-min.jpg' %}" alt="" width="195px" height="200px">
+        </div>
+        <div class="col-md-2">
+            <img src="{% static 'collage\MG_0471-min.jpg' %}" alt="" width="195px" height="200px">
+        </div>
+        <div class="col-md-2">
+            <img src="{% static 'collage\5.jpg' %}" alt="" width="195px" height="200px">
+        </div>
+        <div class="col-md-2">
+            <img src="{% static 'collage\DSC_0083.jpg' %}" alt="" width="195px" height="200px">
+        </div>
+        <div class="col-md-2">
+            <img src="{% static 'collage\Photo_Life_at_PGC_007.jpg' %}" alt="" width="195px" height="200px">
+        </div>
+        <div class="col-md-2">
+            <img src="{% static 'collage\Photo_Life_at_PGC_006.jpg' %}" alt="" width="195px" height="200px">
+        </div>
+    </div><br>
+    <div class="d-grid gap-2 col-6 mx-auto">
+        <a class="btn btn-primary button" href="{% url 'Gallery' %}" style="color:white">View All</a>
     </div>
-    <div class="row" style="margin-top: 50px;margin-bottom:80px ">
-      <div class="col-md-3">
-        <img src="{% static 'img\Recruiters\5.jpg' %}" width="65%">
-      </div>
-      <div class="col-md-3">
-        <img src="{% static 'img\Recruiters\6.jpg' %}" width="65%">
-      </div>
-      <div class="col-md-3">
-        <img src="{% static 'img\Recruiters\7.png' %}" width="65%">
-      </div>
-      <div class="col-md-3">
-        <img src="{% static 'img\Recruiters\8.jpg' %}" width="65%">
-      </div>
-    </div>
-  </div>  
+  </div><br>
+
+  <div class="testimonials">
+    <h3 style="text-align: center;margin-top:80px"><u
+            style="font-weight:bolder;text-decoration-color:red">Testimonial</u></h3>
+    <section class="t-bq-section" id="paul">
+        <div class="t-bq-wrapper t-bq-wrapper-boxed">
+            <div class="t-bq-quote t-bq-quote-paul">
+                <div class="t-bq-quote-paul-userpic"></div>
+                <div class="t-bq-quote-paul-qmark">
+                    &#10077;
+                </div>
+                <div class="t-bq-quote-paul-pattern">
+                </div>
+                <div class="t-bq-quote-paul-base">
+                    <blockquote class="t-bq-quote-paul-text" cite="Strugatsky Brothers">
+                        (2015-2019) Pritam, Mechanical Engineering AIESEC Internship at Indonesia
+
+                        The facilities provided at campus supported me throughout my engineering studies. Colleges
+                        provided me unique opportunity for foreign internship and other pre-placement preparations.
+                        I'm thankful to Poornima Group & my faculties who gave me such platform to perform.
+                    </blockquote>
+                    <div class="t-bq-quote-paul-meta">
+                        <div class="t-bq-quote-paul-meta-info">
+                            <div class="t-bq-quote-paul-author"><cite>Pritam</cite></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="t-bq-section" id="jasper">
+        <div class="t-bq-wrapper t-bq-wrapper-boxed">
+            <div class="t-bq-quote t-bq-quote-jasper">
+                <div class="t-bq-quote-jasper-pattern">
+                    <div class="t-bq-quote-jasper-qmark">
+                        &#10077;
+                    </div>
+                </div>
+
+                <div class="t-bq-quote-jasper-userpic"></div>
+
+                <div class="t-bq-quote-jasper-base">
+                    <blockquote class="t-bq-quote-jasper-text" cite="Strugatsky Brothers">
+                        (2011-2015) Hina Azad, Computer Engineering Placed in Infosys
+
+                        Throughout the journey the journey of 4 years, the rigorous yet energetic life of college
+                        helped me to build a social character. Being a Mentor for 3 years sculpted my communication
+                        skills public speaking to great extent. Not only I was able to get placed in Infosys, but
+                        also win beauty pageants like Gladrags Mega model Mumbai and Miss Glam India, which demand
+                        an impressive personality. I am grateful and proud to be a Poornimite! </blockquote>
+                    <div class="t-bq-quote-jasper-meta">
+                        <div class="t-bq-quote-jasper-meta-info">
+                            <div class="t-bq-quote-jasper-author"><cite>hina Azad</cite></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</div><br>
+
+
+
+
   
   
 
@@ -712,6 +1215,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
       integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
       crossorigin="anonymous"></script>
-</body>
+
+    </body>
 
 </html>

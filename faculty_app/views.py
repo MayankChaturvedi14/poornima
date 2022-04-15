@@ -204,3 +204,6 @@ def get_user_profile(request,username):
     user = User.objects.get(username=username)
     at = FacultyProfile.objects.get(email=user.email)
     return render(request, 'user_profile.html', {"user_details":user,"profile_details":at,"media_url":settings.MEDIA_URL})
+
+def Gallery(request):
+    return render(request,"Gallery.html")

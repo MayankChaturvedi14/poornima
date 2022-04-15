@@ -1,0 +1,1197 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hostels</title>
+    <link rel="stylesheet" href="about.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="about.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+
+        {% load static %}
+</head>
+<style>
+    @import url("https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap");
+
+    :root {
+        --header-height: 3rem;
+        --nav-width: 68px;
+        --first-color: rgb(33, 37, 41);
+        --first-color-light: #ffffff;
+        --white-color: #ffffff;
+        --body-font: 'Nunito', sans-serif;
+        --normal-font-size: 1rem;
+        --z-fixed: 100;
+    }
+
+    /* width */
+    ::-webkit-scrollbar {
+        width: 10px;
+    }
+
+    /* Track */
+    ::-webkit-scrollbar-track {
+        background: #f1f1f1;
+    }
+
+    /* Handle */
+    ::-webkit-scrollbar-thumb {
+        background: #888;
+    }
+
+    /* Handle on hover */
+    ::-webkit-scrollbar-thumb:hover {
+        background: #555;
+    }
+
+
+    *,
+    ::before,
+    ::after {
+        box-sizing: border-box;
+    }
+
+    body {
+        position: relative;
+        margin: var(--header-height) 0 0 0;
+        padding: 0 1rem;
+        font-family: var(--body-font);
+        font-size: var(--normal-font-size);
+        transition: .5s;
+    }
+
+    a {
+        text-decoration: none !important;
+    }
+
+    a:link {
+        text-decoration: none !important;
+    }
+
+    .header {
+        width: 100%;
+        height: var(--header-height);
+        position: fixed;
+        top: 0;
+        left: 0;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 1rem;
+        background-color: var(--white-color);
+        z-index: var(--z-fixed);
+        transition: .5s;
+    }
+
+    .header_toggle {
+        color: var(--first-color);
+        font-size: 1.5rem;
+        cursor: pointer
+    }
+
+    .header_img {
+        width: 35px;
+        height: 35px;
+        display: flex;
+        justify-content: center;
+        border-radius: 50%;
+        overflow: hidden;
+    }
+
+    .header_img img {
+        width: 40px;
+    }
+
+    .l-navbar {
+        position: fixed;
+        top: 0;
+        left: -30%;
+        width: var(--nav-width);
+        height: 100vh;
+        background-color: var(--first-color);
+        padding: .5rem 1rem 0 0;
+        transition: .5s;
+        z-index: var(--z-fixed);
+
+    }
+
+    .nav {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        overflow: hidden;
+
+    }
+
+    .nav_logo,
+    .nav_link {
+        display: grid;
+        grid-template-columns: max-content max-content;
+        align-items: center;
+        column-gap: 1rem;
+        padding: .5rem 0 .5rem 1.5rem
+    }
+
+    .scr {
+        overflow-y: scroll;
+
+    }
+
+    .nav_logo {
+        margin-bottom: 2rem
+    }
+
+    .nav_logo-icon {
+        margin: 30px;
+    }
+
+    .nav_logo-name {
+        color: var(--white-color);
+        font-weight: bold;
+        color: red;
+        margin-right: 20px;
+    }
+
+    .nav_link {
+        position: relative;
+        text-decoration: none;
+        color: var(--first-color-light);
+        margin-bottom: 1.5rem;
+        transition: .3s;
+        margin-right: 10px;
+    }
+
+    .nav_link:hover {
+        background-color: lightcoral;
+        color: white;
+        border-radius: 10px;
+    }
+
+    .nav_icon {
+        font-size: 1.25rem
+    }
+
+    .show {
+        left: 0
+    }
+
+    .body-pd {
+        padding-left: calc(var(--nav-width) + 1rem)
+    }
+
+    .active1 {
+        background-color: red;
+        border-radius: 10px;
+    }
+
+
+
+
+
+
+
+    @media screen and (min-width: 768px) {
+        body {
+            margin: calc(var(--header-height) + 1rem) 0 0 0;
+            padding-left: calc(var(--nav-width) + 2rem);
+        }
+
+        .header {
+            height: calc(var(--header-height) + 1rem);
+            padding: 0 2rem 0 calc(var(--nav-width) + 2rem);
+        }
+
+        .header_img {
+            width: 40px;
+            height: 40px;
+        }
+
+        .header_img img {
+            width: 45px;
+        }
+
+        .l-navbar {
+            left: 0;
+            padding: 1rem 1rem 0 0;
+        }
+
+        .show {
+            width: calc(var(--nav-width) + 156px);
+
+        }
+
+        .body-pd {
+            padding-left: calc(var(--nav-width) + 188px);
+        }
+        a.button4 {
+            display: block;
+            margin: 0.2em auto;
+        }
+    }
+
+    .bigcontainer {
+        margin-top: 30px;
+    }
+
+    /* Add padding BETWEEN each column */
+
+    /* Create three equal columns that floats next to each other */
+    .column {
+        margin-left: 5px;
+        margin-right: auto;
+        display: none;
+        /* Hide all elements by default */
+    }
+
+    /* Clear floats after rows */
+    .row:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+
+    /* Content */
+    .content {
+        background-color: white;
+        padding: 10px;
+    }
+
+    /* The "show" class is added to the filtered elements */
+    .show {
+        display: block;
+    }
+
+    /* Style the buttons */
+    .btn {
+
+        padding: 12px 16px;
+        background-color: white;
+        cursor: pointer;
+        border: 3px solid rgb(0, 119, 255);
+    }
+
+    a.button4 {
+        display: inline-block;
+        padding: 0.3em 1.2em;
+        margin: 0 0.1em 0.1em 0;
+        border: 3px solid rgb(17, 130, 236);
+        
+        box-sizing: border-box;
+        text-decoration: none;
+        font-family: 'Roboto', sans-serif;
+        font-weight: 300;
+        
+        text-shadow: 0 0.04em 0.04em rgba(0, 0, 0, 0.35);
+        text-align: center;
+        transition: all 0.2s;
+    }
+
+    a.button4:hover {
+        border-color: rgb(4, 250, 37);
+    }
+
+    @media all and (max-width:30em) {
+        a.button4 {
+            display: block;
+            margin: 0.2em auto;
+        }
+    }
+</style>
+
+<body id="body-pd">
+    <header class="header" id="header">
+        <div class="header_toggle"> <i class='bx bx-menu' id="header-toggle"></i> </div>
+
+    </header>
+    <div class="l-navbar" id="nav-bar">
+        <nav class="nav">
+          <div class="scr">
+            <a style="color:white; font-weight:700;" href="{% url 'home' %}" class="nav_logo">
+              <span class="nav_logo-name">
+                <img style="padding-right:30px;" class="nav-icon" src="{% static 'img\POORNIMA.png' %}" width=60 height=30>
+              </span>POORNIMA</a>
+            <hr>
+            <div class="nav_list">
+              <a href="{% url 'placement' %}" class="nav_link" title="Placement">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                  class="bi bi-briefcase-fill" viewBox="0 0 16 16">
+                  <path
+                    d="M6.5 1A1.5 1.5 0 0 0 5 2.5V3H1.5A1.5 1.5 0 0 0 0 4.5v1.384l7.614 2.03a1.5 1.5 0 0 0 .772 0L16 5.884V4.5A1.5 1.5 0 0 0 14.5 3H11v-.5A1.5 1.5 0 0 0 9.5 1h-3zm0 1h3a.5.5 0 0 1 .5.5V3H6v-.5a.5.5 0 0 1 .5-.5z" />
+                  <path
+                    d="M0 12.5A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5V6.85L8.129 8.947a.5.5 0 0 1-.258 0L0 6.85v5.65z" />
+                </svg>
+                <span class="nav_name">Placement</span>
+              </a>
+              <a href="{% url 'current_student' %}" class="nav_link" title="Current Student">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-people-fill"
+                  viewBox="0 0 16 16">
+                  <path d="M7 14s-1 0-1-1 1-4 5-4 5 3 5 4-1 1-1 1H7zm4-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
+                  <path fill-rule="evenodd"
+                    d="M5.216 14A2.238 2.238 0 0 1 5 13c0-1.355.68-2.75 1.936-3.72A6.325 6.325 0 0 0 5 9c-4 0-5 3-5 4s1 1 1 1h4.216z" />
+                  <path d="M4.5 8a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5z" />
+                </svg>
+                <span class="nav_name">Current Student</span>
+              </a> <a href="{% url 'current_faculty' %}" class="nav_link " title="Current Faculty">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                  class="bi bi-person-lines-fill" viewBox="0 0 16 16">
+                  <path
+                    d="M6 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-5 6s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H1zM11 3.5a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 0 1h-4a.5.5 0 0 1-.5-.5zm.5 2.5a.5.5 0 0 0 0 1h4a.5.5 0 0 0 0-1h-4zm2 3a.5.5 0 0 0 0 1h2a.5.5 0 0 0 0-1h-2zm0 3a.5.5 0 0 0 0 1h2a.5.5 0 0 0 0-1h-2z" />
+                </svg>
+                <span class="nav_name">Current Faculty</span>
+              </a> <a href="{% url 'career' %}" class="nav_link" title="Career">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                  class="bi bi-clipboard-data" viewBox="0 0 16 16">
+                  <path
+                    d="M4 11a1 1 0 1 1 2 0v1a1 1 0 1 1-2 0v-1zm6-4a1 1 0 1 1 2 0v5a1 1 0 1 1-2 0V7zM7 9a1 1 0 0 1 2 0v3a1 1 0 1 1-2 0V9z" />
+                  <path
+                    d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z" />
+                  <path
+                    d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z" />
+                </svg>
+                <span class="nav_name">Career</span>
+              </a> <a href="{% url 'hostal' %}" class="nav_link" title="Hostel">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                  class="bi bi-house-door-fill" viewBox="0 0 16 16">
+                  <path
+                    d="M6.5 14.5v-3.505c0-.245.25-.495.5-.495h2c.25 0 .5.25.5.5v3.5a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5z" />
+                </svg>
+                <span class="nav_name">Hostel</span> </a>
+              <a href="https://ieeexplore.ieee.org/Xplore/home.jsp" class="nav_link " title="IEEE Xplore">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-newspaper"
+                  viewBox="0 0 16 16">
+                  <path
+                    d="M0 2.5A1.5 1.5 0 0 1 1.5 1h11A1.5 1.5 0 0 1 14 2.5v10.528c0 .3-.05.654-.238.972h.738a.5.5 0 0 0 .5-.5v-9a.5.5 0 0 1 1 0v9a1.5 1.5 0 0 1-1.5 1.5H1.497A1.497 1.497 0 0 1 0 13.5v-11zM12 14c.37 0 .654-.211.853-.441.092-.106.147-.279.147-.531V2.5a.5.5 0 0 0-.5-.5h-11a.5.5 0 0 0-.5.5v11c0 .278.223.5.497.5H12z" />
+                  <path
+                    d="M2 3h10v2H2V3zm0 3h4v3H2V6zm0 4h4v1H2v-1zm0 2h4v1H2v-1zm5-6h2v1H7V6zm3 0h2v1h-2V6zM7 8h2v1H7V8zm3 0h2v1h-2V8zm-3 2h2v1H7v-1zm3 0h2v1h-2v-1zm-3 2h2v1H7v-1zm3 0h2v1h-2v-1z" />
+                </svg>
+                <span class="nav_name">IEEE Xplore</span>
+              </a>
+              <a href="{% url 'about' %}" class="nav_link" title="About">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                  class="bi bi-question-circle-fill" viewBox="0 0 16 16">
+                  <path
+                    d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM5.496 6.033h.825c.138 0 .248-.113.266-.25.09-.656.54-1.134 1.342-1.134.686 0 1.314.343 1.314 1.168 0 .635-.374.927-.965 1.371-.673.489-1.206 1.06-1.168 1.987l.003.217a.25.25 0 0 0 .25.246h.811a.25.25 0 0 0 .25-.25v-.105c0-.718.273-.927 1.01-1.486.609-.463 1.244-.977 1.244-2.056 0-1.511-1.276-2.241-2.673-2.241-1.267 0-2.655.59-2.75 2.286a.237.237 0 0 0 .241.247zm2.325 6.443c.61 0 1.029-.394 1.029-.927 0-.552-.42-.94-1.029-.94-.584 0-1.009.388-1.009.94 0 .533.425.927 1.01.927z" />
+                </svg>
+                <span class="nav_name">About</span>
+              </a>
+    
+            </div>
+          </div>
+    
+        </nav>
+      </div>
+    <!-- Carousel -->
+    <div class="row">
+        <img src="img\PGC-Hostel-Banner-1.jpg' %}" alt="" width="90%"
+            style="display:block;margin-left:auto;margin-right:auto; margin-top:20px; border-radius:10px;box-shadow:10px 10px rgb(209, 207, 207)">
+    </div>
+    <div id="myBtnContainer" style="margin-top: 50px;">
+        <a  class="button4 btn active" onclick="filterSelection('all')">ALL</a>
+        <a  class="button4 btn"  onclick="filterSelection('conferences')">CONFERENCES</a>
+        <a  class="button4 btn"  onclick="filterSelection('events')">EVENTS</a>
+        <a  class="button4 btn"  onclick="filterSelection('infrastructure')">INFRASTRUCTURE</a>
+        <a  class="button4 btn"  onclick="filterSelection('sports')">SPORTS</a>
+        <a  class="button4 btn"  onclick="filterSelection('technovation')">TECHNOVATION</a>
+        <a  class="button4 btn"  onclick="filterSelection('aarohan')">AAROHAN</a>
+    </div>
+    <div class="bigcontainer">
+        <div class="container1">
+            <div class="row">
+                <div class="column conferences col-md-3">
+                    <div class="content">
+                        <a href="{% static 'img\Gallery\DSC_9196.jpg' %}">
+                            <img src="{% static 'img\Gallery\DSC_9196.jpg' %}" width="260px" height="200px">
+                        </a>
+                    </div>
+                </div>
+                <div class="column conferences col-md-3">
+                    <div class="content">
+                        <a href="{% static 'img\Gallery\DSC_0457.jpg' %}">
+                            <img src="{% static 'img\Gallery\DSC_0457.jpg' %}" width="260px" height="200px">
+                        </a>
+                    </div>
+                </div>
+                <div class="column conferences col-md-3">
+                    <div class="content">
+                        <a href="{% static 'img\Gallery\DSC_0423.jpg' %}">
+                            <img src="{% static 'img\Gallery\DSC_0423.jpg' %}" width="260px" height="200px">
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="column conferences col-md-3">
+                    <div class="content">
+                        <a href="{% static 'img\Gallery\MG_0147.jpg' %}">
+                            <img src="{% static 'img\Gallery\MG_0147.jpg' %}" width="260px" height="200px">
+                        </a>
+                    </div>
+                </div>
+                <div class="column conferences col-md-3">
+                    <div class="content">
+                        <a href="{% static 'img\Gallery\MG_0080.jpg' %}">
+                            <img src="{% static 'img\Gallery\MG_0080.jpg' %}" width="260px" height="200px">
+                        </a>
+                    </div>
+                </div>
+                <div class="column conferences col-md-3">
+                    <div class="content">
+                        <a href="{% static 'img\Gallery\IMG_0637.jpg' %}">
+                            <img src="{% static 'img\Gallery\IMG_0637.jpg' %}" width="260px" height="200px">
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="column conferences col-md-3">
+                    <div class="content">
+                        <a href="{% static 'img\Gallery\MG_1310.jpg' %}">
+                            <img src="{% static 'img\Gallery\MG_1310.jpg' %}" width="260px" height="200px">
+                        </a>
+                    </div>
+                </div>
+                <div class="column conferences col-md-3">
+                    <div class="content">
+                        <a href="{% static 'img\Gallery\MG_1243.jpg' %}">
+                            <img src="{% static 'img\Gallery\MG_1243.jpg' %}" width="260px" height="200px">
+                        </a>
+                    </div>
+                </div>
+                <div class="column conferences col-md-3">
+                    <div class="content">
+                        <a href="{% static 'img\Gallery\MG_0660.jpg' %}">
+                            <img src="{% static 'img\Gallery\MG_0660.jpg' %}" width="260px" height="200px">
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="column conferences col-md-3">
+                    <div class="content">
+                        <a href="{% static 'img\Gallery\MG_0643.jpg' %}">
+                            <img src="{% static 'img\Gallery\MG_0643.jpg' %}" width="260px" height="200px">
+                        </a>
+                    </div>
+                </div>
+                <div class="column conferences col-md-3">
+                    <div class="content">
+                        <a href="{% static 'img\Gallery\MG_0630.jpg' %}">
+                            <img src="{% static 'img\Gallery\MG_0630.jpg' %}" width="260px" height="200px">
+                        </a>
+                    </div>
+                </div>
+                <div class="column conferences col-md-3">
+                    <div class="content">
+                        <a href="{% static 'img\Gallery\MG_0191.jpg' %}">
+                            <img src="{% static 'img\Gallery\MG_0191.jpg' %}" width="260px" height="200px">
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="column conferences col-md-3">
+                    <div class="content">
+                        <a href="{% static 'img\Gallery\MG_0088.webp' %}">
+                            <img src="{% static 'img\Gallery\MG_0088.webp' %}" width="260px" height="200px">
+                        </a>
+                    </div>
+                </div>
+                <div class="column conferences col-md-3">
+                    <div class="content">
+                        <a href="{% static 'img\Gallery\MG_0575-rotated.jpg' %}">
+                            <img src="{% static 'img\Gallery\MG_0575-rotated.jpg' %}" width="200px" height="200px">
+                        </a>
+                    </div>
+                </div>
+                <div class="column conferences col-md-3">
+                    <div class="content">
+                        <a href="{% static 'img\Gallery\images.jfif' %}">
+                            <img src="{% static 'img\Gallery\images.jfif' %}" width="260px" height="200px">
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="container2">
+            <div class="row">
+                <div class="column events col-md-3">
+                    <div class="content">
+                        <a href="{% static 'img\Gallery\DSC_0045.jpg' %}">
+                            <img src="{% static 'img\Gallery\DSC_0045.jpg' %}" width="260px" height="200px">
+                        </a>
+                    </div>
+                </div>
+                <div class="column events col-md-3">
+                    <div class="content">
+                        <a href="{% static 'img\Gallery\DSC_0376.jpg' %}">
+                            <img src="{% static 'img\Gallery\DSC_0376.jpg' %}" width="260px" height="200px">
+                        </a>
+                    </div>
+                </div>
+                <div class="column events col-md-3">
+                    <div class="content">
+                        <a href="{% static 'img\Gallery\DSC_1017.jpg' %}">
+                            <img src="{% static 'img\Gallery\DSC_1017.jpg' %}" width="260px" height="200px">
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="column events col-md-3">
+                    <div class="content">
+                        <a href="{% static 'img\Gallery\DSC_0236.jpg' %}">
+                            <img src="{% static 'img\Gallery\DSC_0236.jpg' %}" width="260px" height="200px">
+                        </a>
+                    </div>
+                </div>
+                <div class="column events col-md-3">
+                    <div class="content">
+                        <a href="{% static 'img\Gallery\DSC_0334.jpg' %}">
+                            <img src="{% static 'img\Gallery\DSC_0334.jpg' %}" width="260px" height="200px">
+                        </a>
+                    </div>
+                </div>
+                <div class="column events col-md-3">
+                    <div class="content">
+                        <a href="{% static 'img\Gallery\DSC_0057.jpg' %}">
+                            <img src="{% static 'img\Gallery\DSC_0057.jpg' %}" width="260px" height="200px">
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="column events col-md-3">
+                    <div class="content">
+                        <a href="{% static 'img\Gallery\DSC_0010.jpg' %}">
+                            <img src="{% static 'img\Gallery\DSC_0010.jpg' %}" width="260px" height="200px">
+                        </a>
+                    </div>
+                </div>
+                <div class="column events col-md-3">
+                    <div class="content">
+                        <a href="{% static 'img\Gallery\DSC_0011.jpg' %}">
+                            <img src="{% static 'img\Gallery\DSC_0011.jpg' %}" width="260px" height="200px">
+                        </a>
+                    </div>
+                </div>
+                <div class="column events col-md-3">
+                    <div class="content">
+                        <a href="{% static 'img\Gallery\DSC_0008.jpg' %}">
+                            <img src="{% static 'img\Gallery\DSC_0008.jpg' %}" width="260px" height="200px">
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="column events col-md-3">
+                    <div class="content">
+                        <a href="{% static 'img\Gallery\9J4A9514.jpg' %}">
+                            <img src="{% static 'img\Gallery\9J4A9514.jpg' %}" width="260px" height="200px">
+                        </a>
+                    </div>
+                </div>
+                <div class="column events col-md-3">
+                    <div class="content">
+                        <a href="{% static 'img\Gallery\9J4A9625.jpg' %}">
+                            <img src="{% static 'img\Gallery\9J4A9625.jpg' %}" width="260px" height="200px">
+                        </a>
+                    </div>
+                </div>
+                <div class="column events col-md-3">
+                    <div class="content">
+                        <a href="{% static 'img\Gallery\DSC01873.jpg' %}">
+                            <img src="{% static 'img\Gallery\DSC01873.jpg' %}" width="260px" height="200px">
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="column events col-md-3">
+                    <div class="content">
+                        <a href="{% static 'img\Gallery\DSC01856.jpg' %}">
+                            <img src="{% static 'img\Gallery\DSC01856.jpg' %}" width="260px" height="200px">
+                        </a>
+                    </div>
+                </div>
+                <div class="column events col-md-3">
+                    <div class="content">
+                        <a href="{% static 'img\Gallery\DSC01871.jpg' %}">
+                            <img src="{% static 'img\Gallery\DSC01871.jpg' %}" width="260px" height="200px">
+                        </a>
+                    </div>
+                </div>
+                <div class="column events col-md-3">
+                    <div class="content">
+                        <a href="{% static 'img\Gallery\DSC01580.jpg' %}">
+                            <img src="{% static 'img\Gallery\DSC01580.jpg' %}" width="260px" height="200px">
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="column events col-md-3">
+                    <div class="content">
+                        <a href="{% static 'img\Gallery\DSC01528.jpg' %}">
+                            <img src="{% static 'img\Gallery\DSC01528.jpg' %}" width="260px" height="200px">
+                        </a>
+                    </div>
+                </div>
+                <div class="column events col-md-3">
+                    <div class="content">
+                        <a href="{% static 'img\Gallery\20901778_1597179850312729_6034501357316556875_o.jpg' %}">
+                            <img src="{% static 'img\Gallery\20901778_1597179850312729_6034501357316556875_o.jpg' %}" width="260px"
+                                height="200px">
+                        </a>
+                    </div>
+                </div>
+                <div class="column events col-md-3">
+                    <div class="content">
+                        <a href="{% static 'img\Gallery\20934850_1597179686979412_8556126019390644068_o.jpg' %}">
+                            <img src="{% static 'img\Gallery\20934850_1597179686979412_8556126019390644068_o.jpg' %}" width="260px"
+                                height="200px">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container3">
+            <div class="row">
+                <div class="column infrastructure col-md-3">
+                    <div class="content">
+                        <a href="{% static 'img\Gallery\DSC_0123.jpg' %}">
+                            <img src="{% static 'img\Gallery\DSC_0123.jpg' %}" width="260px" height="200px">
+                        </a>
+                    </div>
+                </div>
+                <div class="column infrastructure col-md-3">
+                    <div class="content">
+                        <a href="{% static 'img\Gallery\DSC_0009.jpg' %}">
+                            <img src="{% static 'img\Gallery\DSC_0009.jpg' %}" width="260px" height="200px">
+                        </a>
+                    </div>
+                </div>
+                <div class="column infrastructure col-md-3">
+                    <div class="content">
+                        <a href="{% static 'img\Gallery\d90a_354.jpg' %}">
+                            <img src="{% static 'img\Gallery\d90a_354.jpg' %}" width="260px" height="200px">
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="column infrastructure col-md-3">
+                    <div class="content">
+                        <a href="{% static 'img\Gallery\9J4A9495.jpg' %}">
+                            <img src="{% static 'img\Gallery\9J4A9495.jpg' %}" width="260px" height="200px">
+                        </a>
+                    </div>
+                </div>
+                <div class="column infrastructure col-md-3">
+                    <div class="content">
+                        <a href="{% static 'img\Gallery\d90a_344.jpg' %}">
+                            <img src="{% static 'img\Gallery\d90a_344.jpg' %}" width="260px" height="200px">
+                        </a>
+                    </div>
+                </div>
+                <div class="column infrastructure col-md-3">
+                    <div class="content">
+                        <a href="{% static 'img\Gallery\9J4A9489.jpg' %}">
+                            <img src="{% static 'img\Gallery\9J4A9489.jpg' %}" width="260px" height="200px">
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="column infrastructure col-md-3">
+                    <div class="content">
+                        <a href="{% static 'img\Gallery\01_pietpgcpsom-1.jpg' %}">
+                            <img src="{% static 'img\Gallery\01_pietpgcpsom-1.jpg' %}" width="260px" height="200px">
+                        </a>
+                    </div>
+                </div>
+                <div class="column infrastructure col-md-3">
+                    <div class="content">
+                        <a href="{% static 'img\Gallery\1_9.jpg' %}">
+                            <img src="{% static 'img\Gallery\1_9.jpg' %}" width="260px" height="200px">
+                        </a>
+                    </div>
+                </div>
+                <div class="column infrastructure col-md-3">
+                    <div class="content">
+                        <a href="{% static 'img\Gallery\DSC_0999.jpg' %}">
+                            <img src="{% static 'img\Gallery\DSC_0999.jpg' %}" width="260px" height="200px">
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="column infrastructure col-md-3">
+                    <div class="content">
+                        <a href="{% static 'img\Gallery\1-3.jpg' %}">
+                            <img src="{% static 'img\Gallery\1-3.jpg' %}" width="260px" height="200px">
+                        </a>
+                    </div>
+                </div>
+                <div class="column infrastructure col-md-3">
+                    <div class="content">
+                        <a href="{% static 'img\Gallery\1-4.jpg' %}">
+                            <img src="{% static 'img\Gallery\1-4.jpg' %}" width="260px" height="200px">
+                        </a>
+                    </div>
+                </div>
+                <div class="column infrastructure col-md-3">
+                    <div class="content">
+                        <a href="{% static 'img\Gallery\campus1.png' %}">
+                            <img src="{% static 'img\Gallery\campus1.png' %}" width="260px" height="200px">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container4">
+            <div class="row">
+                <div class="column sports col-md-3">
+                    <div class="content">
+                        <a href="{% static 'img\Gallery\DSC_0083.jpg' %}">
+                            <img src="{% static 'img\Gallery\DSC_0083.jpg' %}" width="260px" height="200px">
+                        </a>
+                    </div>
+                </div>
+                <div class="column sports col-md-3">
+                    <div class="content">
+                        <a href="{% static 'img\Gallery\DSC_0718.jpg' %}">
+                            <img src="{% static 'img\Gallery\DSC_0718.jpg' %}" width="260px" height="200px">
+                        </a>
+                    </div>
+                </div>
+                <div class="column sports col-md-3">
+                    <div class="content">
+                        <a href="{% static 'img\Gallery\DSC_0233.jpg' %}">
+                            <img src="{% static 'img\Gallery\DSC_0233.jpg' %}" width="260px" height="200px">
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="column sports col-md-3">
+                    <div class="content">
+                        <a href="{% static 'img\Gallery\DSC_0136-1.jpg' %}">
+                            <img src="{% static 'img\Gallery\DSC_0136-1.jpg' %}" width="260px" height="200px">
+                        </a>
+                    </div>
+                </div>
+                <div class="column sports col-md-3">
+                    <div class="content">
+                        <a href="{% static 'img\Gallery\DSC_0249.jpg' %}">
+                            <img src="{% static 'img\Gallery\DSC_0249.jpg' %}" width="260px" height="200px">
+                        </a>
+                    </div>
+                </div>
+                <div class="column sports col-md-3">
+                    <div class="content">
+                        <a href="{% static 'img\Gallery\DSC_0181.jpg' %}">
+                            <img src="{% static 'img\Gallery\DSC_0181.jpg' %}" width="260px" height="200px">
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="column sports col-md-3">
+                    <div class="content">
+                        <a href="{% static 'img\Gallery\arohan_-2016-9-8_day_2-cam5_2.jpg' %}">
+                            <img src="{% static 'img\Gallery\arohan_-2016-9-8_day_2-cam5_2.jpg' %}" width="260px" height="200px">
+                        </a>
+                    </div>
+                </div>
+                <div class="column sports col-md-3">
+                    <div class="content">
+                        <a href="{% static 'img\Gallery\DSC_0126.jpg' %}">
+                            <img src="{% static 'img\Gallery\DSC_0126.jpg' %}" width="260px" height="200px">
+                        </a>
+                    </div>
+                </div>
+                <div class="column sports col-md-3">
+                    <div class="content">
+                        <a href="{% static 'img\Gallery\DSC_0031-1.jpg' %}">
+                            <img src="{% static 'img\Gallery\DSC_0031-1.jpg' %}" width="260px" height="200px">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container5">
+            <div class="row">
+                <div class="column technovation col-md-3">
+                    <div class="content">
+                        <a href="{% static 'img\Gallery\121.jpg' %}">
+                            <img src="{% static 'img\Gallery\121.jpg' %}" width="260px" height="200px">
+                        </a>
+                    </div>
+                </div>
+                <div class="column technovation col-md-3">
+                    <div class="content">
+                        <a href="{% static 'img\Gallery\14.jpg' %}">
+                            <img src="{% static 'img\Gallery\14.jpg' %}" width="260px" height="200px">
+                        </a>
+                    </div>
+                </div>
+                <div class="column technovation col-md-3">
+                    <div class="content">
+                        <a href="{% static 'img\Gallery\13.jpg' %}">
+                            <img src="{% static 'img\Gallery\13.jpg' %}" width="260px" height="200px">
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="column technovation col-md-3">
+                    <div class="content">
+                        <a href="{% static 'img\Gallery\11.jpg' %}">
+                            <img src="{% static 'img\Gallery\11.jpg' %}" width="260px" height="200px">
+                        </a>
+                    </div>
+                </div>
+                <div class="column technovation col-md-3">
+                    <div class="content">
+                        <a href="{% static 'img\Gallery\9.jpg' %}">
+                            <img src="{% static 'img\Gallery\9.jpg' %}" width="260px" height="200px">
+                        </a>
+                    </div>
+                </div>
+                <div class="column technovation col-md-3">
+                    <div class="content">
+                        <a href="{% static 'img\Gallery\10.jpg' %}">
+                            <img src="{% static 'img\Gallery\10.jpg' %}" width="260px" height="200px">
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="column technovation col-md-3">
+                    <div class="content">
+                        <a href="{% static 'img\Gallery\8.jpg' %}">
+                            <img src="{% static 'img\Gallery\8.jpg' %}" width="260px" height="200px">
+                        </a>
+                    </div>
+                </div>
+                <div class="column technovation col-md-3">
+                    <div class="content">
+                        <a href="{% static 'img\Gallery\7.jpg' %}">
+                            <img src="{% static 'img\Gallery\7.jpg' %}" width="260px" height="200px">
+                        </a>
+                    </div>
+                </div>
+                <div class="column technovation col-md-3">
+                    <div class="content">
+                        <a href="{% static 'img\Gallery\6.jpg' %}">
+                            <img src="{% static 'img\Gallery\6.jpg' %}" width="260px" height="200px">
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="column technovation col-md-3">
+                    <div class="content">
+                        <a href="{% static 'img\Gallery\5.jpg' %}">
+                            <img src="{% static 'img\Gallery\5.jpg' %}" width="260px" height="200px">
+                        </a>
+                    </div>
+                </div>
+                <div class="column technovation col-md-3">
+                    <div class="content">
+                        <a href="{% static 'img\Gallery\3.jpg' %}">
+                            <img src="{% static 'img\Gallery\3.jpg' %}" width="260px" height="200px">
+                        </a>
+                    </div>
+                </div>
+                <div class="column technovation col-md-3">
+                    <div class="content">
+                        <a href="{% static 'img\Gallery\4.jpg' %}">
+                            <img src="{% static 'img\Gallery\4.jpg' %}" width="260px" height="200px">
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="column technovation col-md-3">
+                    <div class="content">
+                        <a href="{% static 'img\Gallery\1.jpg' %}">
+                            <img src="{% static 'img\Gallery\1.jpg' %}" width="260px" height="200px">
+                        </a>
+                    </div>
+                </div>
+                <div class="column technovation col-md-3">
+                    <div class="content">
+                        <a href="{% static 'img\Gallery\2.jpg' %}">
+                            <img src="{% static 'img\Gallery\2.jpg' %}" width="260px" height="200px">
+                        </a>
+                    </div>
+                </div>
+                <div class="column technovation col-md-3">
+                    <div class="content">
+                        <a href="{% static 'img\Gallery\ASRC-Technovation.jpg' %}">
+                            <img src="{% static 'img\Gallery\ASRC-Technovation.jpg' %}" width="260px" height="200px">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container6">
+            <div class="row">
+                <div class="column aarohan col-md-3">
+                    <div class="content">
+                        <a href="{% static 'img\Gallery\PicsArtmin.png' %}">
+                            <img src="{% static 'img\Gallery\PicsArtmin.png' %}" width="260px" height="200px">
+                        </a>
+                    </div>
+                </div>
+                <div class="column aarohan col-md-3">
+                    <div class="content">
+                        <a href="{% static 'img\Gallery\IMG_9915-min.jpg' %}">
+                            <img src="{% static 'img\Gallery\IMG_9915-min.jpg' %}" width="260px" height="200px">
+                        </a>
+                    </div>
+                </div>
+                <div class="column aarohan col-md-3">
+                    <div class="content">
+                        <a href="{% static 'img\Gallery\IMG_8297-min.jpg' %}">
+                            <img src="{% static 'img\Gallery\IMG_8297-min.jpg' %}" width="260px" height="200px">
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="column aarohan col-md-3">
+                    <div class="content">
+                        <a href="{% static 'img\Gallery\IMG_7062-min.jpg' %}">
+                            <img src="{% static 'img\Gallery\IMG_7062-min.jpg' %}" width="260px" height="200px">
+                        </a>
+                    </div>
+                </div>
+                <div class="column aarohan col-md-3">
+                    <div class="content">
+                        <a href="{% static 'img\Gallery\IMG_8285-min.jpg' %}">
+                            <img src="{% static 'img\Gallery\IMG_8285-min.jpg' %}" width="260px" height="200px">
+                        </a>
+                    </div>
+                </div>
+                <div class="column aarohan col-md-3">
+                    <div class="content">
+                        <a href="{% static 'img\Gallery\IMG_7078-min.jpg' %}">
+                            <img src="{% static 'img\Gallery\IMG_7078-min.jpg' %}" width="260px" height="200px">
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="column aarohan col-md-3">
+                    <div class="content">
+                        <a href="{% static 'img\Gallery\IMG_1179-min.jpg' %}">
+                            <img src="{% static 'img\Gallery\IMG_1179-min.jpg' %}" width="260px" height="200px">
+                        </a>
+                    </div>
+                </div>
+                <div class="column aarohan col-md-3">
+                    <div class="content">
+                        <a href="{% static 'img\Gallery\IMG_6962-min.jpg' %}">
+                            <img src="{% static 'img\Gallery\IMG_6962-min.jpg' %}" width="260px" height="200px">
+                        </a>
+                    </div>
+                </div>
+                <div class="column aarohan col-md-3">
+                    <div class="content">
+                        <a href="{% static 'img\Gallery\IMG_6859-min.jpg' %}">
+                            <img src="{% static 'img\Gallery\IMG_6859-min.jpg' %}" width="260px" height="200px">
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="column aarohan col-md-3">
+                    <div class="content">
+                        <a href="{% static 'img\Gallery\MG_0496-min.jpg' %}">
+                            <img src="{% static 'img\Gallery\MG_0496-min.jpg' %}" width="260px" height="200px">
+                        </a>
+                    </div>
+                </div>
+                <div class="column aarohan col-md-3">
+                    <div class="content">
+                        <a href="{% static 'img\Gallery\IMG_0313-min.jpg' %}">
+                            <img src="{% static 'img\Gallery\IMG_0313-min.jpg' %}" width="260px" height="200px">
+                        </a>
+                    </div>
+                </div>
+                <div class="column aarohan col-md-3">
+                    <div class="content">
+                        <a href="{% static 'img\Gallery\MG_8668-min.jpg' %}">
+                            <img src="{% static 'img\Gallery\MG_8668-min.jpg' %}" width="260px" height="200px">
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="column aarohan col-md-3">
+                    <div class="content">
+                        <a href="{% static 'img\Gallery\MG_0471-min.jpg' %}">
+                            <img src="{% static 'img\Gallery\MG_0471-min.jpg' %}" width="260px" height="200px">
+                        </a>
+                    </div>
+                </div>
+                <div class="column aarohan col-md-3">
+                    <div class="content">
+                        <a href="{% static 'img\Gallery\MG_0300-min.jpg' %}">
+                            <img src="{% static 'img\Gallery\MG_0300-min.jpg' %}" width="260px" height="200px">
+                        </a>
+                    </div>
+                </div>
+                <div class="column aarohan col-md-3">
+                    <div class="content">
+                        <a href="{% static 'img\Gallery\main-qimg-c3fa503ab4be199f5f99f0170cf6a771-pjlq.jfif' %}">
+                            <img src="{% static 'img\Gallery\main-qimg-c3fa503ab4be199f5f99f0170cf6a771-pjlq.jfif' %}" width="260px"
+                                height="200px">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Portfolio Gallery Grid -->
+
+
+    <!-- END GRID -->
+    </div>
+
+    <!-- END MAIN -->
+    </div>
+
+
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function (event) {
+
+            const showNavbar = (toggleId, navId, bodyId, headerId) => {
+                const toggle = document.getElementById(toggleId),
+                    nav = document.getElementById(navId),
+                    bodypd = document.getElementById(bodyId),
+                    headerpd = document.getElementById(headerId)
+
+                // Validate that all variables exist
+                if (toggle && nav && bodypd && headerpd) {
+                    toggle.addEventListener('click', () => {
+                        // show navbar
+                        nav.classList.toggle('show')
+                        // change icon
+                        toggle.classList.toggle('bx-x')
+                        // add padding to body
+                        bodypd.classList.toggle('body-pd')
+                        // add padding to header
+                        headerpd.classList.toggle('body-pd')
+                    })
+                }
+            }
+
+            showNavbar('header-toggle', 'nav-bar', 'body-pd', 'header')
+
+            /*===== LINK ACTIVE =====*/
+            const linkColor = document.querySelectorAll('.nav_link')
+
+            function colorLink() {
+                if (linkColor) {
+                    linkColor.forEach(l => l.classList.remove('active'))
+                    this.classList.add('active')
+                }
+            }
+            linkColor.forEach(l => l.addEventListener('click', colorLink))
+
+            // Your code to run since DOM is loaded and ready
+        });
+
+
+    </script>
+    <script src='https://code.jquery.com/jquery-3.2.1.min.js'></script>
+    <script>
+        filterSelection("all")
+        function filterSelection(c) {
+            var x, i;
+            x = document.getElementsByClassName("column");
+            if (c == "all") c = "";
+            for (i = 0; i < x.length; i++) {
+                w3RemoveClass(x[i], "show");
+                if (x[i].className.indexOf(c) > -1) w3AddClass(x[i], "show");
+            }
+        }
+
+        function w3AddClass(element, name) {
+            var i, arr1, arr2;
+            arr1 = element.className.split(" ");
+            arr2 = name.split(" ");
+            for (i = 0; i < arr2.length; i++) {
+                if (arr1.indexOf(arr2[i]) == -1) { element.className += " " + arr2[i]; }
+            }
+        }
+
+        function w3RemoveClass(element, name) {
+            var i, arr1, arr2;
+            arr1 = element.className.split(" ");
+            arr2 = name.split(" ");
+            for (i = 0; i < arr2.length; i++) {
+                while (arr1.indexOf(arr2[i]) > -1) {
+                    arr1.splice(arr1.indexOf(arr2[i]), 1);
+                }
+            }
+            element.className = arr1.join(" ");
+        }
+
+
+        // Add active class to the current button (highlight it)
+        var btnContainer = document.getElementById("myBtnContainer");
+        var btns = btnContainer.getElementsByClassName("btn");
+        for (var i = 0; i < btns.length; i++) {
+            btns[i].addEventListener("click", function () {
+                var current = document.getElementsByClassName("active");
+                current[0].className = current[0].className.replace(" active", "");
+                this.className += " active";
+            });
+        }
+    </script>
+
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
